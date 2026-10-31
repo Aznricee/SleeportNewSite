@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleeport hotel — Бронювання номера</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="layout.js"></script>
+    <link rel="canonical" href="https://sleeport.dp.ua/booking.html">
+    <link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/booking.html">
+    <link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/booking.html">
+    <link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/booking.html">
+    <meta name="robots" content="index, follow">
+    <meta name="description"
+        content="Онлайн-бронювання номерів у готелі Sleeport, м. Дніпро. Швидке підтвердження адміністратором.">
+</head>
+
+<body>
+    <site-header></site-header>
+
+    <main class="booking-page">
+        <div class="container">
+            <div class="booking-header">
+                <span class="hero-label">БРОНЮВАННЯ ОНЛАЙН</span>
+                <h1>Замовити перебування у Sleeport</h1>
+                <p>Заповніть заявку, і черговий адміністратор перевірить доступність та зв'яжеться з вами для
+                    підтвердження броні.</p>
+            </div>
+
+            <div class="booking-container-card">
+                <div id="form-status-box" class="form-status"></div>
+
+                <form id="booking-form">
+                    <div class="booking-grid">
+                        <div>
+                            <label class="field-label" for="guest-name">Прізвище та ім'я *</label>
+                            <input class="field-input" type="text" id="guest-name" required
+                                placeholder="Шевченко Олександр">
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="guest-phone">Номер телефону *</label>
+                            <input class="field-input" type="tel" id="guest-phone" required
+                                placeholder="+380 96 000 00 00">
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="checkin-date">Дата заїзду *</label>
+                            <input class="field-input" type="date" id="checkin-date" required>
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="checkout-date">Дата виїзду *</label>
+                            <input class="field-input" type="date" id="checkout-date" required>
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="room-select">Категорія номера *</label>
+                            <select class="field-select" id="room-select" required>
+                                <option value="">Оберіть категорію...</option>
+                                <option value="standard">Стандарт одномісний</option>
+                                <option value="superior-single">Стандарт одномісний з дод. місцем</option>
+                                <option value="standard-double">Стандарт двомісний</option>
+                                <option value="small-double">Двомісний маленький</option>
+                                <option value="superior-double">Двомісний покращений</option>
+                                <option value="two-room">Двокімнатний</option>
+                                <option value="other">Інше / Потрібна консультація</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="guests-count">Кількість гостей *</label>
+                            <select class="field-select" id="guests-count" required>
+                                <option value="1">1 гість</option>
+                                <option value="2" selected>2 гостя</option>
+                                <option value="3">3 гостя</option>
+                                <option value="4+">4 і більше (група)</option>
+                            </select>
+                        </div>
+
+                        <div class="field-full">
+                            <label class="field-label" for="guest-wishes">Коментарі та особливі побажання</label>
+                            <textarea class="field-textarea" id="guest-wishes"
+                                placeholder="Орієнтовний час прибуття, необхідність додаткових зручностей або ваші питання..."></textarea>
+                        </div>
+
+                        <div class="field-full">
+                            <label class="booking-rules-check">
+                                <input type="checkbox" id="rules-agree" required>
+                                <span>Я погоджуюся з <a href="rules.html" target="_blank">правилами готелю</a> та
+                                    обробкою даних згідно з <a href="privacy.html" target="_blank">політикою
+                                        конфіденційності</a>.</span>
+                            </label>
+                        </div>
+                        <div class="field-full">
+                            <label class="booking-rules-check">
+                                <input type="checkbox" id="confirmation-agree" required>
+                                <span>Я розумію, що заявка є попередньою та вважається дійсною лише після підтвердження
+                                    адміністрацією готелю.</span>
+                            </label>
+                        </div>
+
+                        <div style="position: absolute; left: -9999px; top: -9999px; opacity: 0; pointer-events: none;">
+                            <input type="text" id="user-website" name="website_url" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <div class="field-full">
+                            <button type="submit" id="submit-btn" class="btn-submit">
+                                Надіслати заявку на бронювання
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+<site-footer></site-footer>
+
+<script>
+    function copyPhone(phone) {
+        navigator.clipboard.writeText(phone);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const pageLoadedAt = Date.now();
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const roomParam = urlParams.get("room");
+        const roomSelect = document.getElementById("room-select");
+
+        if (roomParam && roomSelect) {
+            const exists = Array.from(roomSelect.options).some(opt => opt.value === roomParam);
+            if (exists) {
+                roomSelect.value = roomParam;
+            }
+        }
+
+        const checkinInput = document.getElementById("checkin-date");
+        const checkoutInput = document.getElementById("checkout-date");
+        const todayStr = new Date().toISOString().split("T")[0];
+
+        checkinInput.min = todayStr;
+        checkoutInput.min = todayStr;
+
+        checkinInput.addEventListener("change", () => {
+            if (checkinInput.value) {
+                checkoutInput.min = checkinInput.value;
+                if (checkoutInput.value && checkoutInput.value <= checkinInput.value) {
+                    checkoutInput.value = "";
+                }
+            }
+        });
+
+        const form = document.getElementById("booking-form");
+        const statusBox = document.getElementById("form-status-box");
+        const submitBtn = document.getElementById("submit-btn");
+
+        const WORKER_URL = "https://sleeport-booking-api.kravchenkoruslan2005.workers.dev";
+
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const honeypotEl = document.getElementById("user-website");
+            if (honeypotEl && honeypotEl.value.trim() !== "") {
+                statusBox.className = "form-status success";
+                statusBox.textContent = "Заявку успішно надіслано! Черговий адміністратор зв'яжеться з вами для підтвердження.";
+                form.reset();
+                return;
+            }
+
+            const secondsSinceLoad = (Date.now() - pageLoadedAt) / 1000;
+            if (secondsSinceLoad < 3) {
+                statusBox.className = "form-status error";
+                statusBox.textContent = "Будь ласка, перевірте правильність заповнення форми.";
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = "Надсилання...";
+            statusBox.className = "form-status";
+            statusBox.textContent = "";
+
+            const selectedRoomText = roomSelect.options[roomSelect.selectedIndex].text;
+
+            try {
+                const response = await fetch(WORKER_URL, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        name: document.getElementById("guest-name").value.trim(),
+                        phone: document.getElementById("guest-phone").value.trim(),
+                        checkin: checkinInput.value,
+                        checkout: checkoutInput.value,
+                        room: selectedRoomText,
+                        guests: document.getElementById("guests-count").value,
+                        wishes: document.getElementById("guest-wishes").value.trim(),
+                        trap: honeypotEl ? honeypotEl.value : ""
+                    })
+                });
+
+                const result = await response.json();
+
+                if (response.ok && result.ok) {
+                    statusBox.className = "form-status success";
+                    statusBox.textContent = "Заявку успішно надіслано! Черговий адміністратор зв'яжеться з вами для підтвердження.";
+                    form.reset();
+                } else {
+                    throw new Error(result.error || "Помилка обробки");
+                }
+            } catch (err) {
+                console.error(err);
+                statusBox.className = "form-status error";
+                statusBox.textContent = "Не вдалося надіслати заявку онлайн. Будь ласка, зателефонуйте на рецепцію за номером +380 96 375 95 30.";
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = "Надіслати заявку на бронювання";
+            }
+        });
+    });
+</script>
+
+</body>
+
+</html>

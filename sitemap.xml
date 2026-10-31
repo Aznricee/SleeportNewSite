@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+    <!-- Головна сторінка -->
+    <url>
+        <loc>https://sleeport.dp.ua/</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/"/>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://sleeport.dp.ua/en/</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/"/>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Номерний фонд -->
+    <url>
+        <loc>https://sleeport.dp.ua/rooms.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/rooms.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/rooms.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/rooms.html"/>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://sleeport.dp.ua/en/rooms.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/rooms.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/rooms.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/rooms.html"/>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Бронювання -->
+    <url>
+        <loc>https://sleeport.dp.ua/booking.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/booking.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/booking.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/booking.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://sleeport.dp.ua/en/booking.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/booking.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/booking.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/booking.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- Про нас -->
+    <url>
+        <loc>https://sleeport.dp.ua/about.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/about.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/about.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/about.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sleeport.dp.ua/en/about.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/about.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/about.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/about.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Сніданки -->
+    <url>
+        <loc>https://sleeport.dp.ua/breakfast.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/breakfast.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/breakfast.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/breakfast.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sleeport.dp.ua/en/breakfast.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/breakfast.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/breakfast.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/breakfast.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Галерея -->
+    <url>
+        <loc>https://sleeport.dp.ua/galery.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/galery.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/gallery.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/galery.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sleeport.dp.ua/en/gallery.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/galery.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/gallery.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/galery.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Для бізнесу -->
+    <url>
+        <loc>https://sleeport.dp.ua/coop.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/coop.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/coop.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/coop.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://sleeport.dp.ua/en/coop.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/coop.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/coop.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/coop.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <!-- Контакти -->
+    <url>
+        <loc>https://sleeport.dp.ua/contacts.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/contacts.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/contacts.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/contacts.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://sleeport.dp.ua/en/contacts.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/contacts.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/contacts.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/contacts.html"/>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Правила та конфіденційність -->
+    <url>
+        <loc>https://sleeport.dp.ua/rules.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/rules.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/rules.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/rules.html"/>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://sleeport.dp.ua/en/rules.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/rules.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/rules.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/rules.html"/>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    <url>
+        <loc>https://sleeport.dp.ua/privacy.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/privacy.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/privacy.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/privacy.html"/>
+        <changefreq>yearly</changefreq>
+        <priority>0.4</priority>
+    </url>
+    <url>
+        <loc>https://sleeport.dp.ua/en/privacy.html</loc>
+        <xhtml:link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/privacy.html"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/privacy.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/privacy.html"/>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+</urlset>

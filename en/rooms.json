@@ -1,0 +1,246 @@
+{
+  "title": "Room Inventory",
+  "currency": "UAH",
+  "pricePeriod": "night",
+  "commonTitle": "Standard Room Amenities",
+  "commonDescription": "All hotel rooms are equipped with necessary conveniences for a comfortable stay:",
+  "commonFeatures": [
+    "Private bathroom with shower (ROCA, Hansgrohe fixtures)",
+    "Individual climate control and ventilation system",
+    "High-speed Wi-Fi",
+    "LED TV LG Full HD",
+    "LEGRAND sockets with USB ports and 220V",
+    "Mini-fridge and in-room electronic safe",
+    "Tea set, tea, sugar, and bottled drinking water",
+    "Orthopedic mattress on a bed podium",
+    "Work desk, chair, and floor lamp",
+    "Hairdryer, towel sets (3 pcs), soap and shower gel dispensers"
+  ],
+  "commonNote": "Equipment in specific categories may vary. Additional amenities are detailed in the room description.",
+  "addNote": "A shared dining area equipped with a microwave and electric kettles is also available on-site",
+  "rooms": [
+    {
+      "id": "standard",
+      "number": "01",
+      "name": "Single Standard",
+      "description": "A cozy and functional room with an ergonomic layout for solo travelers and business trips.",
+      "fullDescription": "A compact 16 m² room featuring contemporary design and carpeted flooring. It combines a restful sleeping area with an orthopedic mattress on a bed podium, a full workstation, and an en-suite bathroom enclosed by a stylish glass wall.",
+      "area": "16",
+      "capacity": "1 guest",
+      "bedType": "Single bed (orthopedic mattress on a bed podium)",
+      "features": [
+        "Single bed on a podium",
+        "Work desk and chair",
+        "Hospitality set with tea and water"
+      ],
+      "amenities": [
+        "Sleeping area: single orthopedic mattress on a bed podium",
+        "Workstation: work desk, chair, mirror, floor lamp, carpet flooring",
+        "Connectivity: free Wi-Fi, wired Ethernet, LEGRAND sockets (2x USB, 3x 220V)",
+        "Multimedia: 26\" LED TV LG Full HD (satellite & digital TV)",
+        "Climate & security: individual climate control, electronic safe",
+        "Hospitality tray: tea set, tea, sugar, bottled water (0.5 L), mini-fridge",
+        "Hallway: wardrobe, luggage shelf, coat rack, full-length mirror",
+        "Bathroom: walk-in shower separated by glass wall, wall-hung toilet, washbasin, ventilation",
+        "Textiles & care: hairdryer, towel set (3 pcs per guest), shower gel and liquid soap dispensers"
+      ],
+      "price": 1299,
+      "image": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=85",
+      "imageAlt": "Single Standard Room",
+      "gallery": [
+        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=85",
+        "../images/techn/safe_and_freezer.jpg",
+        "../images/techn/hair_dryer.jpg"
+      ],
+      "visible": true
+    },
+    {
+      "id": "superior-single",
+      "number": "02",
+      "name": "Single Standard with Extra Bed",
+      "description": "A practical 16 m² room with an additional bunk-style upper bed to accommodate a second guest.",
+      "fullDescription": "A functional choice for colleagues or travel companions. Featuring an upper-tier second bed, the room preserves its full workspace, private bathroom, individual climate system, and standard hotel amenities.",
+      "area": "16",
+      "capacity": "1–2 guests",
+      "bedType": "Single bed + additional upper-tier bed",
+      "features": [
+        "Two beds (bunk arrangement)",
+        "Work desk and LEGRAND USB/220V sockets",
+        "Tea set and bottled water"
+      ],
+      "amenities": [
+        "Sleeping spots: main podium bed with orthopedic mattress + upper-tier extra bed",
+        "Workstation: work desk, chair, floor lamp, mirror, carpet flooring",
+        "Connectivity: free Wi-Fi, wired Ethernet, LEGRAND sockets (2x USB, 3x 220V)",
+        "Multimedia: 26\" LED TV LG Full HD (satellite & digital TV)",
+        "Climate & security: individual climate control, electronic safe",
+        "Hospitality set: tea ware, tea, sugar, bottled water (0.5 L), mini-fridge",
+        "Hallway: wardrobe, luggage shelf, coat rack, full-length mirror",
+        "Bathroom: walk-in shower separated by glass wall, wall-hung toilet, washbasin, ventilation",
+        "Textiles & care: hairdryer, towel sets (3 pcs/guest), shower gel and liquid soap dispensers"
+      ],
+      "price": 1449,
+      "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=85",
+      "imageAlt": "Single Standard with Extra Bed",
+      "gallery": [
+        "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85",
+        "../images/techn/locksystem_1.jpg",
+        "../images/techn/safe_and_freezer.jpg"
+      ],
+      "visible": true
+    },
+    {
+      "id": "standard-double",
+      "number": "03",
+      "name": "Double Standard",
+      "description": "A spacious 20 m² room configurable with either one double bed or two separate single beds.",
+      "fullDescription": "An optimal choice for couples or two colleagues on a business trip. Spanning 20 m², it can be prepared with one queen bed (160×200 cm) or two single beds (80×200 cm). Equipped with a 32\" LED TV, dedicated desk, and full conveniences.",
+      "area": "20",
+      "capacity": "2 guests",
+      "bedType": "Double bed (1600×2000 mm) or two single beds (800×2000 mm)",
+      "features": [
+        "Flexible bedding setup (Double or Twin)",
+        "32\" LED TV LG Full HD",
+        "Work desk and LEGRAND USB/220V sockets"
+      ],
+      "amenities": [
+        "Bedding: orthopedic mattress on a podium (double 160×200 cm or two singles 80×200 cm)",
+        "Work zone: work desk, chair, floor lamp, mirror, carpet flooring",
+        "Connectivity: free Wi-Fi, Ethernet port, LEGRAND pop-up sockets (2x USB, 3x 220V)",
+        "Multimedia: 32\" LED TV LG Full HD (satellite & digital TV)",
+        "Climate & security: individual air conditioning/heating, electronic safe",
+        "Hospitality set: tea ware, tea, sugar, bottled water (2x 0.5 L), mini-fridge",
+        "Hallway: spacious wardrobe, luggage shelf, coat hanger, full-length mirror",
+        "Bathroom: shower enclosure, wall-hung toilet, washbasin, ventilation system",
+        "Textiles & care: hairdryer, towel sets (3 pcs per person), body wash and liquid soap dispensers"
+      ],
+      "price": 1459,
+      "image": "../images/rooms/room_6_bed_prev.jpg",
+      "imageAlt": "Double Standard Hotel Room",
+      "gallery": [
+        "../images/rooms/room_6_bed.jpg",
+        "../images/rooms/room_6_bed_2.jpg",
+        "../images/rooms/room_6_bathroom.jpg",
+        "../images/rooms/room_6_closet.jpg",
+        "../images/rooms/room_3_bed_1.jpg",
+        "../images/rooms/room_3_table_2.jpg",
+        "../images/rooms/room_3_bathroom_1.jpg",
+        "../images/rooms/water_and_tea_in_room.jpg"
+      ],
+      "visible": true
+    },
+    {
+      "id": "small-double",
+      "number": "04",
+      "name": "Small Double",
+      "description": "A compact room featuring a comfortable double sofa bed and full hotel amenities.",
+      "fullDescription": "A thoughtfully planned room for one or two guests. Furnished with a convertible double sofa bed, work desk, individual air conditioning, and a private shower room.",
+      "area": "16",
+      "capacity": "1–2 guests",
+      "bedType": "Convertible double sofa bed",
+      "features": [
+        "Double sofa bed",
+        "Work desk and chair",
+        "Hospitality set with tea and water"
+      ],
+      "amenities": [
+        "Sleeping accommodation: quality pull-out double sofa bed",
+        "Work area: writing desk, chair, floor lamp, mirror, carpet flooring",
+        "Connectivity: high-speed Wi-Fi, wired Ethernet, LEGRAND sockets (2x USB, 3x 220V)",
+        "Multimedia: LED TV LG Full HD with satellite and digital channels",
+        "Climate & security: individual climate control, private safe",
+        "Hospitality set: tea ware, tea, sugar, bottled water, mini-fridge",
+        "Hallway: wardrobe, luggage shelf, coat hanger, full-length mirror",
+        "Bathroom: shower cabin, wall-hung toilet, washbasin, ventilation",
+        "Textiles & care: hairdryer, towel sets (3 pcs/guest), shower gel and soap dispensers"
+      ],
+      "price": 1359,
+      "image": "../images/rooms/room_1_bed.jpg",
+      "imageAlt": "Small Double Hotel Room",
+      "gallery": [
+        "../images/rooms/room_1_bed.jpg",
+        "../images/rooms/room_1_table_1.jpg",
+        "../images/rooms/room_1_mirror.jpg",
+        "../images/rooms/room_1_bathroom_2.jpg"
+      ],
+      "visible": true
+    },
+    {
+      "id": "superior-double",
+      "number": "05",
+      "name": "Superior Double",
+      "description": "Our most spacious 30 m² room featuring an in-room microwave and generous living area.",
+      "fullDescription": "A 30 m² superior category room designed for added comfort and extended stays. It features an expanded living area, 32\" LG LED TV, in-room microwave oven, mini-fridge, tea station, and convertible bedding (Double or Twin).",
+      "area": "30",
+      "capacity": "2 guests",
+      "bedType": "Double bed (1600×2000 mm) or two single beds (800×2000 mm)",
+      "features": [
+        "Generous 30 m² floor plan",
+        "32\" LED TV LG Full HD",
+        "In-room microwave oven",
+        "Convertible bed (Double or Twin)"
+      ],
+      "amenities": [
+        "Sleeping zone: orthopedic mattress on podium (double 160×200 cm or two singles 80×200 cm)",
+        "Living & work area: spacious desk, chair, floor lamp, mirror, carpeted floor",
+        "Connectivity: free Wi-Fi, wired internet, LEGRAND sockets (2x USB, 3x 220V)",
+        "Multimedia: 32\" LED TV LG Full HD (satellite & digital TV)",
+        "Climate & security: individual air conditioning, electronic safe",
+        "Kitchenette & refreshments: microwave oven, electric kettle, tea ware, tea, sugar, water (2x 0.5 L), mini-fridge",
+        "Hallway: wardrobe, luggage rack, coat hanger, full-length mirror",
+        "Bathroom: shower enclosure, wall-hung toilet, washbasin, ventilation",
+        "Textiles & care: hairdryer, towel sets (3 pcs/guest), shower gel and liquid soap dispensers"
+      ],
+      "price": 1559,
+      "image": "../images/rooms/room_2_full - prev.jpg",
+      "imageAlt": "Superior Double Hotel Room",
+      "gallery": [
+        "../images/rooms/room_2_full_bed_better.jpg",
+        "../images/rooms/room_2_kitchen_2.jpg",
+        "../images/rooms/room_2_something.jpg",
+        "../images/rooms/room_2_decore.jpg",
+        "../images/techn/safe.jpg",
+        "../images/techn/freezer.jpg",
+        "../images/techn/temp_system.jpg"
+      ],
+      "visible": true
+    },
+    {
+      "id": "two-room",
+      "number": "06",
+      "name": "Two-Room Suite",
+      "description": "A suite with two isolated bedrooms, two independent TVs, and two separate climate control units.",
+      "fullDescription": "A 20 m² layout split into two independent rooms, offering full privacy for business travelers or friends. Each room includes its own single bed (900×2000 mm), separate 26\" LG LED TV, individual air conditioner, and workstation.",
+      "area": "20",
+      "capacity": "2 guests",
+      "bedType": "Two separate beds (one 900×2000 mm bed in each room)",
+      "features": [
+        "Two private isolated rooms",
+        "Two separate 26\" Full HD TVs",
+        "Two independent A/C units"
+      ],
+      "amenities": [
+        "Sleeping areas: one orthopedic mattress on a bed podium (90×200 cm) in each private room",
+        "Workstations: desk, chair, floor lamp, mirror, and carpet flooring in both rooms",
+        "Connectivity: free high-speed Wi-Fi and wired Ethernet across both rooms, LEGRAND sockets",
+        "Multimedia: two 26\" LED TVs LG Full HD (satellite & digital TV in each room)",
+        "Climate & security: two independent climate control systems, in-room safe",
+        "Hospitality tray: tea ware, tea, sugar, bottled water (2x 0.5 L), mini-fridge",
+        "Hallway: entry corridor with wardrobe, luggage shelf, coat hanger, and full-length mirror",
+        "Bathroom: walk-in shower, wall-hung toilet, washbasin, ventilation",
+        "Textiles & care: hairdryer, towel sets (3 pcs/guest), shower gel and soap dispensers"
+      ],
+      "price": 1459,
+      "image": "../images/rooms/room_14_room_1_2 - prev.jpg",
+      "imageAlt": "Two-Room Suite Hotel Room",
+      "gallery": [
+        "../images/rooms/room_14_room_1.jpg",
+        "../images/rooms/room_14_room_1_1.jpg",
+        "../images/rooms/room_14_room_2.jpg"
+      ],
+      "visible": true
+    }
+  ],
+  "bottomNote": "Room availability depends on your travel dates. Please contact hotel administration or submit a booking request for confirmation.",
+  "contactsLinkText": "Hotel Contacts ↗"
+}

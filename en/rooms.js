@@ -1,0 +1,125 @@
+async function loadRoomsPage() {
+    const list = document.getElementById('rooms-list');
+
+    try {
+        const response = await fetch('rooms.json');
+
+        if (!response.ok) {
+            throw new Error(`Failed to load rooms.json: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        document.title = `Sleeport hotel — ${data.title || 'Rooms'}`;
+        document.getElementById('rooms-title').textContent = data.title || 'Room Inventory';
+        document.getElementById('common-title').textContent = data.commonTitle || '';
+        document.getElementById('common-description').textContent = data.commonDescription || '';
+        document.getElementById('common-note').textContent = data.commonNote || '';
+        document.getElementById('add-note').textContent = data.addNote || '';
+        document.getElementById('rooms-bottom-note').textContent = data.bottomNote || '';
+        document.getElementById('contacts-link').textContent = data.contactsLinkText || 'Hotel Contacts ↗';
+
+        const commonFeatures = document.getElementById('common-features');
+        commonFeatures.replaceChildren();
+
+        (data.commonFeatures || []).forEach(feature => {
+            const item = document.createElement('li');
+            item.textContent = feature;
+            commonFeatures.appendChild(item);
+        });
+
+        list.replaceChildren();
+
+        const visibleRooms = (data.rooms || []).filter(room => room.visible !== false);
+
+        if (visibleRooms.length === 0) {
+            list.textContent = 'Room categories are currently not published.';
+            return;
+        }
+
+        visibleRooms.forEach(room => {
+            const article = document.createElement('article');
+            article.className = 'room-card';
+
+            const photo = document.createElement('div');
+            photo.className = 'room-photo';
+
+            const img = document.createElement('img');
+            img.src = room.image || '';
+            img.alt = room.imageAlt || room.name || 'Hotel Room';
+            img.loading = 'lazy';
+            photo.appendChild(img);
+
+            const info = document.createElement('div');
+            info.className = 'room-info';
+
+            const category = document.createElement('span');
+            category.className = 'room-category';
+            category.textContent = `${String(room.number || '').padStart(2, '0')} / CATEGORY`;
+
+            const title = document.createElement('h2');
+            title.textContent = room.name || '';
+
+            const description = document.createElement('p');
+            description.className = 'room-description';
+            description.textContent = room.description || '';
+
+            const listTitle = document.createElement('p');
+            listTitle.className = 'room-list-title';
+            listTitle.textContent = 'In the room:';
+
+            const features = document.createElement('ul');
+            features.className = 'room-features';
+
+            (room.features || []).forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                features.appendChild(li);
+            });
+
+            const price = document.createElement('div');
+            price.className = 'room-price';
+
+            const amount = document.createElement('strong');
+            if (
+                room.price !== null &&
+                room.price !== undefined &&
+                room.price !== '' &&
+                Number.isFinite(Number(room.price))
+            ) {
+                amount.textContent = `${new Intl.NumberFormat('en-US').format(Number(room.price))} ${data.currency || 'UAH'}`;
+            } else {
+                amount.textContent = 'Check price';
+            }
+
+            const period = document.createElement('span');
+            period.textContent = ` / ${data.pricePeriod || 'night'}`;
+            price.append(amount, period);
+
+            const actions = document.createElement('div');
+            actions.className = 'room-actions';
+
+            const details = document.createElement('a');
+            details.className = 'room-details-button';
+            details.href = `room-details.html?category=${encodeURIComponent(room.id || '')}`;
+            details.textContent = 'Details';
+
+            const booking = document.createElement('a');
+            booking.className = 'room-book-button';
+            booking.href = `booking.html?room=${encodeURIComponent(room.id || '')}`;
+            booking.textContent = 'Book now';
+
+            actions.append(details, booking);
+
+            info.append(category, title, description, listTitle, features, price, actions);
+            article.append(photo, info);
+            list.appendChild(article);
+        });
+
+    } catch (error) {
+        console.error(error);
+        list.textContent = 'Unable to load room inventory. Please check server availability.';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', loadRoomsPage);

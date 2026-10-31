@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleeport Hotel — Book a Room</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="layout.js" defer></script>
+    <link rel="canonical" href="https://sleeport.dp.ua/en/booking.html">
+    <link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/booking.html">
+    <link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/booking.html">
+    <link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/booking.html">
+    <meta name="robots" content="index, follow">
+    <meta name="description"
+        content="Online room reservation at Sleeport Hotel in Dnipro. Instant direct booking with front desk confirmation.">
+</head>
+
+<body>
+    <site-header></site-header>
+
+    <main class="booking-page">
+        <div class="container">
+            <div class="booking-header">
+                <span class="hero-label">ONLINE RESERVATION</span>
+                <h1>Reserve Your Stay at Sleeport</h1>
+                <p>Fill out the form below, and the on-duty administrator will check availability and contact you to
+                    confirm your booking.</p>
+            </div>
+
+            <div class="booking-container-card">
+                <div id="form-status-box" class="form-status"></div>
+
+                <form id="booking-form">
+                    <div class="booking-grid">
+                        <div>
+                            <label class="field-label" for="guest-name">First and Last Name *</label>
+                            <input class="field-input" type="text" id="guest-name" required
+                                placeholder="Alexander Shevchenko">
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="guest-phone">Phone Number *</label>
+                            <input class="field-input" type="tel" id="guest-phone" required
+                                placeholder="+380 96 000 00 00">
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="checkin-date">Check-in Date *</label>
+                            <input class="field-input" type="date" id="checkin-date" required>
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="checkout-date">Check-out Date *</label>
+                            <input class="field-input" type="date" id="checkout-date" required>
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="room-select">Room Category *</label>
+                            <select class="field-select" id="room-select" required>
+                                <option value="">Select a category...</option>
+                                <option value="standard">Single Standard</option>
+                                <option value="superior-single">Single Standard with Extra Bed</option>
+                                <option value="standard-double">Double Standard</option>
+                                <option value="small-double">Small Double</option>
+                                <option value="superior-double">Superior Double</option>
+                                <option value="two-room">Two-Room Suite</option>
+                                <option value="other">Other / Consultation Needed</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="guests-count">Number of Guests *</label>
+                            <select class="field-select" id="guests-count" required>
+                                <option value="1">1 guest</option>
+                                <option value="2" selected>2 guests</option>
+                                <option value="3">3 guests</option>
+                                <option value="4+">4 or more (group)</option>
+                            </select>
+                        </div>
+
+                        <div class="field-full">
+                            <label class="field-label" for="guest-wishes">Special Requests & Comments</label>
+                            <textarea class="field-textarea" id="guest-wishes"
+                                placeholder="Estimated arrival time, extra requirements, or questions..."></textarea>
+                        </div>
+
+                        <div class="field-full">
+                            <label class="booking-rules-check">
+                                <input type="checkbox" id="rules-agree" required>
+                                <span>I agree to the <a href="rules.html" target="_blank">hotel rules</a> and consent to
+                                    data processing according to the <a href="privacy.html" target="_blank">privacy
+                                        policy</a>.</span>
+                            </label>
+                        </div>
+                        <div class="field-full">
+                            <label class="booking-rules-check">
+                                <input type="checkbox" id="confirmation-agree" required>
+                                <span>I understand that this request is preliminary and becomes confirmed only after
+                                    validation by hotel administration.</span>
+                            </label>
+                        </div>
+
+                        <div style="position: absolute; left: -9999px; top: -9999px; opacity: 0; pointer-events: none;">
+                            <input type="text" id="user-website" name="website_url" tabindex="-1" autocomplete="off">
+                        </div>
+
+                        <div class="field-full">
+                            <button type="submit" id="submit-btn" class="btn-submit">
+                                Submit Booking Request
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script>
+        function copyPhone(phone) {
+            navigator.clipboard.writeText(phone);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const pageLoadedAt = Date.now();
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const roomParam = urlParams.get("room");
+            const roomSelect = document.getElementById("room-select");
+
+            if (roomParam && roomSelect) {
+                const exists = Array.from(roomSelect.options).some(opt => opt.value === roomParam);
+                if (exists) {
+                    roomSelect.value = roomParam;
+                }
+            }
+
+            const checkinInput = document.getElementById("checkin-date");
+            const checkoutInput = document.getElementById("checkout-date");
+            const todayStr = new Date().toISOString().split("T")[0];
+
+            checkinInput.min = todayStr;
+            checkoutInput.min = todayStr;
+
+            checkinInput.addEventListener("change", () => {
+                if (checkinInput.value) {
+                    checkoutInput.min = checkinInput.value;
+                    if (checkoutInput.value && checkoutInput.value <= checkinInput.value) {
+                        checkoutInput.value = "";
+                    }
+                }
+            });
+
+            const form = document.getElementById("booking-form");
+            const statusBox = document.getElementById("form-status-box");
+            const submitBtn = document.getElementById("submit-btn");
+
+            const WORKER_URL = "https://sleeport-booking-api.kravchenkoruslan2005.workers.dev";
+
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+
+                const honeypotEl = document.getElementById("user-website");
+                if (honeypotEl && honeypotEl.value.trim() !== "") {
+                    statusBox.className = "form-status success";
+                    statusBox.textContent = "Your request has been sent! The front desk will contact you shortly.";
+                    form.reset();
+                    return;
+                }
+
+                const secondsSinceLoad = (Date.now() - pageLoadedAt) / 1000;
+                if (secondsSinceLoad < 3) {
+                    statusBox.className = "form-status error";
+                    statusBox.textContent = "Please verify your form details.";
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = "Sending...";
+                statusBox.className = "form-status";
+                statusBox.textContent = "";
+
+                const selectedRoomText = roomSelect.options[roomSelect.selectedIndex].text;
+
+                try {
+                    const response = await fetch(WORKER_URL, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            name: document.getElementById("guest-name").value.trim(),
+                            phone: document.getElementById("guest-phone").value.trim(),
+                            checkin: checkinInput.value,
+                            checkout: checkoutInput.value,
+                            room: selectedRoomText,
+                            guests: document.getElementById("guests-count").value,
+                            wishes: document.getElementById("guest-wishes").value.trim(),
+                            trap: honeypotEl ? honeypotEl.value : ""
+                        })
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok && result.ok) {
+                        statusBox.className = "form-status success";
+                        statusBox.textContent = "Your request has been received! The front desk will contact you to confirm details.";
+                        form.reset();
+                    } else {
+                        throw new Error(result.error || "Submission error");
+                    }
+                } catch (err) {
+                    console.error(err);
+                    statusBox.className = "form-status error";
+                    statusBox.textContent = "Could not send the booking request online. Please call reception at +380 96 375 95 30.";
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "Submit Booking Request";
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

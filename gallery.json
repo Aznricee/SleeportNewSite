@@ -1,0 +1,197 @@
+{
+  "pageTitle": "Галерея",
+  "heading": "Атмосфера готелю Sleeport",
+  "subheading": "Ознайомтеся з простором наших номерів, рецепцією, зонами відпочинку та сервісом.",
+  "categories": [
+    {
+      "id": "rooms",
+      "title": "Номерний фонд",
+      "initialVisible": 3,
+      "items": [
+        {
+          "title": "Покращений двомісний номер",
+          "preview": "images/rooms/room_2_full - prev.jpg",
+          "full": "images/rooms/room_2_full.jpg",
+          "alt": "Покращений двомісний номер"
+        },
+        {
+          "title": "Покращений двомісний номер",
+          "preview": "images/rooms/room_2_something.jpg",
+          "full": "images/rooms/room_2_something.jpg",
+          "alt": "Покращений двомісний номер"
+        },
+        {
+          "title": "Стандартний двомісний номер №6",
+          "preview": "images/rooms/room_6_bed.jpg",
+          "full": "images/rooms/room_6_bed.jpg",
+          "alt": "Стандартний двомісний номер №6"
+        },
+        {
+          "title": "Стандартний двомісний номер №6",
+          "preview": "images/rooms/room_6_bed_2.jpg",
+          "full": "images/rooms/room_6_bed_2.jpg",
+          "alt": "Стандартний двомісний номер №6"
+        },
+        {
+          "title": "Стандартний двомісний номер №3",
+          "preview": "images/rooms/room_3_bed_1.jpg",
+          "full": "images/rooms/room_3_bed_1.jpg",
+          "alt": "Стандартний двомісний номер №3"
+        },
+        {
+          "title": "Стандартний двомісний номер №3",
+          "preview": "images/rooms/room_3_table_2.jpg",
+          "full": "images/rooms/room_3_table_2.jpg",
+          "alt": "Стандартний двомісний номер №3"
+        },
+        {
+          "title": "Маленький двомісний номер",
+          "preview": "images/rooms/room_1_bed.jpg",
+          "full": "images/rooms/room_1_bed.jpg",
+          "alt": "Маленький двомісний номер (ліжко)"
+        },
+        {
+          "title": "Маленький двомісний номер",
+          "preview": "images/rooms/room_1_table_1.jpg",
+          "full": "images/rooms/room_1_table_1.jpg",
+          "alt": "Маленький двомісний номер (стіл)"
+        },
+        {
+          "title": "Двокімнатний номер - перша кімната",
+          "preview": "images/rooms/room_14_room_1.jpg",
+          "full": "images/rooms/room_14_room_1.jpg",
+          "alt": "Двокімнатний номер - перша кімната"
+        },
+        {
+          "title": "Двокімнатний номер - перша кімната",
+          "preview": "images/rooms/room_14_room_1_1.jpg",
+          "full": "images/rooms/room_14_room_1_1.jpg",
+          "alt": "Двокімнатний номер - перша кімната"
+        },
+        {
+          "title": "Двокімнатний номер - друга кімната",
+          "preview": "images/rooms/room_14_room_2.jpg",
+          "full": "images/rooms/room_14_room_2.jpg",
+          "alt": "Двокімнатний номер - друга кімната"
+        }
+      ]
+    },
+    {
+      "id": "techn",
+      "title": "Прилади в номерах",
+      "initialVisible": 3,
+      "items": [
+        {
+          "title": "Настінний фен",
+          "preview": "images/techn/hair_dryer.jpg",
+          "full": "images/techn/hair_dryer.jpg",
+          "alt": "Настінний фен"
+        },
+        {
+          "title": "Електричний замок ззовні",
+          "preview": "images/techn/locksystem_1.jpg",
+          "full": "images/techn/locksystem_1.jpg",
+          "alt": "Електричний замок ззовні"
+        },
+        {
+          "title": "Електричний замок зсередини",
+          "preview": "images/techn/locksystem_2.jpg",
+          "full": "images/techn/locksystem_2.jpg",
+          "alt": "Електричний замок зсередини"
+        },
+        {
+          "title": "Сейф",
+          "preview": "images/techn/safe.jpg",
+          "full": "images/techn/safe_and_freezer.jpg",
+          "alt": "Сейф та холодильник"
+        },
+                {
+          "title": "Мініхолодильник",
+          "preview": "images/techn/freezer.jpg",
+          "full": "images/techn/safe_and_freezer.jpg",
+          "alt": "Сейф та холодильник"
+        },
+        {
+          "title": "Система клімат контролю",
+          "preview": "images/techn/temp_system.jpg",
+          "full": "images/techn/temp_system.jpg",
+          "alt": "Система клімат контролю"
+        },
+        {
+          "title": "Праска та прасувальна дошка",
+          "preview": "images/techn/iron_table.jpg",
+          "full": "images/techn/iron_table.jpg",
+          "alt": "Праска та прасувальна дошка"
+        }
+      ]
+    },
+    {
+      "id": "interior",
+      "title": "Хол та зона зустрічі гостей",
+      "initialVisible": 3,
+      "items": [
+        {
+          "title": "Вхід до готелю",
+          "preview": "images/hotel and decore/enter.jpg",
+          "full": "images/hotel and decore/enter.jpg",
+          "alt": "Вхід до готелю"
+        },
+        {
+          "title": "Стійка рецепції готелю",
+          "preview": "images/hotel and decore/Reception.jpg",
+          "full": "images/hotel and decore/Reception.jpg",
+          "alt": "Рецепція готелю"
+        },
+        {
+          "title": "Зона очікування",
+          "preview": "images/hotel and decore/Hall_Yellow2.jpg",
+          "full": "images/hotel and decore/Hall_Yellow2.jpg",
+          "alt": "Зона очікування"
+        },
+        {
+          "title": "Коридор готелю",
+          "preview": "images/hotel and decore/corridore.jpg",
+          "full": "images/hotel and decore/corridore.jpg",
+          "alt": "Коридор готелю"
+        },
+        {
+          "title": "Декор готелю",
+          "preview": "images/hotel and decore/decore_in_hall.jpg",
+          "full": "images/hotel and decore/decore_in_hall.jpg",
+          "alt": "Декор готелю"
+        },
+        {
+          "title": "Декор готелю",
+          "preview": "images/hotel and decore/fish_paint.jpg",
+          "full": "images/hotel and decore/fish_paint.jpg",
+          "alt": "Декор готелю"
+        }
+      ]
+    },
+    {
+      "id": "dining",
+      "title": "Їдальня та зона сніданків",
+      "initialVisible": 3,
+      "items": [
+        {
+          "title": "Їдальня",
+          "preview": "images/hotel and decore/cafeteria.jpg",
+          "full": "images/hotel and decore/cafeteria.jpg",
+          "alt": "Стіл у їдальні"
+        },
+        {
+          "title": "Техніка у їдальні",
+          "preview": "images/hotel and decore/cafeteria_cattles.jpg",
+          "full": "images/hotel and decore/cafeteria_cattles.jpg",
+          "alt": "Техніка у їдальні"
+        },
+        {
+          "title": "Телевізор для ранкових новин",
+          "preview": "images/hotel and decore/cafeteria_tv.jpg",
+          "full": "images/hotel and decore/cafeteria_tv.jpg",
+          "alt": "Телевізор для ранкових новин"
+        }
+      ]
+    }
+  ]
+}

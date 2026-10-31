@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakfast & Coffee — Sleeport</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="layout.js" defer></script>
+    <link rel="canonical" href="https://sleeport.dp.ua/en/breakfast.html">
+    <link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/breakfast.html">
+    <link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/breakfast.html">
+    <link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/breakfast.html">
+    <meta name="robots" content="index, follow">
+    <meta name="description"
+        content="Breakfast and specialty coffee menu at Sleeport Hotel: hearty dishes and fresh coffee from 8:00 AM to 10:00 AM.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Breakfast & Coffee — Sleeport Hotel">
+    <meta property="og:description"
+        content="Start your morning with taste: full breakfast options and specialty coffee menu.">
+    <meta property="og:url" content="https://sleeport.dp.ua/en/breakfast.html">
+    <meta property="og:image" content="https://sleeport.dp.ua/images/breakfast%20menu/Omelette.webp">
+</head>
+
+<body>
+
+    <site-header></site-header>
+
+    <main class="breakfast-page">
+        <div class="breakfast-container">
+
+            <header class="breakfast-heading">
+                <h1 id="page-title">Breakfast & Coffee</h1>
+                <p id="page-description">
+                    Start your day with a satisfying breakfast and aromatic coffee
+                    at Sleeport Hotel.
+                </p>
+            </header>
+
+            <section id="service-info" class="service-info" hidden></section>
+
+            <!-- Breakfast Menu -->
+            <section class="menu-section" aria-labelledby="breakfast-title">
+                <header class="menu-section-heading">
+                    <h2 id="breakfast-title">Breakfast Menu</h2>
+                    <p id="breakfast-description"></p>
+                </header>
+
+                <div class="menu-grid" id="breakfast-list" aria-live="polite">
+                    <p>Loading breakfast menu...</p>
+                </div>
+            </section>
+
+            <!-- Coffee Menu -->
+            <section class="menu-section">
+                <h2 id="coffee-title">Coffee Menu</h2>
+                <p id="coffee-description"></p>
+                <div id="coffee-list"></div>
+            </section>
+
+            <div class="breakfast-note">
+                <p id="menu-note"></p>
+            </div>
+
+        </div>
+    </main>
+
+    <site-footer></site-footer>
+
+    <script>
+        function copyPhone(phone) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(phone).catch(() => {
+                    window.prompt('Copy phone number:', phone);
+                });
+            } else {
+                window.prompt('Copy phone number:', phone);
+            }
+        }
+    </script>
+
+    <script src="breakfast.js" defer></script>
+
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+{
+  "pageTitle": "Gallery",
+  "heading": "Sleeport Hotel Atmosphere",
+  "subheading": "Explore our rooms, reception area, relaxation spaces, and guest services.",
+  "categories": [
+    {
+      "id": "rooms",
+      "title": "Rooms & Suites",
+      "initialVisible": 3,
+      "items": [
+        {
+          "title": "Superior Double Room",
+          "preview": "../images/rooms/room_2_full - prev.jpg",
+          "full": "../images/rooms/room_2_full.jpg",
+          "alt": "Superior Double Room"
+        },
+        {
+          "title": "Superior Double Room Interior",
+          "preview": "../images/rooms/room_2_something.jpg",
+          "full": "../images/rooms/room_2_something.jpg",
+          "alt": "Superior Double Room Interior"
+        },
+        {
+          "title": "Standard Double Room №6",
+          "preview": "../images/rooms/room_6_bed.jpg",
+          "full": "../images/rooms/room_6_bed.jpg",
+          "alt": "Standard Double Room №6"
+        },
+        {
+          "title": "Standard Double Room №6",
+          "preview": "../images/rooms/room_6_bed_2.jpg",
+          "full": "../images/rooms/room_6_bed_2.jpg",
+          "alt": "Standard Double Room №6"
+        },
+        {
+          "title": "Standard Double Room №3",
+          "preview": "../images/rooms/room_3_bed_1.jpg",
+          "full": "../images/rooms/room_3_bed_1.jpg",
+          "alt": "Standard Double Room №3"
+        },
+        {
+          "title": "Standard Double Room №3 Work Area",
+          "preview": "../images/rooms/room_3_table_2.jpg",
+          "full": "../images/rooms/room_3_table_2.jpg",
+          "alt": "Standard Double Room №3 Work Area"
+        },
+        {
+          "title": "Small Double Room",
+          "preview": "../images/rooms/room_1_bed.jpg",
+          "full": "../images/rooms/room_1_bed.jpg",
+          "alt": "Small Double Room (bed)"
+        },
+        {
+          "title": "Small Double Room Desk",
+          "preview": "../images/rooms/room_1_table_1.jpg",
+          "full": "../images/rooms/room_1_table_1.jpg",
+          "alt": "Small Double Room (desk)"
+        },
+        {
+          "title": "Two-Room Suite — First Room",
+          "preview": "../images/rooms/room_14_room_1.jpg",
+          "full": "../images/rooms/room_14_room_1.jpg",
+          "alt": "Two-Room Suite — First Room"
+        },
+        {
+          "title": "Two-Room Suite — First Room Angle",
+          "preview": "../images/rooms/room_14_room_1_1.jpg",
+          "full": "../images/rooms/room_14_room_1_1.jpg",
+          "alt": "Two-Room Suite — First Room Angle"
+        },
+        {
+          "title": "Two-Room Suite — Second Room",
+          "preview": "../images/rooms/room_14_room_2.jpg",
+          "full": "../images/rooms/room_14_room_2.jpg",
+          "alt": "Two-Room Suite — Second Room"
+        }
+      ]
+    },
+    {
+      "id": "techn",
+      "title": "In-Room Amenities",
+      "initialVisible": 3,
+      "items": [
+        {
+          "title": "Wall-mounted Hairdryer",
+          "preview": "../images/techn/hair_dryer.jpg",
+          "full": "../images/techn/hair_dryer.jpg",
+          "alt": "Wall-mounted Hairdryer"
+        },
+        {
+          "title": "Electronic Door Lock (Exterior)",
+          "preview": "../images/techn/locksystem_1.jpg",
+          "full": "../images/techn/locksystem_1.jpg",
+          "alt": "Electronic Door Lock (Exterior)"
+        },
+        {
+          "title": "Electronic Door Lock (Interior)",
+          "preview": "../images/techn/locksystem_2.jpg",
+          "full": "../images/techn/locksystem_2.jpg",
+          "alt": "Electronic Door Lock (Interior)"
+        },
+        {
+          "title": "In-Room Safe",
+          "preview": "../images/techn/safe.jpg",
+          "full": "../images/techn/safe_and_freezer.jpg",
+          "alt": "In-Room Safe"
+        },
+        {
+          "title": "Mini-Fridge",
+          "preview": "../images/techn/freezer.jpg",
+          "full": "../images/techn/safe_and_freezer.jpg",
+          "alt": "Mini-Fridge"
+        },
+        {
+          "title": "Climate Control System",
+          "preview": "../images/techn/temp_system.jpg",
+          "full": "../images/techn/temp_system.jpg",
+          "alt": "Climate Control Panel"
+        },
+        {
+          "title": "Iron and Ironing Board",
+          "preview": "../images/techn/iron_table.jpg",
+          "full": "../images/techn/iron_table.jpg",
+          "alt": "Iron and Ironing Board"
+        }
+      ]
+    },
+    {
+      "id": "interior",
+      "title": "Lobby & Reception",
+      "initialVisible": 3,
+      "items": [
+        {
+          "title": "Hotel Entrance",
+          "preview": "../images/hotel and decore/enter.jpg",
+          "full": "../images/hotel and decore/enter.jpg",
+          "alt": "Hotel Entrance"
+        },
+        {
+          "title": "Reception Desk",
+          "preview": "../images/hotel and decore/Reception.jpg",
+          "full": "../images/hotel and decore/Reception.jpg",
+          "alt": "Reception Desk"
+        },
+        {
+          "title": "Lounge Area",
+          "preview": "../images/hotel and decore/Hall_Yellow2.jpg",
+          "full": "../images/hotel and decore/Hall_Yellow2.jpg",
+          "alt": "Lounge Area"
+        },
+        {
+          "title": "Hotel Corridor",
+          "preview": "../images/hotel and decore/corridore.jpg",
+          "full": "../images/hotel and decore/corridore.jpg",
+          "alt": "Hotel Corridor"
+        },
+        {
+          "title": "Hall Decor",
+          "preview": "../images/hotel and decore/decore_in_hall.jpg",
+          "full": "../images/hotel and decore/decore_in_hall.jpg",
+          "alt": "Hall Decor"
+        },
+        {
+          "title": "Wall Art in Hallway",
+          "preview": "../images/hotel and decore/fish_paint.jpg",
+          "full": "../images/hotel and decore/fish_paint.jpg",
+          "alt": "Wall Art"
+        }
+      ]
+    },
+    {
+      "id": "dining",
+      "title": "Dining & Breakfast Area",
+      "initialVisible": 3,
+      "items": [
+        {
+          "title": "Dining Room",
+          "preview": "../images/hotel and decore/cafeteria.jpg",
+          "full": "../images/hotel and decore/cafeteria.jpg",
+          "alt": "Dining Room Table"
+        },
+        {
+          "title": "Dining Room Appliances",
+          "preview": "../images/hotel and decore/cafeteria_cattles.jpg",
+          "full": "../images/hotel and decore/cafeteria_cattles.jpg",
+          "alt": "Dining Room Appliances"
+        },
+        {
+          "title": "Morning News Screen",
+          "preview": "../images/hotel and decore/cafeteria_tv.jpg",
+          "full": "../images/hotel and decore/cafeteria_tv.jpg",
+          "alt": "Morning News Screen"
+        }
+      ]
+    }
+  ]
+}

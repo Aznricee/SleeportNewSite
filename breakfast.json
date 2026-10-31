@@ -1,0 +1,301 @@
+{
+  "title": "Сніданки та кава — Sleeport",
+  "pageTitle": "Сніданки та кава",
+  "pageDescription": "Смачні сніданки, ароматна кава та затишний початок дня у Sleeport.",
+  "currency": "грн",
+  "serviceInfo": {
+    "title": "Умови сніданку",
+    "items": [
+      {
+        "label": "Час подачі",
+        "value": "8:00 - 10:00"
+      },
+      {
+        "label": "Кава до сніданку",
+        "value": "Будь-яка кава з меню — 35 грн"
+      },
+      {
+        "label": "Чай до сніданку",
+        "value": "Безкоштовно"
+      }
+    ]
+  },
+  "breakfast": {
+    "title": "Меню сніданків",
+    "description": "Оберіть страви до смаку та складіть свій ідеальний сніданок.",
+    "items": [
+      {
+        "id": "breakfast-01",
+        "name": "Вівсянка на молоці",
+        "description": "Ніжна вівсяна каша на молоці — простий і ситний початок дня.",
+        "price": 40,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-02",
+        "name": "Вівсянка на воді",
+        "description": "Легка вівсяна каша для спокійного та збалансованого сніданку.",
+        "price": 30,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-03",
+        "name": "Віденські вафлі",
+        "description": "Золотисті вафлі з ніжною текстурою — смакують у будь-який ранок.",
+        "price": 75,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-04",
+        "name": "Віденські вафлі з шоколадом",
+        "description": "Золотисті вафлі з шоколадним доповненням для солодкого настрою.",
+        "price": 80,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-05",
+        "name": "Деруни",
+        "description": "Апетитні картопляні деруни з рум’яною скоринкою.",
+        "price": 50,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-06",
+        "name": "Джем",
+        "description": "Солодке доповнення до вафель, тостів або млинців.",
+        "price": 15,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-07",
+        "name": "Йогурт",
+        "description": "Легкий варіант сніданку або доповнення до основної страви.",
+        "price": 30,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-08",
+        "name": "Млинці з сиром",
+        "description": "Ніжні млинці з сирною начинкою — класичне поєднання смаків.",
+        "price": 80,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-09",
+        "name": "Омлет",
+        "description": "Ніжний омлет — поживний і простий варіант сніданку.",
+        "price": 50,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-10",
+        "name": "Омлет з беконом",
+        "description": "Ніжний омлет із беконом для більш ситного сніданку.",
+        "price": 60,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-11",
+        "name": "Салат із капустою та огірком",
+        "description": "Свіжий овочевий салат із хрусткої капусти та огірка.",
+        "price": 75,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-12",
+        "name": "Салат із помідором та огірком",
+        "description": "Легкий салат зі свіжих помідорів та огірків.",
+        "price": 75,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-13",
+        "name": "Сарделька",
+        "description": "Ситне доповнення до яєчних страв, каші або тостів.",
+        "price": 65,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-14",
+        "name": "Сендвіч із сиром та беконом",
+        "description": "Ситний сендвіч із сиром і беконом — зручний вибір для сніданку.",
+        "price": 75,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-15",
+        "name": "Сендвіч із сиром та ковбасою",
+        "description": "Смачне поєднання сиру й ковбаси у зручному сендвічі.",
+        "price": 65,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-16",
+        "name": "Сирники",
+        "description": "Ніжні сирники з рум’яною скоринкою — класика солодкого сніданку.",
+        "price": 75,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-17",
+        "name": "Сосиски",
+        "description": "Класичне доповнення до омлету, тостів або овочевого салату.",
+        "price": 55,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-18",
+        "name": "Тости",
+        "description": "Підсмажені скибочки хліба — просте доповнення до сніданку.",
+        "price": 20,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      }
+    ]
+  },
+  "coffee": {
+    "title": "Кавове меню",
+    "description": "Від класичної гарячої кави до освіжаючих холодних напоїв.",
+    "categories": [
+      {
+        "id": "hot-coffee",
+        "title": "Гаряча кава",
+        "items": [
+          {
+            "id": "coffee-01",
+            "name": "Еспресо",
+            "description": "Насичена класична кава з виразним смаком.",
+            "price": 30,
+            "visible": true
+          },
+          {
+            "id": "coffee-02",
+            "name": "Подвійне еспресо",
+            "description": "Подвійна порція еспресо для більш інтенсивного смаку.",
+            "price": 40,
+            "visible": true
+          },
+          {
+            "id": "coffee-03",
+            "name": "Американо",
+            "description": "Чорна кава з м’яким смаком і виразним ароматом.",
+            "price": 35,
+            "visible": true
+          },
+          {
+            "id": "coffee-04",
+            "name": "Американо з молоком або вершками",
+            "description": "Класичний американо з ніжним молочним доповненням.",
+            "price": 40,
+            "visible": true
+          },
+          {
+            "id": "coffee-05",
+            "name": "Капучино",
+            "description": "Кава з молоком і ніжною молочною пінкою.",
+            "price": 45,
+            "visible": true
+          },
+          {
+            "id": "coffee-06",
+            "name": "Лате",
+            "description": "М’яка молочна кава з делікатним кавовим смаком.",
+            "price": 50,
+            "visible": true
+          },
+          {
+            "id": "coffee-07",
+            "name": "Раф",
+            "description": "Ніжний кавовий напій із вершковим смаком.",
+            "price": 65,
+            "visible": true
+          }
+        ]
+      },
+      {
+        "id": "cold-coffee",
+        "title": "Холодна кава",
+        "items": [
+          {
+            "id": "coffee-08",
+            "name": "Бамбл",
+            "description": "Освіжаюча кава з цитрусовою або ягідною ноткою.",
+            "price": 70,
+            "image": "",
+            "imageAlt": "",
+            "details": "На вибір: апельсин або вишня",
+            "visible": true
+          },
+          {
+            "id": "coffee-09",
+            "name": "Айс лате",
+            "description": "Холодна кава з молоком — легкий освіжаючий напій.",
+            "price": 60,
+            "visible": true
+          },
+          {
+            "id": "coffee-10",
+            "name": "Еспресо тонік",
+            "description": "Яскраве поєднання еспресо й тоніка з освіжаючим смаком.",
+            "price": 65,
+            "visible": true
+          }
+        ]
+      }
+    ]
+  },
+  "note": "Наявність страв і актуальність цін уточнюйте в адміністрації готелю."
+}

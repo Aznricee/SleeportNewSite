@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleeport hotel — Деталі номера</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="layout.js" defer></script>
+    <meta name="robots" content="noindex, follow">
+    <meta name="description"
+        content="Детальна інформація про номер готелю Sleeport: площа, місткість, типи ліжок та комплектація.">
+</head>
+
+<body>
+    <site-header></site-header>
+
+    <main class="room-details-page">
+        <div class="container">
+
+            <nav class="details-breadcrumbs">
+                <a href="rooms.html">← Усі номери</a>
+            </nav>
+
+            <div id="details-loading" class="details-loading">
+                <p>Завантаження інформації про номер...</p>
+            </div>
+
+            <div id="details-error" class="details-error" style="display: none;">
+                <h2>Номер не знайдено</h2>
+                <p>Можливо, категорію було змінено або посилання недійсне.</p>
+                <a href="rooms.html" class="about-button">Повернутися до номерного фонду</a>
+            </div>
+
+            <article id="details-content" class="details-wrapper" style="display: none;">
+                
+                <header class="details-header">
+                    <span class="hero-label" id="room-category-badge">КАТЕГОРІЯ НОМЕРА</span>
+                    <h1 id="room-title">Назва номера</h1>
+                    <p class="details-short-lead" id="room-short-desc"></p>
+                </header>
+
+                <div class="details-gallery-section">
+                    <div class="details-main-image-wrap">
+                        <img id="main-view-image" src="" alt="Фото номера" class="details-main-img">
+                    </div>
+                    <div class="details-thumbnails" id="gallery-thumbs" aria-label="Мініатюри номеру"></div>
+                </div>
+
+                <div class="details-quick-specs">
+                    <div class="spec-card">
+                        <span class="spec-title">Місткість</span>
+                        <strong class="spec-value" id="spec-capacity">—</strong>
+                    </div>
+                    <div class="spec-card">
+                        <span class="spec-title">Площа номера</span>
+                        <strong class="spec-value" id="spec-area">—</strong>
+                    </div>
+                    <div class="spec-card">
+                        <span class="spec-title">Тип ліжка</span>
+                        <strong class="spec-value" id="spec-bed">—</strong>
+                    </div>
+                    <div class="spec-card">
+                        <span class="spec-title">Вартість проживання</span>
+                        <strong class="spec-value spec-price" id="spec-price">—</strong>
+                    </div>
+                </div>
+
+                <div class="details-grid-body">
+                    <div class="details-main-text">
+                        <section class="details-section">
+                            <h2>Опис кімнати</h2>
+                            <p id="room-full-description"></p>
+                        </section>
+
+                        <section class="details-section">
+                            <h2>Оснащення та що є в номері</h2>
+                            <ul class="details-amenities-list" id="room-amenities"></ul>
+                        </section>
+                    </div>
+
+                    <aside class="details-sidebar">
+                        <div class="details-booking-card">
+                            <h3>Забронювати цей номер</h3>
+                            <p>Оберіть дати, і черговий адміністратор підтвердить доступність номеру.</p>
+                            
+                            <div class="sidebar-price-row">
+                                <span class="sidebar-price" id="sidebar-price-val">—</span>
+                                <span class="sidebar-period">/ доба</span>
+                            </div>
+
+                            <a href="#" id="book-room-btn" class="btn-submit details-book-action">
+                                Перейти до бронювання
+                            </a>
+
+                            <div class="sidebar-phone-box">
+                                <span>Або зателефонуйте на рецепцію:</span>
+                                <a href="tel:+380963759530">+380 96 375 95 30</a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+            </article>
+
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Закрити">&times;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <site-footer></site-footer>
+
+    <script src="room-details.js" defer></script>
+</body>
+
+</html>

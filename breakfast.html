@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Сніданки та кава — Sleeport</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="layout.js" defer></script>
+    <link rel="canonical" href="https://sleeport.dp.ua/breakfast.html">
+    <link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/breakfast.html">
+    <link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/breakfast.html">
+    <link rel="alternate" hreflang="x-default" href="https://sleeport.dp.ua/breakfast.html">
+    <meta name="robots" content="index, follow">
+    <meta name="description"
+        content="Меню сніданків та свіжої кави у готелі Sleeport: поживні ранкові страви, класична та холодна кава.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Сніданки та кава — Sleeport Hotel">
+    <meta property="og:description" content="Почніть свій ранок смачно: сніданки з 8:00 до 10:00 та великий вибір кави.">
+    <meta property="og:url" content="https://sleeport.dp.ua/breakfast.html">
+    <meta property="og:image" content="https://sleeport.dp.ua/images/breakfast%20menu/Omelette.webp">
+</head>
+
+<body>
+
+<site-header></site-header>
+
+    <main class="breakfast-page">
+        <div class="breakfast-container">
+
+            <header class="breakfast-heading">
+                <h1 id="page-title">Сніданки та кава</h1>
+
+                <p id="page-description">
+                    Почніть свій день зі смачного сніданку та ароматної кави
+                    у готелі Sleeport.
+                </p>
+            </header>
+
+            <section id="service-info" class="service-info" hidden></section>
+            <!-- Меню сніданків -->
+
+            <section class="menu-section" aria-labelledby="breakfast-title">
+
+                <header class="menu-section-heading">
+                    <h2 id="breakfast-title">Меню сніданків</h2>
+
+                    <p id="breakfast-description"></p>
+                </header>
+
+                <div class="menu-grid" id="breakfast-list" aria-live="polite">
+                    <p>Завантаження меню...</p>
+                </div>
+
+            </section>
+
+            <!-- Кавове меню -->
+
+            <section class="menu-section">
+                <h2 id="coffee-title">Кавове меню</h2>
+                <p id="coffee-description"></p>
+                <div id="coffee-list"></div>
+            </section>
+
+            <div class="breakfast-note">
+                <p id="menu-note"></p>
+            </div>
+
+        </div>
+
+    </main>
+
+<site-footer></site-footer>
+    <script>
+        function copyPhone(phone) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(phone).catch(() => {
+                    window.prompt('Скопіюйте номер телефону:', phone);
+                });
+            } else {
+                window.prompt('Скопіюйте номер телефону:', phone);
+            }
+        }
+    </script>
+
+    <script src="breakfast.js" defer></script>
+
+</body>
+
+</html>

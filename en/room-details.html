@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleeport hotel — Room Details</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="layout.js" defer></script>
+</head>
+
+<body>
+    <site-header></site-header>
+
+    <main class="room-details-page">
+        <div class="container">
+
+            <nav class="details-breadcrumbs">
+                <a href="rooms.html">← All Rooms</a>
+            </nav>
+
+            <div id="details-loading" class="details-loading">
+                <p>Loading room details...</p>
+            </div>
+
+            <div id="details-error" class="details-error" style="display: none;">
+                <h2>Room not found</h2>
+                <p>The category might have been changed or the link is invalid.</p>
+                <a href="rooms.html" class="about-button">Return to Room Inventory</a>
+            </div>
+
+            <article id="details-content" class="details-wrapper" style="display: none;">
+                
+                <header class="details-header">
+                    <span class="hero-label" id="room-category-badge">ROOM CATEGORY</span>
+                    <h1 id="room-title">Room Name</h1>
+                    <p class="details-short-lead" id="room-short-desc"></p>
+                </header>
+
+                <div class="details-gallery-section">
+                    <div class="details-main-image-wrap">
+                        <img id="main-view-image" src="" alt="Room photo" class="details-main-img">
+                    </div>
+                    <div class="details-thumbnails" id="gallery-thumbs" aria-label="Room thumbnails"></div>
+                </div>
+
+                <div class="details-quick-specs">
+                    <div class="spec-card">
+                        <span class="spec-title">Capacity</span>
+                        <strong class="spec-value" id="spec-capacity">—</strong>
+                    </div>
+                    <div class="spec-card">
+                        <span class="spec-title">Room Size</span>
+                        <strong class="spec-value" id="spec-area">—</strong>
+                    </div>
+                    <div class="spec-card">
+                        <span class="spec-title">Bed Type</span>
+                        <strong class="spec-value" id="spec-bed">—</strong>
+                    </div>
+                    <div class="spec-card">
+                        <span class="spec-title">Nightly Rate</span>
+                        <strong class="spec-value spec-price" id="spec-price">—</strong>
+                    </div>
+                </div>
+
+                <div class="details-grid-body">
+                    <div class="details-main-text">
+                        <section class="details-section">
+                            <h2>Room Overview</h2>
+                            <p id="room-full-description"></p>
+                        </section>
+
+                        <section class="details-section">
+                            <h2>In-Room Amenities & Equipment</h2>
+                            <ul class="details-amenities-list" id="room-amenities"></ul>
+                        </section>
+                    </div>
+
+                    <aside class="details-sidebar">
+                        <div class="details-booking-card">
+                            <h3>Reserve This Room</h3>
+                            <p>Select your dates and the on-duty receptionist will verify availability.</p>
+                            
+                            <div class="sidebar-price-row">
+                                <span class="sidebar-price" id="sidebar-price-val">—</span>
+                                <span class="sidebar-period">/ night</span>
+                            </div>
+
+                            <a href="#" id="book-room-btn" class="btn-submit details-book-action">
+                                Proceed to Booking
+                            </a>
+
+                            <div class="sidebar-phone-box">
+                                <span>Or reach out to reception:</span>
+                                <a href="tel:+380963759530">+380 96 375 95 30</a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+
+            </article>
+
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <site-footer></site-footer>
+
+    <script src="room-details.js" defer></script>
+</body>
+
+</html>

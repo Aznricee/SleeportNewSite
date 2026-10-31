@@ -1,0 +1,301 @@
+{
+  "title": "Breakfast & Coffee — Sleeport",
+  "pageTitle": "Breakfast & Coffee",
+  "pageDescription": "Delicious breakfasts, aromatic coffee, and a cozy start to your day at Sleeport.",
+  "currency": "UAH",
+  "serviceInfo": {
+    "title": "Breakfast Conditions",
+    "items": [
+      {
+        "label": "Serving Hours",
+        "value": "8:00 AM - 10:00 AM"
+      },
+      {
+        "label": "Coffee with Breakfast",
+        "value": "Any coffee from our menu — 35 UAH"
+      },
+      {
+        "label": "Tea with Breakfast",
+        "value": "Complimentary"
+      }
+    ]
+  },
+  "breakfast": {
+    "title": "Breakfast Menu",
+    "description": "Choose your favorites and create your ideal morning meal.",
+    "items": [
+      {
+        "id": "breakfast-01",
+        "name": "Oatmeal with Milk",
+        "description": "Smooth oatmeal cooked with milk — a classic, hearty start to the day.",
+        "price": 40,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-02",
+        "name": "Oatmeal with Water",
+        "description": "Light oatmeal for a balanced and gentle morning.",
+        "price": 30,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-03",
+        "name": "Viennese Waffles",
+        "description": "Golden waffles with a delicate texture, freshly prepared.",
+        "price": 75,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-04",
+        "name": "Viennese Waffles with Chocolate",
+        "description": "Golden waffles served with rich chocolate topping.",
+        "price": 80,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-05",
+        "name": "Potato Pancakes (Deruny)",
+        "description": "Crispy, savory traditional potato pancakes.",
+        "price": 50,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-06",
+        "name": "Fruit Jam",
+        "description": "Sweet topping for waffles, toast, or pancakes.",
+        "price": 15,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-07",
+        "name": "Yogurt",
+        "description": "Refreshing and light addition to your breakfast.",
+        "price": 30,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-08",
+        "name": "Cottage Cheese Crepes",
+        "description": "Tender crepes filled with sweetened cottage cheese.",
+        "price": 80,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-09",
+        "name": "Omelette",
+        "description": "Fluffy omelette — nutritious and classic.",
+        "price": 50,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-10",
+        "name": "Omelette with Bacon",
+        "description": "Savory omelette with crispy bacon slices.",
+        "price": 60,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-11",
+        "name": "Cabbage & Cucumber Salad",
+        "description": "Fresh and crunchy seasonal vegetable salad.",
+        "price": 75,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-12",
+        "name": "Tomato & Cucumber Salad",
+        "description": "Light garden salad made with fresh tomatoes and cucumbers.",
+        "price": 75,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-13",
+        "name": "Sardelka Sausage",
+        "description": "Juicy, hearty sausage to complement eggs or toast.",
+        "price": 65,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-14",
+        "name": "Cheese & Bacon Sandwich",
+        "description": "Warm toasted sandwich with melted cheese and bacon.",
+        "price": 75,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-15",
+        "name": "Cheese & Ham Sandwich",
+        "description": "Classic toasted sandwich with cheese and savory ham.",
+        "price": 65,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-16",
+        "name": "Syrnyky (Cottage Cheese Fritters)",
+        "description": "Golden-crusted cottage cheese pancakes, tender on the inside.",
+        "price": 75,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-17",
+        "name": "Sausages",
+        "description": "Classic pairing for omelettes, toast, or fresh salad.",
+        "price": 55,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      },
+      {
+        "id": "breakfast-18",
+        "name": "Toasts",
+        "description": "Crispy slices of toasted bread.",
+        "price": 20,
+        "image": "",
+        "imageAlt": "",
+        "details": "",
+        "visible": true
+      }
+    ]
+  },
+  "coffee": {
+    "title": "Coffee Menu",
+    "description": "From classic hot espresso drinks to refreshing cold specialties.",
+    "categories": [
+      {
+        "id": "hot-coffee",
+        "title": "Hot Coffee",
+        "items": [
+          {
+            "id": "coffee-01",
+            "name": "Espresso",
+            "description": "Rich and bold single shot.",
+            "price": 30,
+            "visible": true
+          },
+          {
+            "id": "coffee-02",
+            "name": "Double Espresso",
+            "description": "Double shot for an intense coffee boost.",
+            "price": 40,
+            "visible": true
+          },
+          {
+            "id": "coffee-03",
+            "name": "Americano",
+            "description": "Classic black coffee with smooth taste and aroma.",
+            "price": 35,
+            "visible": true
+          },
+          {
+            "id": "coffee-04",
+            "name": "Americano with Milk or Cream",
+            "description": "Americano smoothed with steamed milk or cream.",
+            "price": 40,
+            "visible": true
+          },
+          {
+            "id": "coffee-05",
+            "name": "Cappuccino",
+            "description": "Espresso with steamed milk and airy milk foam.",
+            "price": 45,
+            "visible": true
+          },
+          {
+            "id": "coffee-06",
+            "name": "Latte",
+            "description": "Mild and creamy milk coffee with gentle flavor.",
+            "price": 50,
+            "visible": true
+          },
+          {
+            "id": "coffee-07",
+            "name": "Raf Coffee",
+            "description": "Silky coffee drink steamed with sweet cream.",
+            "price": 65,
+            "visible": true
+          }
+        ]
+      },
+      {
+        "id": "cold-coffee",
+        "title": "Cold Coffee",
+        "items": [
+          {
+            "id": "coffee-08",
+            "name": "Bumble Coffee",
+            "description": "Refreshing espresso layered over juice.",
+            "price": 70,
+            "image": "",
+            "imageAlt": "",
+            "details": "Choice of orange or cherry juice",
+            "visible": true
+          },
+          {
+            "id": "coffee-09",
+            "name": "Iced Latte",
+            "description": "Chilled espresso with fresh milk over ice.",
+            "price": 60,
+            "visible": true
+          },
+          {
+            "id": "coffee-10",
+            "name": "Espresso Tonic",
+            "description": "Sparkling tonic water topped with espresso.",
+            "price": 65,
+            "visible": true
+          }
+        ]
+      }
+    ]
+  },
+  "note": "Dish availability and current prices can be verified with hotel administration."
+}
