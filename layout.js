@@ -13,6 +13,7 @@ class SiteHeader extends HTMLElement {
             <div class="top-bar">
                 <div class="top-bar-container">
                     <div class="phone-numbers">
+                        <a href="mailto:sleeporthotelsleeport.dnk@gmail.com">sleeporthotelsleeport.dnk@gmail.com</a>
                         <button class="phone-copy" onclick="copyPhone('+380 96 375 95 30')">
                             +380 96 375 95 30
                         </button>
@@ -34,7 +35,7 @@ class SiteHeader extends HTMLElement {
                     
                     <nav class="navigation" id="main-navigation">
                         <a href="about.html">Про нас</a>
-                        <a href="rooms.html">Номерний фонд</a>
+                        <a href="rooms.html">Номери</a>
                         <a href="galery.html">Галерея</a>
                         <a href="breakfast.html">Сніданки</a>
                         <a href="coop.html">Для корпоративних клієнтів</a>
@@ -127,7 +128,7 @@ class SiteFooter extends HTMLElement {
                 <div class="footer-column">
                     <h3>Навігація</h3>
                     <a href="about.html">Про нас</a>
-                    <a href="rooms.html">Номерний фонд</a>
+                    <a href="rooms.html">Номери</a>
                     <a href="galery.html">Галерея</a>
                     <a href="breakfast.html">Сніданки</a>
                     <a href="coop.html">Для корпоративних клієнтів</a>
@@ -156,7 +157,15 @@ class SiteFooter extends HTMLElement {
                 <div class="footer-column">
                     <h3>Наша адреса</h3>
                     <p>м. Дніпро вул. Театральна, буд. 5</p>
-                    <a href="contacts.html" class="footer-map-link">Як нас знайти</a>
+                    <div class="footer-map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps?q=м.+Дніпро,+вул.+Театральна,+5&output=embed"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Розташування Sleeport Hotel на Google Maps">
+                        </iframe>
+                    </div>
                 </div>
             </div>
 

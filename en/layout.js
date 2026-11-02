@@ -13,6 +13,7 @@ class SiteHeaderEn extends HTMLElement {
             <div class="top-bar">
                 <div class="top-bar-container">
                     <div class="phone-numbers">
+                        <a href="mailto:sleeporthotelsleeport.dnk@gmail.com">sleeporthotelsleeport.dnk@gmail.com</a>
                         <button class="phone-copy" onclick="copyPhone('+380 96 375 95 30')">
                             +380 96 375 95 30
                         </button>
@@ -141,7 +142,19 @@ class SiteFooterEn extends HTMLElement {
                 <div class="footer-column">
                     <h3>Our Address</h3>
                     <p>Dnipro, 5 Teatralna Str.</p>
-                    <a href="contacts.html" class="footer-map-link">How to find us</a>
+                    <div class="footer-column footer-map-column">
+                    <h3>Our Address</h3>
+                    <p>Dnipro, 5 Teatralna Str.</p>
+                    <div class="footer-map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps?q=м.+Дніпро,+вул.+Театральна,+5&output=embed"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="Sleeport Hotel Location on Google Maps">
+                        </iframe>
+                    </div>
+                </div>
                 </div>
             </div>
 
