@@ -762,6 +762,7 @@ main.rooms-page {
     font-size: 25px;
     font-weight: 500;
     line-height: 1.3;
+    font-weight: bold;
 }
 
 .room-description {

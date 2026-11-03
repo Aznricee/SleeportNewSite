@@ -2,7 +2,6 @@ async function loadRoomsPage() {
     const list = document.getElementById('rooms-list');
 
     try {
-        // Завантажуємо дані про номери з JSON-файлу
         const response = await fetch('rooms.json');
 
         if (!response.ok) {
@@ -13,7 +12,6 @@ async function loadRoomsPage() {
 
         const data = await response.json();
 
-        // Заповнюємо основну інформацію сторінки
         document.title = `Sleeport hotel — ${data.title || 'Номерний фонд'}`;
 
         document.getElementById('rooms-title').textContent =
@@ -28,7 +26,7 @@ async function loadRoomsPage() {
         document.getElementById('common-note').textContent =
             data.commonNote || '';
 
-            document.getElementById('add-note').textContent =
+        document.getElementById('add-note').textContent =
             data.addNote || '';
 
         document.getElementById('rooms-bottom-note').textContent =
@@ -37,99 +35,76 @@ async function loadRoomsPage() {
         document.getElementById('contacts-link').textContent =
             data.contactsLinkText || 'Контакти готелю';
 
-        // Формуємо список стандартних зручностей
         const commonFeatures = document.getElementById('common-features');
-
         commonFeatures.replaceChildren();
 
         (data.commonFeatures || []).forEach(feature => {
             const item = document.createElement('li');
-
             item.textContent = feature;
-
             commonFeatures.appendChild(item);
         });
 
-        // Готуємо контейнер для карток номерів
         list.replaceChildren();
 
-        // Відображаємо тільки категорії, які не приховані
         const visibleRooms = (data.rooms || []).filter(
             room => room.visible !== false
         );
 
         if (visibleRooms.length === 0) {
-            list.textContent =
-                'Наразі категорії номерів не опубліковані.';
-
+            list.textContent = 'Наразі категорії номерів не опубліковані.';
             return;
         }
 
-        // Створюємо картку для кожного номера
         visibleRooms.forEach(room => {
             const article = document.createElement('article');
-
             article.className = 'room-card';
 
-            // Фотографія номера
-            const photo = document.createElement('div');
+            const detailsUrl = `room-details.html?category=${encodeURIComponent(room.id || '')}`;
 
-            photo.className = 'room-photo';
+            const photoLink = document.createElement('a');
+            photoLink.className = 'room-photo';
+            photoLink.href = detailsUrl;
+            photoLink.setAttribute('aria-label', `Детальніше про номер ${room.name || ''}`);
 
             const img = document.createElement('img');
-
             img.src = room.image || '';
             img.alt = room.imageAlt || room.name || 'Номер готелю';
             img.loading = 'lazy';
 
-            photo.appendChild(img);
+            photoLink.appendChild(img);
 
-            // Основна інформація
             const info = document.createElement('div');
-
             info.className = 'room-info';
 
-            // Номер категорії
             const category = document.createElement('span');
-
             category.className = 'room-category';
 
-            category.textContent =
-                `${String(room.number || '').padStart(2, '0')} / КАТЕГОРІЯ`;
-
-            // Назва номера
             const title = document.createElement('h2');
+            const titleLink = document.createElement('a');
+            titleLink.href = detailsUrl;
+            titleLink.textContent = room.name || '';
+            titleLink.style.color = 'inherit';
+            titleLink.style.textDecoration = 'none';
+            title.appendChild(titleLink);
 
-            title.textContent = room.name || '';
-
-            // Опис номера
             const description = document.createElement('p');
-
             description.className = 'room-description';
             description.textContent = room.description || '';
 
-            // Заголовок переліку зручностей
             const listTitle = document.createElement('p');
-
             listTitle.className = 'room-list-title';
             listTitle.textContent = 'У номері:';
 
-            // Перелік зручностей
             const features = document.createElement('ul');
-
             features.className = 'room-features';
 
             (room.features || []).forEach(feature => {
                 const li = document.createElement('li');
-
                 li.textContent = feature;
-
                 features.appendChild(li);
             });
 
-            // Вартість проживання
             const price = document.createElement('div');
-
             price.className = 'room-price';
 
             const amount = document.createElement('strong');
@@ -147,39 +122,25 @@ async function loadRoomsPage() {
             }
 
             const period = document.createElement('span');
-
             period.textContent = ` / ${data.pricePeriod || 'доба'}`;
 
             price.append(amount, period);
 
-            // Кнопки дій
             const actions = document.createElement('div');
-
             actions.className = 'room-actions';
 
-            // Детальна інформація про номер
             const details = document.createElement('a');
-
             details.className = 'room-details-button';
-
-            details.href =
-                `room-details.html?category=${encodeURIComponent(room.id || '')}`;
-
+            details.href = detailsUrl;
             details.textContent = 'Детальніше';
 
-            // Бронювання номера
             const booking = document.createElement('a');
-
             booking.className = 'room-book-button';
-
-            booking.href =
-                `booking.html?room=${encodeURIComponent(room.id || '')}`;
-
+            booking.href = `booking.html?room=${encodeURIComponent(room.id || '')}`;
             booking.textContent = 'Забронювати';
 
             actions.append(details, booking);
 
-            // Об'єднуємо всі елементи картки
             info.append(
                 category,
                 title,
@@ -190,8 +151,7 @@ async function loadRoomsPage() {
                 actions
             );
 
-            article.append(photo, info);
-
+            article.append(photoLink, info);
             list.appendChild(article);
         });
 
@@ -205,12 +165,9 @@ async function loadRoomsPage() {
     }
 }
 
-
-// Запускаємо завантаження сторінки
 document.addEventListener('DOMContentLoaded', () => {
     loadRoomsPage();
 
-    // Налаштовуємо копіювання телефонних номерів
     document.querySelectorAll('[data-phone]').forEach(button => {
         button.addEventListener('click', async () => {
             const phone = button.dataset.phone;
@@ -219,7 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 await navigator.clipboard.writeText(phone);
 
                 const previousText = button.textContent;
-
                 button.textContent = 'Скопійовано';
 
                 window.setTimeout(() => {
