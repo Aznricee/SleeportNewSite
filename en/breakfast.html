@@ -30,9 +30,10 @@
     <main class="breakfast-page">
         <div class="breakfast-container">
 
-            <header class="breakfast-heading">
-                <h1 id="page-title">Breakfast & Coffee</h1>
-                <p id="page-description">
+            <header class="page-header">
+                <span class="page-eyebrow">MORNING MENU & SPECIALTY COFFEE</span>
+                <h1 class="page-title" id="page-title">Breakfast & Coffee</h1>
+                <p class="page-lead" id="page-description">
                     Start your day with a satisfying breakfast and aromatic coffee
                     at Sleeport Hotel.
                 </p>
@@ -43,8 +44,8 @@
             <!-- Breakfast Menu -->
             <section class="menu-section" aria-labelledby="breakfast-title">
                 <header class="menu-section-heading">
-                    <h2 id="breakfast-title">Breakfast Menu</h2>
-                    <p id="breakfast-description"></p>
+                    <h2 class="section-title" id="breakfast-title">Breakfast Menu</h2>
+                    <p class="content-text" id="breakfast-description"></p>
                 </header>
 
                 <div class="menu-grid" id="breakfast-list" aria-live="polite">
@@ -54,8 +55,8 @@
 
             <!-- Coffee Menu -->
             <section class="menu-section">
-                <h2 id="coffee-title">Coffee Menu</h2>
-                <p id="coffee-description"></p>
+                <h2 class="section-title" id="coffee-title">Coffee Menu</h2>
+                <p class="content-text" id="coffee-description"></p>
                 <div id="coffee-list"></div>
             </section>
 
@@ -67,18 +68,6 @@
     </main>
 
     <site-footer></site-footer>
-
-    <script>
-        function copyPhone(phone) {
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(phone).catch(() => {
-                    window.prompt('Copy phone number:', phone);
-                });
-            } else {
-                window.prompt('Copy phone number:', phone);
-            }
-        }
-    </script>
 
     <script src="breakfast.js" defer></script>
 

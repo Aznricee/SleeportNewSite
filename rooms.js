@@ -18,7 +18,7 @@ async function loadRoomsPage() {
             data.title || 'Номерний фонд';
 
         document.getElementById('common-title').textContent =
-            data.commonTitle || '';
+            data.commonTitle || 'Стандартна комплектація номерів';
 
         document.getElementById('common-description').textContent =
             data.commonDescription || '';
@@ -33,7 +33,7 @@ async function loadRoomsPage() {
             data.bottomNote || '';
 
         document.getElementById('contacts-link').textContent =
-            data.contactsLinkText || 'Контакти готелю';
+            data.contactsLinkText || 'Контакти готелю ↗';
 
         const commonFeatures = document.getElementById('common-features');
         commonFeatures.replaceChildren();
@@ -78,6 +78,7 @@ async function loadRoomsPage() {
 
             const category = document.createElement('span');
             category.className = 'room-category';
+            category.textContent = `${String(room.number || '').padStart(2, '0')} / КАТЕГОРІЯ`;
 
             const title = document.createElement('h2');
             const titleLink = document.createElement('a');
@@ -88,7 +89,7 @@ async function loadRoomsPage() {
             title.appendChild(titleLink);
 
             const description = document.createElement('p');
-            description.className = 'room-description';
+            description.className = 'room-description content-text';
             description.textContent = room.description || '';
 
             const listTitle = document.createElement('p');
@@ -165,29 +166,4 @@ async function loadRoomsPage() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadRoomsPage();
-
-    document.querySelectorAll('[data-phone]').forEach(button => {
-        button.addEventListener('click', async () => {
-            const phone = button.dataset.phone;
-
-            try {
-                await navigator.clipboard.writeText(phone);
-
-                const previousText = button.textContent;
-                button.textContent = 'Скопійовано';
-
-                window.setTimeout(() => {
-                    button.textContent = previousText;
-                }, 1200);
-
-            } catch {
-                window.prompt(
-                    'Скопіюйте номер телефону:',
-                    phone
-                );
-            }
-        });
-    });
-});
+document.addEventListener('DOMContentLoaded', loadRoomsPage);

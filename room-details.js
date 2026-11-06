@@ -85,17 +85,50 @@ document.addEventListener("DOMContentLoaded", async () => {
     function setupGallery(room) {
         const mainImg = document.getElementById("main-view-image");
         const thumbsContainer = document.getElementById("gallery-thumbs");
+        const prevBtn = document.getElementById("details-prev-btn");
+        const nextBtn = document.getElementById("details-next-btn");
+
         thumbsContainer.replaceChildren();
 
         const images = (room.gallery && room.gallery.length > 0)
             ? room.gallery
             : [room.image];
 
-        mainImg.src = images[0] || room.image || "";
-        mainImg.alt = room.imageAlt || room.name;
+        let currentIndex = 0;
+
+        function updateMainView(index) {
+            currentIndex = (index + images.length) % images.length;
+            mainImg.src = images[currentIndex] || room.image || "";
+            mainImg.alt = `${room.name} — фото ${currentIndex + 1}`;
+
+            thumbsContainer.querySelectorAll(".details-thumb-btn").forEach((btn, idx) => {
+                btn.classList.toggle("active", idx === currentIndex);
+            });
+        }
+
+        updateMainView(0);
+
+        // Якщо в номері лише одне фото — ховаємо стрілки навігації
+        if (images.length <= 1) {
+            if (prevBtn) prevBtn.style.display = "none";
+            if (nextBtn) nextBtn.style.display = "none";
+        } else {
+            if (prevBtn) {
+                prevBtn.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    updateMainView(currentIndex - 1);
+                });
+            }
+            if (nextBtn) {
+                nextBtn.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    updateMainView(currentIndex + 1);
+                });
+            }
+        }
 
         mainImg.addEventListener("click", () => {
-            openLightbox(mainImg.src, room.name);
+            openLightbox(images, currentIndex, room.name);
         });
 
         images.forEach((imgSrc, index) => {
@@ -111,11 +144,7 @@ document.addEventListener("DOMContentLoaded", async () => {
             thumbBtn.appendChild(thumbImg);
 
             thumbBtn.addEventListener("click", () => {
-                mainImg.src = imgSrc;
-                thumbsContainer.querySelectorAll(".details-thumb-btn").forEach(btn => {
-                    btn.classList.remove("active");
-                });
-                thumbBtn.classList.add("active");
+                updateMainView(index);
             });
 
             thumbsContainer.appendChild(thumbBtn);
@@ -190,16 +219,54 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.head.appendChild(script);
     }
 
+    /* Логіка Лайтбоксу з підтримкою стрілок та клавіш */
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
     const lightboxCaption = document.getElementById("lightbox-caption");
     const lightboxClose = document.getElementById("lightbox-close");
+    const lightboxPrev = document.getElementById("lightbox-prev-btn");
+    const lightboxNext = document.getElementById("lightbox-next-btn");
 
-    function openLightbox(src, caption) {
-        lightboxImg.src = src;
-        lightboxCaption.textContent = caption || "";
+    let lbImages = [];
+    let lbIndex = 0;
+    let lbTitle = "";
+
+    function openLightbox(imagesArray, startIndex, captionTitle) {
+        lbImages = imagesArray;
+        lbIndex = startIndex;
+        lbTitle = captionTitle || "";
+
+        updateLightboxView();
+
+        if (lbImages.length <= 1) {
+            if (lightboxPrev) lightboxPrev.style.display = "none";
+            if (lightboxNext) lightboxNext.style.display = "none";
+        } else {
+            if (lightboxPrev) lightboxPrev.style.display = "flex";
+            if (lightboxNext) lightboxNext.style.display = "flex";
+        }
+
         lightbox.classList.add("active");
         document.body.style.overflow = "hidden";
+    }
+
+    function updateLightboxView() {
+        lightboxImg.src = lbImages[lbIndex] || "";
+        lightboxCaption.textContent = lbImages.length > 1 
+            ? `${lbTitle} (${lbIndex + 1} з ${lbImages.length})` 
+            : lbTitle;
+    }
+
+    function prevLightboxImage() {
+        if (lbImages.length <= 1) return;
+        lbIndex = (lbIndex - 1 + lbImages.length) % lbImages.length;
+        updateLightboxView();
+    }
+
+    function nextLightboxImage() {
+        if (lbImages.length <= 1) return;
+        lbIndex = (lbIndex + 1) % lbImages.length;
+        updateLightboxView();
     }
 
     function closeLightbox() {
@@ -209,14 +276,31 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+    if (lightboxPrev) lightboxPrev.addEventListener("click", (e) => {
+        e.stopPropagation();
+        prevLightboxImage();
+    });
+    if (lightboxNext) lightboxNext.addEventListener("click", (e) => {
+        e.stopPropagation();
+        nextLightboxImage();
+    });
+
     if (lightbox) {
         lightbox.addEventListener("click", (e) => {
             if (e.target === lightbox) closeLightbox();
         });
     }
+
+    // Керування клавіатурою (Esc для закриття, стрілки вліво/вправо для гортання)
     document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && lightbox.classList.contains("active")) {
+        if (!lightbox || !lightbox.classList.contains("active")) return;
+
+        if (e.key === "Escape") {
             closeLightbox();
+        } else if (e.key === "ArrowLeft") {
+            prevLightboxImage();
+        } else if (e.key === "ArrowRight") {
+            nextLightboxImage();
         }
     });
 });

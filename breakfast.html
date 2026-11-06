@@ -4,10 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Sleeport Hotel - Сніданки та кава</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/icon.png">
-
     <link rel="stylesheet" href="style.css">
     <script src="layout.js" defer></script>
     <link rel="canonical" href="https://sleeport.dp.ua/breakfast.html">
@@ -26,42 +24,37 @@
 
 <body>
 
-<site-header></site-header>
+    <site-header></site-header>
 
     <main class="breakfast-page">
         <div class="breakfast-container">
 
-            <header class="breakfast-heading">
-                <h1 id="page-title">Сніданки та кава</h1>
-
-                <p id="page-description">
-                    Почніть свій день зі смачного сніданку та ароматної кави
-                    у готелі Sleeport.
+            <header class="page-header">
+                <span class="page-eyebrow">РАНКОВЕ МЕНЮ ТА КАВА</span>
+                <h1 class="page-title" id="page-title">Сніданки та кава</h1>
+                <p class="page-lead" id="page-description">
+                    Почніть свій день зі смачного сніданку та ароматної кави у готелі Sleeport.
                 </p>
             </header>
 
             <section id="service-info" class="service-info" hidden></section>
+
             <!-- Меню сніданків -->
-
             <section class="menu-section" aria-labelledby="breakfast-title">
-
                 <header class="menu-section-heading">
-                    <h2 id="breakfast-title">Меню сніданків</h2>
-
-                    <p id="breakfast-description"></p>
+                    <h2 class="section-title" id="breakfast-title">Меню сніданків</h2>
+                    <p class="content-text" id="breakfast-description"></p>
                 </header>
 
                 <div class="menu-grid" id="breakfast-list" aria-live="polite">
                     <p>Завантаження меню...</p>
                 </div>
-
             </section>
 
             <!-- Кавове меню -->
-
             <section class="menu-section">
-                <h2 id="coffee-title">Кавове меню</h2>
-                <p id="coffee-description"></p>
+                <h2 class="section-title" id="coffee-title">Кавове меню</h2>
+                <p class="content-text" id="coffee-description"></p>
                 <div id="coffee-list"></div>
             </section>
 
@@ -70,24 +63,11 @@
             </div>
 
         </div>
-
     </main>
 
-<site-footer></site-footer>
-    <script>
-        function copyPhone(phone) {
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(phone).catch(() => {
-                    window.prompt('Скопіюйте номер телефону:', phone);
-                });
-            } else {
-                window.prompt('Скопіюйте номер телефону:', phone);
-            }
-        }
-    </script>
+    <site-footer></site-footer>
 
     <script src="breakfast.js" defer></script>
-
 </body>
 
 </html>

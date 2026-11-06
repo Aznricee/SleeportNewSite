@@ -7,7 +7,7 @@
     <title>Sleeport hotel - Бронювання номера</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/icon.png">
     <link rel="stylesheet" href="style.css">
-    <script src="layout.js"></script>
+    <script src="layout.js" defer></script>
     <link rel="canonical" href="https://sleeport.dp.ua/booking.html">
     <link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/booking.html">
     <link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/booking.html">
@@ -22,12 +22,12 @@
 
     <main class="booking-page">
         <div class="container">
-            <div class="booking-header">
-                <span class="hero-label">БРОНЮВАННЯ ОНЛАЙН</span>
-                <h1>Замовити перебування у Sleeport</h1>
-                <p>Заповніть заявку, і черговий адміністратор перевірить доступність та зв'яжеться з вами для
+            <header class="page-header">
+                <span class="page-eyebrow">БРОНЮВАННЯ ОНЛАЙН</span>
+                <h1 class="page-title">Замовити перебування у Sleeport</h1>
+                <p class="page-lead">Заповніть заявку, і черговий адміністратор перевірить доступність та зв'яжеться з вами для
                     підтвердження броні.</p>
-            </div>
+            </header>
 
             <div class="booking-container-card">
                 <div id="form-status-box" class="form-status"></div>
@@ -117,113 +117,108 @@
         </div>
     </main>
 
-<site-footer></site-footer>
+    <site-footer></site-footer>
 
-<script>
-    function copyPhone(phone) {
-        navigator.clipboard.writeText(phone);
-    }
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const pageLoadedAt = Date.now();
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const pageLoadedAt = Date.now();
+            const urlParams = new URLSearchParams(window.location.search);
+            const roomParam = urlParams.get("room");
+            const roomSelect = document.getElementById("room-select");
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const roomParam = urlParams.get("room");
-        const roomSelect = document.getElementById("room-select");
-
-        if (roomParam && roomSelect) {
-            const exists = Array.from(roomSelect.options).some(opt => opt.value === roomParam);
-            if (exists) {
-                roomSelect.value = roomParam;
-            }
-        }
-
-        const checkinInput = document.getElementById("checkin-date");
-        const checkoutInput = document.getElementById("checkout-date");
-        const todayStr = new Date().toISOString().split("T")[0];
-
-        checkinInput.min = todayStr;
-        checkoutInput.min = todayStr;
-
-        checkinInput.addEventListener("change", () => {
-            if (checkinInput.value) {
-                checkoutInput.min = checkinInput.value;
-                if (checkoutInput.value && checkoutInput.value <= checkinInput.value) {
-                    checkoutInput.value = "";
+            if (roomParam && roomSelect) {
+                const exists = Array.from(roomSelect.options).some(opt => opt.value === roomParam);
+                if (exists) {
+                    roomSelect.value = roomParam;
                 }
             }
-        });
 
-        const form = document.getElementById("booking-form");
-        const statusBox = document.getElementById("form-status-box");
-        const submitBtn = document.getElementById("submit-btn");
+            const checkinInput = document.getElementById("checkin-date");
+            const checkoutInput = document.getElementById("checkout-date");
+            const todayStr = new Date().toISOString().split("T")[0];
 
-        const WORKER_URL = "https://sleeport-booking-api.kravchenkoruslan2005.workers.dev";
+            checkinInput.min = todayStr;
+            checkoutInput.min = todayStr;
 
-        form.addEventListener("submit", async (e) => {
-            e.preventDefault();
+            checkinInput.addEventListener("change", () => {
+                if (checkinInput.value) {
+                    checkoutInput.min = checkinInput.value;
+                    if (checkoutInput.value && checkoutInput.value <= checkinInput.value) {
+                        checkoutInput.value = "";
+                    }
+                }
+            });
 
-            const honeypotEl = document.getElementById("user-website");
-            if (honeypotEl && honeypotEl.value.trim() !== "") {
-                statusBox.className = "form-status success";
-                statusBox.textContent = "Заявку успішно надіслано! Черговий адміністратор зв'яжеться з вами для підтвердження.";
-                form.reset();
-                return;
-            }
+            const form = document.getElementById("booking-form");
+            const statusBox = document.getElementById("form-status-box");
+            const submitBtn = document.getElementById("submit-btn");
 
-            const secondsSinceLoad = (Date.now() - pageLoadedAt) / 1000;
-            if (secondsSinceLoad < 3) {
-                statusBox.className = "form-status error";
-                statusBox.textContent = "Будь ласка, перевірте правильність заповнення форми.";
-                return;
-            }
+            const WORKER_URL = "https://sleeport-booking-api.kravchenkoruslan2005.workers.dev";
 
-            submitBtn.disabled = true;
-            submitBtn.textContent = "Надсилання...";
-            statusBox.className = "form-status";
-            statusBox.textContent = "";
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
 
-            const selectedRoomText = roomSelect.options[roomSelect.selectedIndex].text;
-
-            try {
-                const response = await fetch(WORKER_URL, {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({
-                        name: document.getElementById("guest-name").value.trim(),
-                        phone: document.getElementById("guest-phone").value.trim(),
-                        checkin: checkinInput.value,
-                        checkout: checkoutInput.value,
-                        room: selectedRoomText,
-                        guests: document.getElementById("guests-count").value,
-                        wishes: document.getElementById("guest-wishes").value.trim(),
-                        trap: honeypotEl ? honeypotEl.value : ""
-                    })
-                });
-
-                const result = await response.json();
-
-                if (response.ok && result.ok) {
+                const honeypotEl = document.getElementById("user-website");
+                if (honeypotEl && honeypotEl.value.trim() !== "") {
                     statusBox.className = "form-status success";
                     statusBox.textContent = "Заявку успішно надіслано! Черговий адміністратор зв'яжеться з вами для підтвердження.";
                     form.reset();
-                } else {
-                    throw new Error(result.error || "Помилка обробки");
+                    return;
                 }
-            } catch (err) {
-                console.error(err);
-                statusBox.className = "form-status error";
-                statusBox.textContent = "Не вдалося надіслати заявку онлайн. Будь ласка, зателефонуйте на рецепцію за номером +380 96 375 95 30.";
-            } finally {
-                submitBtn.disabled = false;
-                submitBtn.textContent = "Надіслати заявку на бронювання";
-            }
-        });
-    });
-</script>
 
+                const secondsSinceLoad = (Date.now() - pageLoadedAt) / 1000;
+                if (secondsSinceLoad < 3) {
+                    statusBox.className = "form-status error";
+                    statusBox.textContent = "Будь ласка, перевірте правильність заповнення форми.";
+                    return;
+                }
+
+                submitBtn.disabled = true;
+                submitBtn.textContent = "Надсилання...";
+                statusBox.className = "form-status";
+                statusBox.textContent = "";
+
+                const selectedRoomText = roomSelect.options[roomSelect.selectedIndex].text;
+
+                try {
+                    const response = await fetch(WORKER_URL, {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            name: document.getElementById("guest-name").value.trim(),
+                            phone: document.getElementById("guest-phone").value.trim(),
+                            checkin: checkinInput.value,
+                            checkout: checkoutInput.value,
+                            room: selectedRoomText,
+                            guests: document.getElementById("guests-count").value,
+                            wishes: document.getElementById("guest-wishes").value.trim(),
+                            trap: honeypotEl ? honeypotEl.value : ""
+                        })
+                    });
+
+                    const result = await response.json();
+
+                    if (response.ok && result.ok) {
+                        statusBox.className = "form-status success";
+                        statusBox.textContent = "Заявку успішно надіслано! Черговий адміністратор зв'яжеться з вами для підтвердження.";
+                        form.reset();
+                    } else {
+                        throw new Error(result.error || "Помилка обробки");
+                    }
+                } catch (err) {
+                    console.error(err);
+                    statusBox.className = "form-status error";
+                    statusBox.textContent = "Не вдалося надіслати заявку онлайн. Будь ласка, зателефонуйте на рецепцію за номером +380 96 375 95 30.";
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "Надіслати заявку на бронювання";
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>

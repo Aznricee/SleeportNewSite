@@ -22,12 +22,11 @@
 
     <main class="booking-page">
         <div class="container">
-            <div class="booking-header">
-                <span class="hero-label">ONLINE RESERVATION</span>
-                <h1>Reserve Your Stay at Sleeport</h1>
-                <p>Fill out the form below, and the on-duty administrator will check availability and contact you to
-                    confirm your booking.</p>
-            </div>
+            <header class="page-header">
+                <span class="page-eyebrow">ONLINE RESERVATION</span>
+                <h1 class="page-title">Reserve Your Stay at Sleeport</h1>
+                <p class="page-lead">Fill out the form below, and the on-duty administrator will check availability and contact you to confirm your booking.</p>
+            </header>
 
             <div class="booking-container-card">
                 <div id="form-status-box" class="form-status"></div>
@@ -120,10 +119,6 @@
     <site-footer></site-footer>
 
     <script>
-        function copyPhone(phone) {
-            navigator.clipboard.writeText(phone);
-        }
-
         document.addEventListener("DOMContentLoaded", () => {
             const pageLoadedAt = Date.now();
 

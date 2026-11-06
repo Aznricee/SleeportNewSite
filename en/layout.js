@@ -22,7 +22,7 @@ class SiteHeaderEn extends HTMLElement {
                         </button>
                     </div>
                     <div class="language-switch">
-                        <a href="../index.html">UA</a>
+                        <a href="../index.html" id="ua-lang-link">UA</a>
                         <span>|</span>
                         <a href="index.html" class="active">EN</a>
                     </div>
@@ -35,7 +35,7 @@ class SiteHeaderEn extends HTMLElement {
                     
                     <nav class="navigation" id="main-navigation">
                         <a href="about.html">About Us</a>
-                        <a href="rooms.html">Rooms</a>
+                        <a href="rooms.html">Room Inventory</a>
                         <a href="gallery.html">Gallery</a>
                         <a href="breakfast.html">Breakfast</a>
                         <a href="coop.html">Corporate Clients</a>
@@ -59,6 +59,7 @@ class SiteHeaderEn extends HTMLElement {
 
         this.initMobileMenu();
         this.highlightActiveLink();
+        this.setupLanguageSwitcher();
     }
 
     initMobileMenu() {
@@ -98,6 +99,20 @@ class SiteHeaderEn extends HTMLElement {
             }
         });
     }
+
+    setupLanguageSwitcher() {
+        const currentFile = window.location.pathname.split("/").pop() || "index.html";
+        const uaLink = this.querySelector("#ua-lang-link");
+        if (!uaLink) return;
+
+        let targetUaFile = currentFile;
+        if (currentFile === "gallery.html") {
+            targetUaFile = "galery.html";
+        }
+
+        const queryString = window.location.search || "";
+        uaLink.setAttribute("href", `../${targetUaFile}${queryString}`);
+    }
 }
 
 class SiteFooterEn extends HTMLElement {
@@ -113,7 +128,7 @@ class SiteFooterEn extends HTMLElement {
                 <div class="footer-column">
                     <h3>Navigation</h3>
                     <a href="about.html">About Us</a>
-                    <a href="rooms.html">Rooms</a>
+                    <a href="rooms.html">Room Inventory</a>
                     <a href="gallery.html">Gallery</a>
                     <a href="breakfast.html">Breakfast</a>
                     <a href="coop.html">Corporate Clients</a>
@@ -142,9 +157,6 @@ class SiteFooterEn extends HTMLElement {
                 <div class="footer-column">
                     <h3>Our Address</h3>
                     <p>Dnipro, 5 Teatralna Str.</p>
-                    <div class="footer-column footer-map-column">
-                    <h3>Our Address</h3>
-                    <p>Dnipro, 5 Teatralna Str.</p>
                     <div class="footer-map-wrapper">
                         <iframe
                             src="https://www.google.com/maps?q=м.+Дніпро,+вул.+Театральна,+5&output=embed"
@@ -154,7 +166,6 @@ class SiteFooterEn extends HTMLElement {
                             title="Sleeport Hotel Location on Google Maps">
                         </iframe>
                     </div>
-                </div>
                 </div>
             </div>
 

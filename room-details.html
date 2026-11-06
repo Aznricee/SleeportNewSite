@@ -28,26 +28,30 @@
             </div>
 
             <div id="details-error" class="details-error" style="display: none;">
-                <h2>Номер не знайдено</h2>
-                <p>Можливо, категорію було змінено або посилання недійсне.</p>
+                <h2 class="section-title">Номер не знайдено</h2>
+                <p class="content-text">Можливо, категорію було змінено або посилання недійсне.</p>
                 <a href="rooms.html" class="about-button">Повернутися до номерного фонду</a>
             </div>
 
             <article id="details-content" class="details-wrapper" style="display: none;">
                 
                 <header class="details-header">
-                    <span class="hero-label" id="room-category-badge">КАТЕГОРІЯ НОМЕРА</span>
-                    <h1 id="room-title">Назва номера</h1>
-                    <p class="details-short-lead" id="room-short-desc"></p>
+                    <span class="page-eyebrow" id="room-category-badge">КАТЕГОРІЯ НОМЕРА</span>
+                    <h1 class="page-title" id="room-title">Назва номера</h1>
+                    <p class="page-lead details-short-lead" id="room-short-desc"></p>
                 </header>
-
+                
                 <div class="details-gallery-section">
                     <div class="details-main-image-wrap">
+                        <button type="button" class="details-nav-arrow details-nav-prev" id="details-prev-btn"
+                            aria-label="Попереднє фото">&#8592;</button>
                         <img id="main-view-image" src="" alt="Фото номера" class="details-main-img">
+                        <button type="button" class="details-nav-arrow details-nav-next" id="details-next-btn"
+                            aria-label="Наступне фото">&#8594;</button>
                     </div>
                     <div class="details-thumbnails" id="gallery-thumbs" aria-label="Мініатюри номеру"></div>
                 </div>
-
+                
                 <div class="details-quick-specs">
                     <div class="spec-card">
                         <span class="spec-title">Місткість</span>
@@ -70,20 +74,20 @@
                 <div class="details-grid-body">
                     <div class="details-main-text">
                         <section class="details-section">
-                            <h2>Опис кімнати</h2>
-                            <p id="room-full-description"></p>
+                            <h2 class="section-title">Опис кімнати</h2>
+                            <p class="content-text" id="room-full-description"></p>
                         </section>
 
                         <section class="details-section">
-                            <h2>Оснащення та що є в номері</h2>
+                            <h2 class="section-title">Оснащення та що є в номері</h2>
                             <ul class="details-amenities-list" id="room-amenities"></ul>
                         </section>
                     </div>
 
                     <aside class="details-sidebar">
                         <div class="details-booking-card">
-                            <h3>Забронювати цей номер</h3>
-                            <p>Оберіть дати, і черговий адміністратор підтвердить доступність номеру.</p>
+                            <h3 class="block-title">Забронювати цей номер</h3>
+                            <p class="content-text">Оберіть дати, і черговий адміністратор підтвердить доступність номеру.</p>
                             
                             <div class="sidebar-price-row">
                                 <span class="sidebar-price" id="sidebar-price-val">—</span>
@@ -106,13 +110,17 @@
 
         </div>
     </main>
-
+    
     <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
         <button class="lightbox-close" id="lightbox-close" aria-label="Закрити">&times;</button>
+        <button type="button" class="lightbox-nav-arrow lightbox-prev" id="lightbox-prev-btn"
+            aria-label="Попереднє фото">&#8592;</button>
         <div class="lightbox-content">
             <img src="" alt="" class="lightbox-img" id="lightbox-img">
             <div class="lightbox-caption" id="lightbox-caption"></div>
         </div>
+        <button type="button" class="lightbox-nav-arrow lightbox-next" id="lightbox-next-btn"
+            aria-label="Наступне фото">&#8594;</button>
     </div>
 
     <site-footer></site-footer>

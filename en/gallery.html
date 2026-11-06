@@ -30,12 +30,11 @@
     <main class="gallery-page">
         <div class="container">
 
-            <div class="gallery-header">
-                <span class="hero-label">PHOTO GALLERY</span>
-                <h1 id="gallery-heading">Sleeport Hotel Atmosphere</h1>
-                <p id="gallery-subheading">Explore our rooms, reception area, guest amenities, and hospitality details.
-                </p>
-            </div>
+            <header class="page-header">
+                <span class="page-eyebrow">PHOTO GALLERY</span>
+                <h1 class="page-title" id="gallery-heading">Sleeport Hotel Atmosphere</h1>
+                <p class="page-lead" id="gallery-subheading">Explore our rooms, reception area, guest amenities, and hospitality details.</p>
+            </header>
 
             <div class="gallery-filters" id="gallery-filters"></div>
 
@@ -55,10 +54,6 @@
     <site-footer></site-footer>
 
     <script>
-        function copyPhone(phone) {
-            navigator.clipboard.writeText(phone);
-        }
-
         const lightbox = document.getElementById("lightbox");
         const lightboxImg = document.getElementById("lightbox-img");
         const lightboxCaption = document.getElementById("lightbox-caption");

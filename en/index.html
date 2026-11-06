@@ -100,250 +100,202 @@
 
 <body>
     
-<site-header></site-header>
-<main class="home-main">
+    <site-header></site-header>
+    <main class="home-main">
 
-    <!-- Photo Carousel -->
-    <section class="home-hero">
-        <div class="hero-slide active">
-            <img
-                src="../images/hotel and decore/enter.jpg"
-                alt="Main entrance to the hotel"
-            >
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <span class="hero-label">SLEEPORT HOTEL</span>
-                <h1>Where you are always welcome</h1>
-                <p>Comfort, tranquility, and attention to every detail.</p>
+        <!-- Photo Carousel -->
+        <section class="home-hero">
+            <div class="hero-slide active">
+                <img src="../images/hotel and decore/enter.jpg" alt="Main entrance to the hotel">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1>Where you are always welcome</h1>
+                    <p>Comfort, tranquility, and attention to every detail.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="hero-slide">
-            <img
-                src="../images/hotel and decore/Reception.jpg"
-                alt="Hotel reception desk"
-            >
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <span class="hero-label">SLEEPORT HOTEL</span>
-                <h1>A place where hospitality meets you with a smile</h1>
-                <p>Warmth and attentive guest care are our golden rules.</p>
-                <a href="contacts.html" class="hero-button">
-                    Contact Us
+            <div class="hero-slide">
+                <img src="../images/hotel and decore/Reception.jpg" alt="Hotel reception desk">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1>A place where hospitality meets you with a smile</h1>
+                    <p>Warmth and attentive guest care are our golden rules.</p>
+                    <a href="contacts.html" class="hero-button">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-slide">
+                <img src="../images/rooms/room_2_full.jpg" alt="Cozy room interior">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h2>Rest at your own pace</h2>
+                    <p>Choose the room where you will feel completely at home.</p>
+                    <a href="rooms.html" class="hero-button">
+                        View Rooms
+                    </a>
+                </div>
+            </div>
+
+            <button class="hero-arrow hero-prev" type="button" aria-label="Previous slide">
+                &#8592;
+            </button>
+
+            <button class="hero-arrow hero-next" type="button" aria-label="Next slide">
+                &#8594;
+            </button>
+
+            <div class="hero-dots" aria-label="Slide selection">
+                <button class="hero-dot active" type="button" aria-label="Slide 1"></button>
+                <button class="hero-dot" type="button" aria-label="Slide 2"></button>
+                <button class="hero-dot" type="button" aria-label="Slide 3"></button>
+            </div>
+        </section>
+
+        <!-- Introduction -->
+        <section class="home-intro">
+            <span class="page-eyebrow">WELCOME TO SLEEPORT</span>
+            <h2 class="section-title">Where your relaxation begins</h2>
+            <p class="content-text">
+                Discover our hotel, explore room inventory,
+                services, and conveniences designed for a seamless stay in Dnipro.
+            </p>
+        </section>
+
+        <!-- Navigation Cards -->
+        <section class="home-discover">
+            <div class="section-heading">
+                <div>
+                    <span class="page-eyebrow">DISCOVER SLEEPORT</span>
+                    <h2 class="section-title">Everything for your stay</h2>
+                </div>
+            </div>
+
+            <div class="home-cards">
+
+                <a href="rooms.html" class="home-card">
+                    <img src="../images/rooms/room_14_room_1_2 - prev.jpg" alt="Hotel room" loading="lazy">
+                    <span class="card-number">01</span>
+                    <div class="card-info">
+                        <h3 class="block-title" style="color: #ffffff;">Rooms</h3>
+                        <span>Explore rooms ↗</span>
+                    </div>
                 </a>
-            </div>
-        </div>
 
-        <div class="hero-slide">
-            <img
-                src="../images/rooms/room_2_full.jpg"
-                alt="Cozy room interior"
-            >
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <span class="hero-label">YOUR COMFORT</span>
-                <h2>Rest at your own pace</h2>
-                <p>Choose the room where you will feel completely at home.</p>
-                <a href="rooms.html" class="hero-button">
-                    View Rooms
+                <a href="about.html" class="home-card">
+                    <img src="../images/hotel and decore/Hall_Yellow1.jpg" alt="Hotel interior" loading="lazy">
+                    <span class="card-number">02</span>
+                    <div class="card-info">
+                        <h3 class="block-title" style="color: #ffffff;">About Us</h3>
+                        <span>Get to know our hotel ↗</span>
+                    </div>
                 </a>
+
+                <a href="breakfast.html" class="home-card">
+                    <img src="../images/breakfast menu/Omelette.webp" alt="Breakfast" loading="lazy">
+                    <span class="card-number">03</span>
+                    <div class="card-info">
+                        <h3 class="block-title" style="color: #ffffff;">Breakfast</h3>
+                        <span>Explore menu ↗</span>
+                    </div>
+                </a>
+
+                <a href="gallery.html" class="home-card">
+                    <img src="../images/hotel and decore/decore_in_hall.jpg" alt="Hotel decor" loading="lazy">
+                    <span class="card-number">04</span>
+                    <div class="card-info">
+                        <h3 class="block-title" style="color: #ffffff;">Gallery</h3>
+                        <span>Browse photo gallery ↗</span>
+                    </div>
+                </a>
+
+                <a href="coop.html" class="home-card">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+                        alt="Workspace" loading="lazy">
+                    <span class="card-number">05</span>
+                    <div class="card-info">
+                        <h3 class="block-title" style="color: #ffffff;">For Business</h3>
+                        <span>Corporate offers ↗</span>
+                    </div>
+                </a>
+
+                <a href="contacts.html" class="home-card">
+                    <img src="../images/hotel and decore/bussiness small.jpg" alt="Hotel reception contacts" loading="lazy">
+                    <span class="card-number">06</span>
+                    <div class="card-info">
+                        <h3 class="block-title" style="color: #ffffff;">Contacts</h3>
+                        <span>Reach our team ↗</span>
+                    </div>
+                </a>
+
             </div>
-        </div>
+        </section>
 
-        <button class="hero-arrow hero-prev"
-                type="button" aria-label="Previous slide">
-            &#8592;
-        </button>
-
-        <button class="hero-arrow hero-next"
-                type="button" aria-label="Next slide">
-            &#8594;
-        </button>
-
-        <div class="hero-dots" aria-label="Slide selection">
-            <button class="hero-dot active" type="button"
-                    aria-label="Slide 1"></button>
-            <button class="hero-dot" type="button"
-                    aria-label="Slide 2"></button>
-            <button class="hero-dot" type="button"
-                    aria-label="Slide 3"></button>
-            <button class="hero-dot" type="button"
-                    aria-label="Slide 4"></button>
-        </div>
-    </section>
-
-    <!-- Introduction -->
-    <section class="home-intro">
-        <span class="section-label">WELCOME TO SLEEPORT</span>
-        <h2>Where your relaxation begins</h2>
-        <p>
-            Discover our hotel, explore room inventory,
-            services, and conveniences designed for a seamless stay in Dnipro.
-        </p>
-    </section>
-
-    <!-- Navigation Cards -->
-    <section class="home-discover">
-        <div class="section-heading">
+        <!-- Final CTA Section -->
+        <section class="home-booking">
             <div>
-                <span class="section-label">DISCOVER SLEEPORT</span>
-                <h2>Everything for your stay</h2>
+                <span class="page-eyebrow">YOUR REST STARTS HERE</span>
+                <h2 class="section-title">Ready to plan your stay?</h2>
+                <p class="content-text">Get in touch with us or proceed directly to online booking.</p>
             </div>
-        </div>
-
-        <div class="home-cards">
-
-            <a href="rooms.html" class="home-card">
-                <img
-                    src="../images/rooms/room_14_room_1_2 - prev.jpg"
-                    alt="Hotel room"
-                    loading="lazy"
-                >
-                <span class="card-number">01</span>
-                <div class="card-info">
-                    <h3>Rooms</h3>
-                    <span>Explore rooms ↗</span>
-                </div>
+            <a href="booking.html" class="hero-button">
+                Book a Room
             </a>
+        </section>
 
-            <a href="about.html" class="home-card">
-                <img
-                    src="../images/hotel and decore/Hall_Yellow1.jpg"
-                    alt="Hotel interior"
-                    loading="lazy"
-                >
-                <span class="card-number">02</span>
-                <div class="card-info">
-                    <h3>About Us</h3>
-                    <span>Get to know our hotel ↗</span>
-                </div>
-            </a>
+    </main>
 
-            <a href="breakfast.html" class="home-card">
-                <img
-                    src="../images/breakfast menu/Omelette.webp"
-                    alt="Breakfast"
-                    loading="lazy"
-                >
-                <span class="card-number">03</span>
-                <div class="card-info">
-                    <h3>Breakfast</h3>
-                    <span>Explore menu ↗</span>
-                </div>
-            </a>
+    <site-footer></site-footer>
 
-            <a href="gallery.html" class="home-card">
-                <img
-                    src="../images/hotel and decore/decore_in_hall.jpg"
-                    alt="Hotel decor"
-                    loading="lazy"
-                >
-                <span class="card-number">04</span>
-                <div class="card-info">
-                    <h3>Gallery</h3>
-                    <span>Browse photo gallery ↗</span>
-                </div>
-            </a>
+    <script>
+        const slides = document.querySelectorAll(".hero-slide");
+        const dots = document.querySelectorAll(".hero-dot");
+        const prevButton = document.querySelector(".hero-prev");
+        const nextButton = document.querySelector(".hero-next");
 
-            <a href="coop.html" class="home-card">
-                <img
-                    src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
-                    alt="Workspace"
-                    loading="lazy"
-                >
-                <span class="card-number">05</span>
-                <div class="card-info">
-                    <h3>For Business</h3>
-                    <span>Corporate offers ↗</span>
-                </div>
-            </a>
+        let currentSlide = 0;
+        let carouselTimer;
 
-            <a href="contacts.html" class="home-card">
-                <img
-                    src="../images/hotel and decore/bussiness small.jpg"
-                    alt="Hotel reception contacts"
-                    loading="lazy"
-                >
-                <span class="card-number">06</span>
-                <div class="card-info">
-                    <h3>Contacts</h3>
-                    <span>Reach our team ↗</span>
-                </div>
-            </a>
+        function showSlide(index) {
+            currentSlide = (index + slides.length) % slides.length;
 
-        </div>
-    </section>
+            slides.forEach((slide, i) => {
+                slide.classList.toggle("active", i === currentSlide);
+            });
 
-    <!-- Final CTA Section -->
-    <section class="home-booking">
-        <div>
-            <span class="section-label">YOUR REST STARTS HERE</span>
-            <h2>Ready to plan your stay?</h2>
-            <p>Get in touch with us or proceed directly to online booking.</p>
-        </div>
-        <a href="booking.html" class="hero-button">
-            Book a Room
-        </a>
-    </section>
+            dots.forEach((dot, i) => {
+                dot.classList.toggle("active", i === currentSlide);
+            });
+        }
 
-</main>
+        function restartCarousel() {
+            clearInterval(carouselTimer);
 
-<site-footer></site-footer>
+            carouselTimer = setInterval(() => {
+                showSlide(currentSlide + 1);
+            }, 6000);
+        }
 
-<script>
-    function copyPhone(phone) {
-        navigator.clipboard.writeText(phone);
-    }
-</script>
+        prevButton.addEventListener("click", () => {
+            showSlide(currentSlide - 1);
+            restartCarousel();
+        });
 
-<script>
-    const slides = document.querySelectorAll(".hero-slide");
-    const dots = document.querySelectorAll(".hero-dot");
-    const prevButton = document.querySelector(".hero-prev");
-    const nextButton = document.querySelector(".hero-next");
-
-    let currentSlide = 0;
-    let carouselTimer;
-
-    function showSlide(index) {
-        currentSlide = (index + slides.length) % slides.length;
-
-        slides.forEach((slide, i) => {
-            slide.classList.toggle("active", i === currentSlide);
+        nextButton.addEventListener("click", () => {
+            showSlide(currentSlide + 1);
+            restartCarousel();
         });
 
         dots.forEach((dot, i) => {
-            dot.classList.toggle("active", i === currentSlide);
+            dot.addEventListener("click", () => {
+                showSlide(i);
+                restartCarousel();
+            });
         });
-    }
 
-    function restartCarousel() {
-        clearInterval(carouselTimer);
-
-        carouselTimer = setInterval(() => {
-            showSlide(currentSlide + 1);
-        }, 6000);
-    }
-
-    prevButton.addEventListener("click", () => {
-        showSlide(currentSlide - 1);
+        showSlide(0);
         restartCarousel();
-    });
-
-    nextButton.addEventListener("click", () => {
-        showSlide(currentSlide + 1);
-        restartCarousel();
-    });
-
-    dots.forEach((dot, i) => {
-        dot.addEventListener("click", () => {
-            showSlide(i);
-            restartCarousel();
-        });
-    });
-
-    showSlide(0);
-    restartCarousel();
-</script>
+    </script>
 </body>
 </html>

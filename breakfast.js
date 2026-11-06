@@ -23,20 +23,17 @@ async function loadBreakfastPage() {
         setText('coffee-description', data.coffee?.description || '');
         setText('menu-note', data.note || '');
 
-        // Умови сніданку
         renderServiceInfo(
             document.getElementById('service-info'),
             data.serviceInfo
         );
 
-        // Меню сніданків
         renderMenu(
             breakfastList,
             data.breakfast?.items || [],
             data.currency || 'грн'
         );
 
-        // Кавове меню: гаряча та холодна кава
         renderCoffeeCategories(
             coffeeList,
             data.coffee?.categories || [],
@@ -58,7 +55,6 @@ async function loadBreakfastPage() {
     }
 }
 
-
 function setText(id, value) {
     const element = document.getElementById(id);
 
@@ -67,8 +63,6 @@ function setText(id, value) {
     }
 }
 
-
-// Блок умов сніданку
 function renderServiceInfo(container, serviceInfo) {
     if (!container) return;
 
@@ -91,6 +85,7 @@ function renderServiceInfo(container, serviceInfo) {
     container.hidden = false;
 
     const heading = document.createElement('h2');
+    heading.className = 'section-title';
     heading.textContent = serviceInfo.title || 'Умови сніданку';
     container.appendChild(heading);
 
@@ -102,9 +97,11 @@ function renderServiceInfo(container, serviceInfo) {
         card.className = 'service-info-item';
 
         const label = document.createElement('h3');
+        label.className = 'block-title';
         label.textContent = item.label || '';
 
         const value = document.createElement('p');
+        value.className = 'content-text';
         value.textContent = item.value || '';
 
         card.append(label, value);
@@ -114,8 +111,6 @@ function renderServiceInfo(container, serviceInfo) {
     container.appendChild(list);
 }
 
-
-// Категорії кавового меню
 function renderCoffeeCategories(container, categories, currency) {
     if (!container) return;
 
@@ -123,7 +118,7 @@ function renderCoffeeCategories(container, categories, currency) {
 
     if (!Array.isArray(categories) || categories.length === 0) {
         const emptyMessage = document.createElement('p');
-        emptyMessage.className = 'menu-empty';
+        emptyMessage.className = 'menu-empty content-text';
         emptyMessage.textContent =
             'Інформація про кавове меню наразі готується.';
 
@@ -142,7 +137,7 @@ function renderCoffeeCategories(container, categories, currency) {
         section.className = 'coffee-category';
 
         const heading = document.createElement('h3');
-        heading.className = 'coffee-category-title';
+        heading.className = 'coffee-category-title block-title';
         heading.textContent = category.title || '';
 
         section.appendChild(heading);
@@ -158,7 +153,7 @@ function renderCoffeeCategories(container, categories, currency) {
 
     if (!container.children.length) {
         const emptyMessage = document.createElement('p');
-        emptyMessage.className = 'menu-empty';
+        emptyMessage.className = 'menu-empty content-text';
         emptyMessage.textContent =
             'Інформація про кавове меню наразі готується.';
 
@@ -166,8 +161,6 @@ function renderCoffeeCategories(container, categories, currency) {
     }
 }
 
-
-// Картки меню
 function renderMenu(container, items, currency) {
     if (!container) return;
 
@@ -179,8 +172,7 @@ function renderMenu(container, items, currency) {
 
     if (visibleItems.length === 0) {
         const emptyMessage = document.createElement('p');
-
-        emptyMessage.className = 'menu-empty';
+        emptyMessage.className = 'menu-empty content-text';
         emptyMessage.textContent =
             'Інформація про позиції меню наразі готується.';
 
@@ -192,7 +184,6 @@ function renderMenu(container, items, currency) {
         const card = document.createElement('article');
         card.className = 'menu-card';
 
-        // Фото позиції, якщо воно вказане
         if (item.image && item.image.trim() !== '') {
             const imageContainer = document.createElement('div');
             imageContainer.className = 'menu-card-image';
@@ -214,12 +205,13 @@ function renderMenu(container, items, currency) {
         content.className = 'menu-card-content';
 
         const title = document.createElement('h3');
+        title.className = 'block-title';
         title.textContent = item.name || '';
         content.appendChild(title);
 
         if (item.description) {
             const description = document.createElement('p');
-            description.className = 'menu-card-description';
+            description.className = 'menu-card-description content-text';
             description.textContent = item.description;
             content.appendChild(description);
         }
@@ -255,6 +247,5 @@ function renderMenu(container, items, currency) {
         container.appendChild(card);
     });
 }
-
 
 document.addEventListener('DOMContentLoaded', loadBreakfastPage);

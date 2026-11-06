@@ -8,6 +8,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.png">
     <link rel="stylesheet" href="../style.css">
     <script src="layout.js" defer></script>
+    <meta name="robots" content="noindex, follow">
+    <meta name="description"
+        content="Detailed room description at Sleeport Hotel: square area, occupancy, bed types, and in-room amenities.">
 </head>
 
 <body>
@@ -25,22 +28,24 @@
             </div>
 
             <div id="details-error" class="details-error" style="display: none;">
-                <h2>Room not found</h2>
-                <p>The category might have been changed or the link is invalid.</p>
+                <h2 class="section-title">Room not found</h2>
+                <p class="content-text">The category might have been changed or the link is invalid.</p>
                 <a href="rooms.html" class="about-button">Return to Room Inventory</a>
             </div>
 
             <article id="details-content" class="details-wrapper" style="display: none;">
                 
                 <header class="details-header">
-                    <span class="hero-label" id="room-category-badge">ROOM CATEGORY</span>
-                    <h1 id="room-title">Room Name</h1>
-                    <p class="details-short-lead" id="room-short-desc"></p>
+                    <span class="page-eyebrow" id="room-category-badge">ROOM CATEGORY</span>
+                    <h1 class="page-title" id="room-title">Room Name</h1>
+                    <p class="page-lead details-short-lead" id="room-short-desc"></p>
                 </header>
 
                 <div class="details-gallery-section">
                     <div class="details-main-image-wrap">
+                        <button type="button" class="details-nav-arrow details-nav-prev" id="details-prev-btn" aria-label="Previous image">&#8592;</button>
                         <img id="main-view-image" src="" alt="Room photo" class="details-main-img">
+                        <button type="button" class="details-nav-arrow details-nav-next" id="details-next-btn" aria-label="Next image">&#8594;</button>
                     </div>
                     <div class="details-thumbnails" id="gallery-thumbs" aria-label="Room thumbnails"></div>
                 </div>
@@ -67,20 +72,20 @@
                 <div class="details-grid-body">
                     <div class="details-main-text">
                         <section class="details-section">
-                            <h2>Room Overview</h2>
-                            <p id="room-full-description"></p>
+                            <h2 class="section-title">Room Overview</h2>
+                            <p class="content-text" id="room-full-description"></p>
                         </section>
 
                         <section class="details-section">
-                            <h2>In-Room Amenities & Equipment</h2>
+                            <h2 class="section-title">In-Room Amenities & Equipment</h2>
                             <ul class="details-amenities-list" id="room-amenities"></ul>
                         </section>
                     </div>
 
                     <aside class="details-sidebar">
                         <div class="details-booking-card">
-                            <h3>Reserve This Room</h3>
-                            <p>Select your dates and the on-duty receptionist will verify availability.</p>
+                            <h3 class="block-title">Reserve This Room</h3>
+                            <p class="content-text">Select your dates and the on-duty receptionist will verify availability.</p>
                             
                             <div class="sidebar-price-row">
                                 <span class="sidebar-price" id="sidebar-price-val">—</span>
@@ -106,10 +111,12 @@
 
     <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
         <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+        <button type="button" class="lightbox-nav-arrow lightbox-prev" id="lightbox-prev-btn" aria-label="Previous image">&#8592;</button>
         <div class="lightbox-content">
             <img src="" alt="" class="lightbox-img" id="lightbox-img">
             <div class="lightbox-caption" id="lightbox-caption"></div>
         </div>
+        <button type="button" class="lightbox-nav-arrow lightbox-next" id="lightbox-next-btn" aria-label="Next image">&#8594;</button>
     </div>
 
     <site-footer></site-footer>

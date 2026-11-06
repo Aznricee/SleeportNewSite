@@ -7,7 +7,7 @@
     <title>Sleeport hotel - Галерея</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/icon.png">
     <link rel="stylesheet" href="style.css">
-    <script src="layout.js"></script>
+    <script src="layout.js" defer></script>
     <link rel="canonical" href="https://sleeport.dp.ua/galery.html">
     <link rel="alternate" hreflang="uk" href="https://sleeport.dp.ua/galery.html">
     <link rel="alternate" hreflang="en" href="https://sleeport.dp.ua/en/gallery.html">
@@ -24,210 +24,206 @@
 
 <body>
 
-<site-header></site-header>
+    <site-header></site-header>
 
-<main class="gallery-page">
-    <div class="container">
+    <main class="gallery-page">
+        <div class="container">
 
-        <div class="gallery-header">
-            <h1 id="gallery-heading">Атмосфера готелю Sleeport</h1>
-            <p id="gallery-subheading">Ознайомтеся з простором наших номерів, рецепцією, зонами відпочинку та сервісом.</p>
+            <header class="page-header">
+                <span class="page-eyebrow">ФОТОГАЛЕРЕЯ</span>
+                <h1 class="page-title" id="gallery-heading">Атмосфера готелю Sleeport</h1>
+                <p class="page-lead" id="gallery-subheading">Ознайомтеся з простором наших номерів, рецепцією, зонами відпочинку та сервісом.</p>
+            </header>
+
+            <div class="gallery-filters" id="gallery-filters"></div>
+
+            <div id="gallery-sections-container"></div>
+
         </div>
+    </main>
 
-        <div class="gallery-filters" id="gallery-filters"></div>
-
-        <div id="gallery-sections-container"></div>
-
+    <div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
+        <button class="lightbox-close" id="lightbox-close" aria-label="Закрити">&times;</button>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightbox-img">
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+        </div>
     </div>
-</main>
 
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true">
-    <button class="lightbox-close" id="lightbox-close" aria-label="Закрити">&times;</button>
-    <div class="lightbox-content">
-        <img src="" alt="" class="lightbox-img" id="lightbox-img">
-        <div class="lightbox-caption" id="lightbox-caption"></div>
-    </div>
-</div>
+    <site-footer></site-footer>
 
-<site-footer></site-footer>
+    <script>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const lightboxCaption = document.getElementById("lightbox-caption");
+        const lightboxClose = document.getElementById("lightbox-close");
 
-<script>
-    function copyPhone(phone) {
-        navigator.clipboard.writeText(phone);
-    }
-
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-    const lightboxCaption = document.getElementById("lightbox-caption");
-    const lightboxClose = document.getElementById("lightbox-close");
-
-    function openLightbox(fullUrl, captionText) {
-        lightboxImg.src = fullUrl;
-        lightboxCaption.textContent = captionText || "";
-        lightbox.classList.add("active");
-        document.body.style.overflow = "hidden";
-    }
-
-    function closeLightbox() {
-        lightbox.classList.remove("active");
-        lightboxImg.src = "";
-        document.body.style.overflow = "";
-    }
-
-    lightboxClose.addEventListener("click", closeLightbox);
-    lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-            closeLightbox();
+        function openLightbox(fullUrl, captionText) {
+            lightboxImg.src = fullUrl;
+            lightboxCaption.textContent = captionText || "";
+            lightbox.classList.add("active");
+            document.body.style.overflow = "hidden";
         }
-    });
 
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && lightbox.classList.contains("active")) {
-            closeLightbox();
+        function closeLightbox() {
+            lightbox.classList.remove("active");
+            lightboxImg.src = "";
+            document.body.style.overflow = "";
         }
-    });
 
-    function getWordDeclension(count) {
-        const mod10 = count % 10;
-        const mod100 = count % 100;
-        if (mod100 >= 11 && mod100 <= 19) return `${count} фотографій`;
-        if (mod10 === 1) return `${count} фотографія`;
-        if (mod10 >= 2 && mod10 <= 4) return `${count} фотографії`;
-        return `${count} фотографій`;
-    }
-
-    async function loadGallery() {
-        const filtersContainer = document.getElementById("gallery-filters");
-        const sectionsContainer = document.getElementById("gallery-sections-container");
-
-        try {
-            const response = await fetch("gallery.json");
-            if (!response.ok) {
-                throw new Error(`Помилка завантаження: ${response.status}`);
+        lightboxClose.addEventListener("click", closeLightbox);
+        lightbox.addEventListener("click", (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
             }
+        });
 
-            const data = await response.json();
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && lightbox.classList.contains("active")) {
+                closeLightbox();
+            }
+        });
 
-            if (data.heading) document.getElementById("gallery-heading").textContent = data.heading;
-            if (data.subheading) document.getElementById("gallery-subheading").textContent = data.subheading;
-            if (data.pageTitle) document.title = `Sleeport hotel — ${data.pageTitle}`;
+        function getWordDeclension(count) {
+            const mod10 = count % 10;
+            const mod100 = count % 100;
+            if (mod100 >= 11 && mod100 <= 19) return `${count} фотографій`;
+            if (mod10 === 1) return `${count} фотографія`;
+            if (mod10 >= 2 && mod10 <= 4) return `${count} фотографії`;
+            return `${count} фотографій`;
+        }
 
-            filtersContainer.replaceChildren();
-            sectionsContainer.replaceChildren();
+        async function loadGallery() {
+            const filtersContainer = document.getElementById("gallery-filters");
+            const sectionsContainer = document.getElementById("gallery-sections-container");
 
-            const allBtn = document.createElement("button");
-            allBtn.className = "filter-btn active";
-            allBtn.dataset.filter = "all";
-            allBtn.textContent = "Усі фото";
-            filtersContainer.appendChild(allBtn);
-
-            (data.categories || []).forEach(cat => {
-                const btn = document.createElement("button");
-                btn.className = "filter-btn";
-                btn.dataset.filter = cat.id;
-                btn.textContent = cat.title;
-                filtersContainer.appendChild(btn);
-
-                const section = document.createElement("section");
-                section.className = "gallery-category-section";
-                section.dataset.category = cat.id;
-
-                const headingDiv = document.createElement("div");
-                headingDiv.className = "category-heading";
-
-                const h2 = document.createElement("h2");
-                h2.textContent = cat.title;
-
-                const countSpan = document.createElement("span");
-                countSpan.className = "category-count";
-                countSpan.textContent = getWordDeclension((cat.items || []).length);
-
-                headingDiv.append(h2, countSpan);
-
-                const grid = document.createElement("div");
-                grid.className = "gallery-grid";
-
-                const initialLimit = cat.initialVisible || 3;
-                const cardElements = [];
-
-                (cat.items || []).forEach((item, idx) => {
-                    const card = document.createElement("div");
-                    card.className = "gallery-card";
-                    if (idx >= initialLimit) {
-                        card.style.display = "none";
-                    }
-
-                    const img = document.createElement("img");
-                    img.src = item.preview;
-                    img.alt = item.alt || item.title || "";
-                    img.loading = "lazy";
-
-                    const caption = document.createElement("span");
-                    caption.className = "gallery-card-caption";
-                    caption.textContent = item.title;
-
-                    card.append(img, caption);
-                    card.addEventListener("click", () => openLightbox(item.full, item.title));
-
-                    grid.appendChild(card);
-                    cardElements.push(card);
-                });
-
-                section.append(headingDiv, grid);
-
-                if (cardElements.length > initialLimit) {
-                    const toggleDiv = document.createElement("div");
-                    toggleDiv.className = "toggle-container";
-
-                    const toggleBtn = document.createElement("button");
-                    toggleBtn.className = "btn-toggle-more";
-                    toggleBtn.textContent = "Показати більше фото";
-
-                    let isExpanded = false;
-                    toggleBtn.addEventListener("click", () => {
-                        isExpanded = !isExpanded;
-                        cardElements.forEach((card, idx) => {
-                            if (idx >= initialLimit) {
-                                card.style.display = isExpanded ? "block" : "none";
-                            }
-                        });
-                        toggleBtn.textContent = isExpanded ? "Згорнути світлини" : "Показати більше фото";
-                    });
-
-                    toggleDiv.appendChild(toggleBtn);
-                    section.appendChild(toggleDiv);
+            try {
+                const response = await fetch("gallery.json");
+                if (!response.ok) {
+                    throw new Error(`Помилка завантаження: ${response.status}`);
                 }
 
-                sectionsContainer.appendChild(section);
-            });
+                const data = await response.json();
 
-            const filterBtns = filtersContainer.querySelectorAll(".filter-btn");
-            const sections = sectionsContainer.querySelectorAll(".gallery-category-section");
+                if (data.heading) document.getElementById("gallery-heading").textContent = data.heading;
+                if (data.subheading) document.getElementById("gallery-subheading").textContent = data.subheading;
+                if (data.pageTitle) document.title = `Sleeport hotel — ${data.pageTitle}`;
 
-            filterBtns.forEach(btn => {
-                btn.addEventListener("click", () => {
-                    filterBtns.forEach(b => b.classList.remove("active"));
-                    btn.classList.add("active");
+                filtersContainer.replaceChildren();
+                sectionsContainer.replaceChildren();
 
-                    const target = btn.dataset.filter;
-                    sections.forEach(section => {
-                        if (target === "all" || section.dataset.category === target) {
-                            section.style.display = "block";
-                        } else {
-                            section.style.display = "none";
+                const allBtn = document.createElement("button");
+                allBtn.className = "filter-btn active";
+                allBtn.dataset.filter = "all";
+                allBtn.textContent = "Усі фото";
+                filtersContainer.appendChild(allBtn);
+
+                (data.categories || []).forEach(cat => {
+                    const btn = document.createElement("button");
+                    btn.className = "filter-btn";
+                    btn.dataset.filter = cat.id;
+                    btn.textContent = cat.title;
+                    filtersContainer.appendChild(btn);
+
+                    const section = document.createElement("section");
+                    section.className = "gallery-category-section";
+                    section.dataset.category = cat.id;
+
+                    const headingDiv = document.createElement("div");
+                    headingDiv.className = "category-heading";
+
+                    const h2 = document.createElement("h2");
+                    h2.textContent = cat.title;
+
+                    const countSpan = document.createElement("span");
+                    countSpan.className = "category-count";
+                    countSpan.textContent = getWordDeclension((cat.items || []).length);
+
+                    headingDiv.append(h2, countSpan);
+
+                    const grid = document.createElement("div");
+                    grid.className = "gallery-grid";
+
+                    const initialLimit = cat.initialVisible || 3;
+                    const cardElements = [];
+
+                    (cat.items || []).forEach((item, idx) => {
+                        const card = document.createElement("div");
+                        card.className = "gallery-card";
+                        if (idx >= initialLimit) {
+                            card.style.display = "none";
                         }
+
+                        const img = document.createElement("img");
+                        img.src = item.preview;
+                        img.alt = item.alt || item.title || "";
+                        img.loading = "lazy";
+
+                        const caption = document.createElement("span");
+                        caption.className = "gallery-card-caption";
+                        caption.textContent = item.title;
+
+                        card.append(img, caption);
+                        card.addEventListener("click", () => openLightbox(item.full, item.title));
+
+                        grid.appendChild(card);
+                        cardElements.push(card);
+                    });
+
+                    section.append(headingDiv, grid);
+
+                    if (cardElements.length > initialLimit) {
+                        const toggleDiv = document.createElement("div");
+                        toggleDiv.className = "toggle-container";
+
+                        const toggleBtn = document.createElement("button");
+                        toggleBtn.className = "btn-toggle-more";
+                        toggleBtn.textContent = "Показати більше фото";
+
+                        let isExpanded = false;
+                        toggleBtn.addEventListener("click", () => {
+                            isExpanded = !isExpanded;
+                            cardElements.forEach((card, idx) => {
+                                if (idx >= initialLimit) {
+                                    card.style.display = isExpanded ? "block" : "none";
+                                }
+                            });
+                            toggleBtn.textContent = isExpanded ? "Згорнути світлини" : "Показати більше фото";
+                        });
+
+                        toggleDiv.appendChild(toggleBtn);
+                        section.appendChild(toggleDiv);
+                    }
+
+                    sectionsContainer.appendChild(section);
+                });
+
+                const filterBtns = filtersContainer.querySelectorAll(".filter-btn");
+                const sections = sectionsContainer.querySelectorAll(".gallery-category-section");
+
+                filterBtns.forEach(btn => {
+                    btn.addEventListener("click", () => {
+                        filterBtns.forEach(b => b.classList.remove("active"));
+                        btn.classList.add("active");
+
+                        const target = btn.dataset.filter;
+                        sections.forEach(section => {
+                            if (target === "all" || section.dataset.category === target) {
+                                section.style.display = "block";
+                            } else {
+                                section.style.display = "none";
+                            }
+                        });
                     });
                 });
-            });
 
-        } catch (error) {
-            console.error(error);
-            sectionsContainer.textContent = "Не вдалося завантажити фотографії галереї. Перевірте файл gallery.json.";
+            } catch (error) {
+                console.error(error);
+                sectionsContainer.textContent = "Не вдалося завантажити фотографії галереї. Перевірте файл gallery.json.";
+            }
         }
-    }
 
-    document.addEventListener("DOMContentLoaded", loadGallery);
-</script>
-
+        document.addEventListener("DOMContentLoaded", loadGallery);
+    </script>
 </body>
 </html>

@@ -73,6 +73,12 @@
           "preview": "images/rooms/room_14_room_2.jpg",
           "full": "images/rooms/room_14_room_2.jpg",
           "alt": "Двокімнатний номер - друга кімната"
+        },
+        {
+          "title": "Картини з фіалками",
+          "preview": "images/rooms/room_14_paintings.jpg",
+          "full": "images/rooms/room_14_paintings.jpg",
+          "alt": "Картини з фіалками"
         }
       ]
     },
