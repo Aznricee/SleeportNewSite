@@ -171,7 +171,6 @@ class SiteFooter extends HTMLElement {
 
             <div class="footer-bottom">
                 <p>© 2026 Sleeport. Усі права захищено.</p>
-                <a href="rules.html">Правила проживання та бронювання</a>
                 <a href="privacy.html">Політика конфіденційності</a>
             </div>
         </footer>
