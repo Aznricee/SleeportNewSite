@@ -43,16 +43,61 @@ async function loadRoomsPage() {
 
             const detailsUrl = `room-details.html?category=${encodeURIComponent(room.id || '')}`;
 
+            const images = (room.gallery && room.gallery.length > 0)
+                ? room.gallery
+                : (room.image ? [room.image] : []);
+
+            let currentImgIndex = 0;
+
             const photoLink = document.createElement('a');
             photoLink.className = 'room-photo';
             photoLink.href = detailsUrl;
             photoLink.setAttribute('aria-label', `More details about ${room.name || 'room'}`);
 
             const img = document.createElement('img');
-            img.src = room.image || '';
+            img.src = images[0] || room.image || '';
             img.alt = room.imageAlt || room.name || 'Hotel Room';
             img.loading = 'lazy';
             photoLink.appendChild(img);
+
+            if (images.length > 1) {
+                const prevBtn = document.createElement('button');
+                prevBtn.type = 'button';
+                prevBtn.className = 'room-card-arrow room-card-prev';
+                prevBtn.setAttribute('aria-label', 'Previous image');
+                prevBtn.textContent = '←';
+
+                const nextBtn = document.createElement('button');
+                nextBtn.type = 'button';
+                nextBtn.className = 'room-card-arrow room-card-next';
+                nextBtn.setAttribute('aria-label', 'Next image');
+                nextBtn.textContent = '→';
+
+                const counter = document.createElement('span');
+                counter.className = 'room-photo-counter';
+                counter.textContent = `1 / ${images.length}`;
+
+                function switchImage(step) {
+                    currentImgIndex = (currentImgIndex + step + images.length) % images.length;
+                    img.src = images[currentImgIndex];
+                    img.alt = `${room.name} — photo ${currentImgIndex + 1}`;
+                    counter.textContent = `${currentImgIndex + 1} / ${images.length}`;
+                }
+
+                prevBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    switchImage(-1);
+                });
+
+                nextBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    switchImage(1);
+                });
+
+                photoLink.append(prevBtn, nextBtn, counter);
+            }
 
             const info = document.createElement('div');
             info.className = 'room-info';
