@@ -35,15 +35,31 @@
                 <form id="booking-form">
                     <div class="booking-grid">
                         <div>
-                            <label class="field-label" for="guest-name">Прізвище та ім'я *</label>
-                            <input class="field-input" type="text" id="guest-name" required
-                                placeholder="Шевченко Олександр">
+                            <label class="field-label" for="guest-last-name">Прізвище *</label>
+                            <input class="field-input" type="text" id="guest-last-name" required
+                                placeholder="Шевченко">
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="guest-first-name">Ім'я *</label>
+                            <input class="field-input" type="text" id="guest-first-name" required
+                                placeholder="Олександр">
                         </div>
 
                         <div>
                             <label class="field-label" for="guest-phone">Номер телефону *</label>
                             <input class="field-input" type="tel" id="guest-phone" required
                                 placeholder="+380 96 000 00 00">
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="guests-count">Кількість гостей *</label>
+                            <select class="field-select" id="guests-count" required>
+                                <option value="1">1 гість</option>
+                                <option value="2" selected>2 гостя</option>
+                                <option value="3">3 гостя</option>
+                                <option value="4+">4 і більше (група)</option>
+                            </select>
                         </div>
 
                         <div>
@@ -56,12 +72,11 @@
                             <input class="field-input" type="date" id="checkout-date" required>
                         </div>
 
-                        <div>
+                        <div class="field-full">
                             <label class="field-label" for="room-select">Категорія номера *</label>
                             <select class="field-select" id="room-select" required>
                                 <option value="">Оберіть категорію...</option>
                                 <option value="standard">Стандарт одномісний</option>
-                                <option value="superior-single">Стандарт одномісний з дод. місцем</option>
                                 <option value="standard-double">Стандарт двомісний</option>
                                 <option value="small-double">Двомісний маленький</option>
                                 <option value="superior-double">Двомісний покращений</option>
@@ -70,14 +85,17 @@
                             </select>
                         </div>
 
-                        <div>
-                            <label class="field-label" for="guests-count">Кількість гостей *</label>
-                            <select class="field-select" id="guests-count" required>
-                                <option value="1">1 гість</option>
-                                <option value="2" selected>2 гостя</option>
-                                <option value="3">3 гостя</option>
-                                <option value="4+">4 і більше (група)</option>
-                            </select>
+                        <!-- Блок орієнтовного розрахунку вартості -->
+                        <div class="field-full" id="price-summary-container" style="display: none; background: #edf2f7; border: 1px solid #cbd5e1; border-radius: 6px; padding: 18px 20px; margin-top: 4px;">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+                                <span style="font-size: 13px; font-weight: 600; color: #7186a3; text-transform: uppercase; letter-spacing: 0.8px;">
+                                    Орієнтовна вартість (<span id="calc-nights-count">0</span>):
+                                </span>
+                                <span id="calc-total-price" style="font-size: 22px; font-weight: 700; color: #1d3461;">0 грн</span>
+                            </div>
+                            <p style="margin: 8px 0 0; font-size: 13px; color: #626d7c; line-height: 1.5;">
+                                * Додатково може нараховуватись туристичний збір у розмірі <strong>45 грн/доба</strong> за особу (згідно з Податковим кодексом України).
+                            </p>
                         </div>
 
                         <div class="field-full">
@@ -120,7 +138,7 @@
     <site-footer></site-footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", async () => {
             const pageLoadedAt = Date.now();
 
             const urlParams = new URLSearchParams(window.location.search);
@@ -141,6 +159,64 @@
             checkinInput.min = todayStr;
             checkoutInput.min = todayStr;
 
+            // Словник цін категорій (завантажується динамічно з rooms.json)
+            let roomPrices = {};
+
+            try {
+                const res = await fetch("rooms.json");
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.rooms) {
+                        data.rooms.forEach(r => {
+                            if (r.id && r.price) {
+                                roomPrices[r.id] = Number(r.price);
+                            }
+                        });
+                    }
+                }
+            } catch (e) {
+                console.warn("Не вдалося завантажити rooms.json для розрахунку цін:", e);
+            }
+
+            function updatePriceEstimate() {
+                const container = document.getElementById("price-summary-container");
+                const nightsCountEl = document.getElementById("calc-nights-count");
+                const totalPriceEl = document.getElementById("calc-total-price");
+
+                const checkinVal = checkinInput.value;
+                const checkoutVal = checkoutInput.value;
+                const roomVal = roomSelect.value;
+
+                if (!checkinVal || !checkoutVal) {
+                    container.style.display = "none";
+                    return;
+                }
+
+                const d1 = new Date(checkinVal);
+                const d2 = new Date(checkoutVal);
+                const diffTime = d2.getTime() - d1.getTime();
+                const nights = Math.round(diffTime / (1000 * 60 * 60 * 24));
+
+                if (nights <= 0) {
+                    container.style.display = "none";
+                    return;
+                }
+
+                const nightsLabel = nights === 1 ? "1 доба" : `${nights} доби`;
+                nightsCountEl.textContent = nightsLabel;
+
+                const pricePerNight = roomPrices[roomVal];
+
+                if (pricePerNight && !isNaN(pricePerNight)) {
+                    const total = nights * pricePerNight;
+                    totalPriceEl.textContent = `${new Intl.NumberFormat("uk-UA").format(total)} грн`;
+                } else {
+                    totalPriceEl.textContent = "Уточнюйте у адміністратора";
+                }
+
+                container.style.display = "block";
+            }
+
             checkinInput.addEventListener("change", () => {
                 if (checkinInput.value) {
                     checkoutInput.min = checkinInput.value;
@@ -148,7 +224,14 @@
                         checkoutInput.value = "";
                     }
                 }
+                updatePriceEstimate();
             });
+
+            checkoutInput.addEventListener("change", updatePriceEstimate);
+            roomSelect.addEventListener("change", updatePriceEstimate);
+
+            // Первинний розрахунок (якщо номер передано через query-параметр)
+            updatePriceEstimate();
 
             const form = document.getElementById("booking-form");
             const statusBox = document.getElementById("form-status-box");
@@ -164,6 +247,7 @@
                     statusBox.className = "form-status success";
                     statusBox.textContent = "Заявку успішно надіслано! Черговий адміністратор зв'яжеться з вами для підтвердження.";
                     form.reset();
+                    updatePriceEstimate();
                     return;
                 }
 
@@ -179,6 +263,10 @@
                 statusBox.className = "form-status";
                 statusBox.textContent = "";
 
+                const lastName = document.getElementById("guest-last-name").value.trim();
+                const firstName = document.getElementById("guest-first-name").value.trim();
+                const fullName = `${lastName} ${firstName}`.trim();
+
                 const selectedRoomText = roomSelect.options[roomSelect.selectedIndex].text;
 
                 try {
@@ -188,7 +276,7 @@
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify({
-                            name: document.getElementById("guest-name").value.trim(),
+                            name: fullName,
                             phone: document.getElementById("guest-phone").value.trim(),
                             checkin: checkinInput.value,
                             checkout: checkoutInput.value,
@@ -205,6 +293,7 @@
                         statusBox.className = "form-status success";
                         statusBox.textContent = "Заявку успішно надіслано! Черговий адміністратор зв'яжеться з вами для підтвердження.";
                         form.reset();
+                        updatePriceEstimate();
                     } else {
                         throw new Error(result.error || "Помилка обробки");
                     }

@@ -34,15 +34,31 @@
                 <form id="booking-form">
                     <div class="booking-grid">
                         <div>
-                            <label class="field-label" for="guest-name">First and Last Name *</label>
-                            <input class="field-input" type="text" id="guest-name" required
-                                placeholder="Alexander Shevchenko">
+                            <label class="field-label" for="guest-last-name">Last Name *</label>
+                            <input class="field-input" type="text" id="guest-last-name" required
+                                placeholder="Shevchenko">
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="guest-first-name">First Name *</label>
+                            <input class="field-input" type="text" id="guest-first-name" required
+                                placeholder="Alexander">
                         </div>
 
                         <div>
                             <label class="field-label" for="guest-phone">Phone Number *</label>
                             <input class="field-input" type="tel" id="guest-phone" required
                                 placeholder="+380 96 000 00 00">
+                        </div>
+
+                        <div>
+                            <label class="field-label" for="guests-count">Number of Guests *</label>
+                            <select class="field-select" id="guests-count" required>
+                                <option value="1">1 guest</option>
+                                <option value="2" selected>2 guests</option>
+                                <option value="3">3 guests</option>
+                                <option value="4+">4 or more (group)</option>
+                            </select>
                         </div>
 
                         <div>
@@ -55,12 +71,11 @@
                             <input class="field-input" type="date" id="checkout-date" required>
                         </div>
 
-                        <div>
+                        <div class="field-full">
                             <label class="field-label" for="room-select">Room Category *</label>
                             <select class="field-select" id="room-select" required>
                                 <option value="">Select a category...</option>
                                 <option value="standard">Single Standard</option>
-                                <option value="superior-single">Single Standard with Extra Bed</option>
                                 <option value="standard-double">Double Standard</option>
                                 <option value="small-double">Small Double</option>
                                 <option value="superior-double">Superior Double</option>
@@ -69,14 +84,16 @@
                             </select>
                         </div>
 
-                        <div>
-                            <label class="field-label" for="guests-count">Number of Guests *</label>
-                            <select class="field-select" id="guests-count" required>
-                                <option value="1">1 guest</option>
-                                <option value="2" selected>2 guests</option>
-                                <option value="3">3 guests</option>
-                                <option value="4+">4 or more (group)</option>
-                            </select>
+                        <div class="field-full" id="price-summary-container" style="display: none; background: #edf2f7; border: 1px solid #cbd5e1; border-radius: 6px; padding: 18px 20px; margin-top: 4px;">
+                            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+                                <span style="font-size: 13px; font-weight: 600; color: #7186a3; text-transform: uppercase; letter-spacing: 0.8px;">
+                                    Estimated Rate (<span id="calc-nights-count">0</span>):
+                                </span>
+                                <span id="calc-total-price" style="font-size: 22px; font-weight: 700; color: #1d3461;">0 UAH</span>
+                            </div>
+                            <p style="margin: 8px 0 0; font-size: 13px; color: #626d7c; line-height: 1.5;">
+                                * A tourist tax of <strong>45 UAH/night</strong> per guest may apply in accordance with the Tax Code of Ukraine.
+                            </p>
                         </div>
 
                         <div class="field-full">
@@ -119,7 +136,7 @@
     <site-footer></site-footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("DOMContentLoaded", async () => {
             const pageLoadedAt = Date.now();
 
             const urlParams = new URLSearchParams(window.location.search);
@@ -140,6 +157,62 @@
             checkinInput.min = todayStr;
             checkoutInput.min = todayStr;
 
+            let roomPrices = {};
+
+            try {
+                const res = await fetch("rooms.json");
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.rooms) {
+                        data.rooms.forEach(r => {
+                            if (r.id && r.price) {
+                                roomPrices[r.id] = Number(r.price);
+                            }
+                        });
+                    }
+                }
+            } catch (e) {
+                console.warn("Could not load rooms.json for price calculation:", e);
+            }
+
+            function updatePriceEstimate() {
+                const container = document.getElementById("price-summary-container");
+                const nightsCountEl = document.getElementById("calc-nights-count");
+                const totalPriceEl = document.getElementById("calc-total-price");
+
+                const checkinVal = checkinInput.value;
+                const checkoutVal = checkoutInput.value;
+                const roomVal = roomSelect.value;
+
+                if (!checkinVal || !checkoutVal) {
+                    container.style.display = "none";
+                    return;
+                }
+
+                const d1 = new Date(checkinVal);
+                const d2 = new Date(checkoutVal);
+                const diffTime = d2.getTime() - d1.getTime();
+                const nights = Math.round(diffTime / (1000 * 60 * 60 * 24));
+
+                if (nights <= 0) {
+                    container.style.display = "none";
+                    return;
+                }
+
+                nightsCountEl.textContent = nights === 1 ? "1 night" : `${nights} nights`;
+
+                const pricePerNight = roomPrices[roomVal];
+
+                if (pricePerNight && !isNaN(pricePerNight)) {
+                    const total = nights * pricePerNight;
+                    totalPriceEl.textContent = `${new Intl.NumberFormat("en-US").format(total)} UAH`;
+                } else {
+                    totalPriceEl.textContent = "Check with front desk";
+                }
+
+                container.style.display = "block";
+            }
+
             checkinInput.addEventListener("change", () => {
                 if (checkinInput.value) {
                     checkoutInput.min = checkinInput.value;
@@ -147,7 +220,13 @@
                         checkoutInput.value = "";
                     }
                 }
+                updatePriceEstimate();
             });
+
+            checkoutInput.addEventListener("change", updatePriceEstimate);
+            roomSelect.addEventListener("change", updatePriceEstimate);
+
+            updatePriceEstimate();
 
             const form = document.getElementById("booking-form");
             const statusBox = document.getElementById("form-status-box");
@@ -161,8 +240,9 @@
                 const honeypotEl = document.getElementById("user-website");
                 if (honeypotEl && honeypotEl.value.trim() !== "") {
                     statusBox.className = "form-status success";
-                    statusBox.textContent = "Your request has been sent! The front desk will contact you shortly.";
+                    statusBox.textContent = "Your request has been received! The front desk will contact you to confirm details.";
                     form.reset();
+                    updatePriceEstimate();
                     return;
                 }
 
@@ -178,6 +258,10 @@
                 statusBox.className = "form-status";
                 statusBox.textContent = "";
 
+                const lastName = document.getElementById("guest-last-name").value.trim();
+                const firstName = document.getElementById("guest-first-name").value.trim();
+                const fullName = `${firstName} ${lastName}`.trim();
+
                 const selectedRoomText = roomSelect.options[roomSelect.selectedIndex].text;
 
                 try {
@@ -187,7 +271,7 @@
                             "Content-Type": "application/json"
                         },
                         body: JSON.stringify({
-                            name: document.getElementById("guest-name").value.trim(),
+                            name: fullName,
                             phone: document.getElementById("guest-phone").value.trim(),
                             checkin: checkinInput.value,
                             checkout: checkoutInput.value,
@@ -204,6 +288,7 @@
                         statusBox.className = "form-status success";
                         statusBox.textContent = "Your request has been received! The front desk will contact you to confirm details.";
                         form.reset();
+                        updatePriceEstimate();
                     } else {
                         throw new Error(result.error || "Submission error");
                     }
@@ -218,7 +303,6 @@
             });
         });
     </script>
-
 </body>
 
 </html>
