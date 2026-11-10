@@ -2906,10 +2906,14 @@ main.rooms-page {
 }
 
 /* 3. Компактні картки номерів для телефонів */
-@media (max-width: 580px) {
+@media (max-width: 600px) {
     .room-card {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        height: auto;
         min-height: auto;
+        max-height: none;
+        overflow: visible;
     }
 
     .room-photo,
@@ -2956,11 +2960,39 @@ main.rooms-page {
 /* 4. Розвантаження сторінки правил на телефонах */
 @media (max-width: 600px) {
     .top-bar-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         padding: 0 12px;
         gap: 8px;
+        overflow: hidden;
     }
 
+    .phone-numbers {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+        white-space: nowrap;
+    }
+
+.phone-numbers a,
     .phone-copy {
+        font-size: 11px;
+        white-space: nowrap;
+    }
+
+    /* Перемикач мов: забороняємо зникати чи виштовхуватися за екран */
+    .language-switch {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        font-size: 12px;
+        margin-left: auto; /* притискає перемикач праворуч */
+        padding-left: 6px;
+    }
+    .language-switch a {
         font-size: 12px;
     }
 
@@ -2987,5 +3019,74 @@ main.rooms-page {
     .rules-notice,
     .privacy-notice {
         padding: 14px 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* 1. Захист сторінки та контейнера контактів від виходу за межі */
+    .contacts-page {
+        padding-top: 110px;
+        padding-bottom: 40px;
+        overflow-x: hidden;
+    }
+
+    .contacts-page .container {
+        padding: 0 16px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* 2. Компактна сітка та відступи карток */
+    .contacts-grid,
+    .contacts-cards-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .contacts-info-card,
+    .contact-form-section {
+        padding: 20px 16px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* 3. Карта: суворе обмеження ширини та висоти */
+    .contacts-map-wrapper {
+        min-height: 260px;
+        height: 260px;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .contacts-map-wrapper iframe {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* 4. Поля форми в один стовпчик без розпирання */
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        width: 100%;
+    }
+
+    .form-input,
+    .form-textarea {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* 5. Захист довгих посилань та email від переповнення */
+    .contact-group p,
+    .contact-group a {
+        word-break: break-word;
+        overflow-wrap: anywhere;
     }
 }
