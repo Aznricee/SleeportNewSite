@@ -41,14 +41,18 @@ async function loadRoomsPage() {
             const article = document.createElement('article');
             article.className = 'room-card';
 
-            const photo = document.createElement('div');
-            photo.className = 'room-photo';
+            const detailsUrl = `room-details.html?category=${encodeURIComponent(room.id || '')}`;
+
+            const photoLink = document.createElement('a');
+            photoLink.className = 'room-photo';
+            photoLink.href = detailsUrl;
+            photoLink.setAttribute('aria-label', `More details about ${room.name || 'room'}`);
 
             const img = document.createElement('img');
             img.src = room.image || '';
             img.alt = room.imageAlt || room.name || 'Hotel Room';
             img.loading = 'lazy';
-            photo.appendChild(img);
+            photoLink.appendChild(img);
 
             const info = document.createElement('div');
             info.className = 'room-info';
@@ -58,10 +62,15 @@ async function loadRoomsPage() {
             category.textContent = `${String(room.number || '').padStart(2, '0')} / CATEGORY`;
 
             const title = document.createElement('h2');
-            title.textContent = room.name || '';
+            const titleLink = document.createElement('a');
+            titleLink.href = detailsUrl;
+            titleLink.textContent = room.name || '';
+            titleLink.style.color = 'inherit';
+            titleLink.style.textDecoration = 'none';
+            title.appendChild(titleLink);
 
             const description = document.createElement('p');
-            description.className = 'room-description';
+            description.className = 'room-description content-text';
             description.textContent = room.description || '';
 
             const listTitle = document.createElement('p');
@@ -101,7 +110,7 @@ async function loadRoomsPage() {
 
             const details = document.createElement('a');
             details.className = 'room-details-button';
-            details.href = `room-details.html?category=${encodeURIComponent(room.id || '')}`;
+            details.href = detailsUrl;
             details.textContent = 'Details';
 
             const booking = document.createElement('a');
@@ -112,7 +121,7 @@ async function loadRoomsPage() {
             actions.append(details, booking);
 
             info.append(category, title, description, listTitle, features, price, actions);
-            article.append(photo, info);
+            article.append(photoLink, info);
             list.appendChild(article);
         });
 

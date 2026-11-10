@@ -84,10 +84,12 @@ function renderServiceInfo(container, serviceInfo) {
 
     container.hidden = false;
 
-    const heading = document.createElement('h2');
-    heading.className = 'section-title';
-    heading.textContent = serviceInfo.title || 'Умови сніданку';
-    container.appendChild(heading);
+    if (serviceInfo.title) {
+        const heading = document.createElement('h2');
+        heading.className = 'section-title';
+        heading.textContent = serviceInfo.title;
+        container.appendChild(heading);
+    }
 
     const list = document.createElement('div');
     list.className = 'service-info-list';
@@ -96,15 +98,23 @@ function renderServiceInfo(container, serviceInfo) {
         const card = document.createElement('div');
         card.className = 'service-info-item';
 
-        const label = document.createElement('h3');
-        label.className = 'block-title';
+        const label = document.createElement('span');
+        label.className = 'service-info-label';
         label.textContent = item.label || '';
+        card.appendChild(label);
 
-        const value = document.createElement('p');
-        value.className = 'content-text';
+        const value = document.createElement('strong');
+        value.className = 'service-info-val';
         value.textContent = item.value || '';
+        card.appendChild(value);
 
-        card.append(label, value);
+        if (item.sub) {
+            const sub = document.createElement('span');
+            sub.className = 'service-info-sub';
+            sub.textContent = item.sub;
+            card.appendChild(sub);
+        }
+
         list.appendChild(card);
     });
 

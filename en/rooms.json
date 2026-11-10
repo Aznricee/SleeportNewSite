@@ -24,10 +24,10 @@
       "number": "01",
       "name": "Single Standard",
       "description": "A cozy and functional room with an ergonomic layout for solo travelers and business trips.",
-      "fullDescription": "A compact 16 m² room featuring contemporary design and carpeted flooring. It combines a restful sleeping area with an orthopedic mattress on a bed podium, a full workstation, and an en-suite bathroom enclosed by a stylish glass wall.",
+      "fullDescription": "A compact room featuring contemporary design and carpeted flooring. It combines a restful sleeping area with an orthopedic mattress on a bed podium, a full workstation, and an en-suite bathroom enclosed by a stylish glass wall.",
       "area": "16",
       "capacity": "1 guest",
-      "bedType": "Single bed (orthopedic mattress on a bed podium)",
+      "bedType": "Single bed",
       "features": [
         "Single bed on a podium",
         "Work desk and chair",
@@ -45,12 +45,13 @@
         "Textiles & care: hairdryer, towel set (3 pcs per guest), shower gel and liquid soap dispensers"
       ],
       "price": 1299,
-      "image": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1000&q=85",
+      "image": "/images/rooms/8_6.jpg",
       "imageAlt": "Single Standard Room",
       "gallery": [
-        "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=1200&q=85",
-        "../images/techn/safe_and_freezer.jpg",
-        "../images/techn/hair_dryer.jpg"
+        "/images/rooms/8_6.jpg",
+        "/images/rooms/8_2.jpg",
+        "/images/rooms/8_3.jpg",
+        "/images/rooms/8_5.jpg"
       ],
       "visible": true
     },
@@ -58,7 +59,7 @@
       "id": "superior-single",
       "number": "02",
       "name": "Single Standard with Extra Bed",
-      "description": "A practical 16 m² room with an additional bunk-style upper bed to accommodate a second guest.",
+      "description": "A practical room with an additional bunk-style upper bed to accommodate a second guest.",
       "fullDescription": "A functional choice for colleagues or travel companions. Featuring an upper-tier second bed, the room preserves its full workspace, private bathroom, individual climate system, and standard hotel amenities.",
       "area": "16",
       "capacity": "1–2 guests",
@@ -87,7 +88,7 @@
         "../images/techn/locksystem_1.jpg",
         "../images/techn/safe_and_freezer.jpg"
       ],
-      "visible": true
+      "visible": false
     },
     {
       "id": "standard-double",
@@ -200,7 +201,6 @@
         "../images/rooms/room_2_something.jpg",
         "../images/rooms/room_2_decore.jpg",
         "../images/techn/safe.jpg",
-        "../images/techn/freezer.jpg",
         "../images/techn/temp_system.jpg"
       ],
       "visible": true
@@ -234,9 +234,11 @@
       "image": "../images/rooms/room_14_room_1_2 - prev.jpg",
       "imageAlt": "Two-Room Suite Hotel Room",
       "gallery": [
-        "../images/rooms/room_14_room_1.jpg",
-        "../images/rooms/room_14_room_1_1.jpg",
-        "../images/rooms/room_14_room_2.jpg"
+        "/images/rooms/room_14_room_1_2 - prev.jpg",
+        "/images/rooms/14_3.jpg",
+        "/images/rooms/14_4.jpg",
+        "/images/rooms/14_7.jpg",
+        "/images/rooms/14_8.jpg"
       ],
       "visible": true
     }

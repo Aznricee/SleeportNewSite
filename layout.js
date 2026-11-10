@@ -31,8 +31,10 @@ class SiteHeader extends HTMLElement {
 
             <div class="main-header">
                 <div class="header-container">
-                    <a href="index.html" class="logo">Sleeport</a>
-                    
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="Sleeport" height="40">
+                    </a>
+
                     <nav class="navigation" id="main-navigation">
                         <a href="about.html">Про нас</a>
                         <a href="rooms.html">Номери</a>
