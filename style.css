@@ -185,6 +185,8 @@ textarea {
     display: flex;
     align-items: center;
     gap: 24px;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .phone-numbers a,
@@ -2889,5 +2891,101 @@ main.rooms-page {
         grid-template-columns: 1fr;
         gap: 12px;
         margin-bottom: 28px;
+    }
+}
+
+@media (max-width: 700px) {
+    .rooms-common {
+        padding: 24px 18px;
+    }
+
+    .rooms-common .room-features {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+/* 3. Компактні картки номерів для телефонів */
+@media (max-width: 580px) {
+    .room-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .room-photo,
+    .room-photo img {
+        height: 200px;
+        min-height: 200px;
+        aspect-ratio: 16 / 9;
+    }
+
+    .room-info {
+        padding: 18px 16px;
+    }
+
+    /* Приховуємо перелік "У номері:" на смартфонах для компактності */
+    .room-card .room-list-title,
+    .room-card .room-features {
+        display: none;
+    }
+
+    .room-description {
+        margin-bottom: 16px;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .room-price {
+        margin-bottom: 16px;
+    }
+
+    .room-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .room-details-button,
+    .room-book-button {
+        padding: 10px 8px;
+        font-size: 13px;
+        width: 100%;
+    }
+}
+
+/* 4. Розвантаження сторінки правил на телефонах */
+@media (max-width: 600px) {
+    .top-bar-container {
+        padding: 0 12px;
+        gap: 8px;
+    }
+
+    .phone-copy {
+        font-size: 12px;
+    }
+
+    .rules-page {
+        padding-top: 110px;
+        padding-bottom: 40px;
+    }
+
+    .rules-content,
+    .privacy-content {
+        padding: 20px 14px;
+        text-align: left; /* усуває розриви між словами на вузьких екранах */
+    }
+
+    .rules-section h2,
+    .privacy-section h2 {
+        font-size: 18px;
+    }
+
+    .rules-list {
+        padding-left: 18px;
+    }
+
+    .rules-notice,
+    .privacy-notice {
+        padding: 14px 14px;
     }
 }
