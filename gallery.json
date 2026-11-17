@@ -34,20 +34,20 @@
         },
         {
           "title": "Стандартний одномісний номер",
-          "preview": "images/Single/1.jpg",
-          "full": "images/Single/1.jpg",
+          "preview": "images/Single/1.webp",
+          "full": "images/Single/1.webp",
           "alt": "Стандартний одномісний номер"
         },
         {
           "title": "Стандартний одномісний номер",
-          "preview": "images/Single/2.jpg",
-          "full": "images/Single/2.jpg",
+          "preview": "images/Single/2.webp",
+          "full": "images/Single/2.webp",
           "alt": "Стандартний одномісний номер"
         },
         {
           "title": "Стандартний одномісний номер",
-          "preview": "images/Single/3.jpg",
-          "full": "images/Single/3.jpg",
+          "preview": "images/Single/3.webp",
+          "full": "images/Single/3.webp",
           "alt": "Стандартний одномісний номер"
         },
         {
@@ -70,38 +70,38 @@
         },
         {
           "title": "Стандартний двомісний номер",
-          "preview": "images/Double/9.jpg",
-          "full": "images/Double/9.jpg",
+          "preview": "images/Double/9.webp",
+          "full": "images/Double/9.webp",
           "alt": "Стандартний двомісний номер"
         },
         {
           "title": "Стандартний двомісний номер",
-          "preview": "images/Double/10.jpg",
-          "full": "images/Double/10.jpg",
+          "preview": "images/Double/10.webp",
+          "full": "images/Double/10.webp",
           "alt": "Стандартний двомісний номер"
         },
         {
           "title": "Стандартний двомісний номер",
-          "preview": "images/Double/2.jpg",
-          "full": "images/Double/2.jpg",
+          "preview": "images/Double/2.webp",
+          "full": "images/Double/2.webp",
           "alt": "Стандартний двомісний номер"
         },
         {
           "title": "Стандартний двомісний номер",
-          "preview": "images/Double/3.jpg",
-          "full": "images/Double/3.jpg",
+          "preview": "images/Double/3.webp",
+          "full": "images/Double/3.webp",
           "alt": "Стандартний двомісний номер"
         },
                 {
           "title": "Стандартний двомісний номер",
-          "preview": "images/Double/6.jpg",
-          "full": "images/Double/6.jpg",
+          "preview": "images/Double/6.webp",
+          "full": "images/Double/6.webp",
           "alt": "Стандартний двомісний номер"
         },
                 {
           "title": "Стандартний двомісний номер",
-          "preview": "images/Double/7.jpg",
-          "full": "images/Double/7.jpg",
+          "preview": "images/Double/7.webp",
+          "full": "images/Double/7.webp",
           "alt": "Стандартний двомісний номер"
         },
         {
@@ -118,14 +118,14 @@
         },
         {
           "title": "Двокімнатний номер - перша кімната",
-          "preview": "images/Doubleroom/1.jpg",
-          "full": "images/Doubleroom/1.jpg",
+          "preview": "images/Doubleroom/1.webp",
+          "full": "images/Doubleroom/1.webp",
           "alt": "Двокімнатний номер - перша кімната"
         },
         {
           "title": "Двокімнатний номер - перша кімната",
-          "preview": "images/Doubleroom/2.jpg",
-          "full": "images/Doubleroom/2.jpg",
+          "preview": "images/Doubleroom/2.webp",
+          "full": "images/Doubleroom/2.webp",
           "alt": "Двокімнатний номер - перша кімната"
         }
       ]
@@ -137,38 +137,38 @@
       "items": [
         {
           "title": "Настінний фен",
-          "preview": "images/Different/3.jpg",
-          "full": "images/Different/3.jpg",
+          "preview": "images/Different/3.webp",
+          "full": "images/Different/3.webp",
           "alt": "Настінний фен"
         },
         {
           "title": "Електричний замок ззовні",
-          "preview": "images/Different/6.jpg",
-          "full": "images/Different/6.jpg",
+          "preview": "images/Different/6.webp",
+          "full": "images/Different/6.webp",
           "alt": "Електричний замок ззовні"
         },
         {
           "title": "Електричний замок зсередини",
-          "preview": "images/Different/7.jpg",
-          "full": "images/Different/7.jpg",
+          "preview": "images/Different/7.webp",
+          "full": "images/Different/7.webp",
           "alt": "Електричний замок зсередини"
         },
         {
           "title": "Сейф та холодильник",
-          "preview": "images/Different/5.jpg",
-          "full": "images/Different/5.jpg",
+          "preview": "images/Different/5.webp",
+          "full": "images/Different/5.webp",
           "alt": "Сейф та холодильник"
         },
         {
           "title": "Система клімат-контролю",
-          "preview": "images/Different/8.jpg",
-          "full": "images/Different/8.jpg",
+          "preview": "images/Different/8.webp",
+          "full": "images/Different/8.webp",
           "alt": "Система клімат-контролю"
         },
         {
           "title": "Праска та прасувальна дошка",
-          "preview": "images/Different/9.jpg",
-          "full": "images/Different/9.jpg",
+          "preview": "images/Different/9.webp",
+          "full": "images/Different/9.webp",
           "alt": "Праска та прасувальна дошка"
         }
       ]
@@ -180,44 +180,44 @@
       "items": [
         {
           "title": "Вхід до готелю",
-          "preview": "images/Tour/8.jpg",
-          "full": "images/Tour/8.jpg",
+          "preview": "images/Tour/8.webp",
+          "full": "images/Tour/8.webp",
           "alt": "Вхід до готелю"
         },
         {
           "title": "Стійка рецепції готелю",
-          "preview": "images/Tour/19.jpg",
-          "full": "images/Tour/19.jpg",
+          "preview": "images/Tour/19.webp",
+          "full": "images/Tour/19.webp",
           "alt": "Рецепція готелю"
         },
         {
           "title": "Зона очікування",
-          "preview": "images/Tour/11.jpg",
-          "full": "images/Tour/11.jpg",
+          "preview": "images/Tour/11.webp",
+          "full": "images/Tour/11.webp",
           "alt": "Зона очікування"
         },
         {
           "title": "Коридор готелю",
-          "preview": "images/Tour/14.jpg",
-          "full": "images/Tour/14.jpg",
+          "preview": "images/Tour/14.webp",
+          "full": "images/Tour/14.webp",
           "alt": "Коридор готелю"
         },
         {
           "title": "Коридор готелю",
-          "preview": "images/Tour/12.jpg",
-          "full": "images/Tour/12.jpg",
+          "preview": "images/Tour/12.webp",
+          "full": "images/Tour/12.webp",
           "alt": "Коридор готелю"
         },
         {
           "title": "Декор готелю",
-          "preview": "images/Tour/6.jpg",
-          "full": "images/Tour/6.jpg",
+          "preview": "images/Tour/6.webp",
+          "full": "images/Tour/6.webp",
           "alt": "Декор готелю"
         },
         {
           "title": "Декор готелю",
-          "preview": "images/Tour/18.jpg",
-          "full": "images/Tour/18.jpg",
+          "preview": "images/Tour/18.webp",
+          "full": "images/Tour/18.webp",
           "alt": "Декор готелю"
         }
       ]
@@ -229,20 +229,20 @@
       "items": [
         {
           "title": "Їдальня",
-          "preview": "images/Tour/13.jpg",
-          "full": "images/Tour/13.jpg",
+          "preview": "images/Tour/13.webp",
+          "full": "images/Tour/13.webp",
           "alt": "Стіл у їдальні"
         },
         {
           "title": "Техніка у їдальні",
-          "preview": "images/Tour/3.jpg",
-          "full": "images/Tour/3.jpg",
+          "preview": "images/Tour/3.webp",
+          "full": "images/Tour/3.webp",
           "alt": "Техніка у їдальні"
         },
         {
           "title": "Телевізор для ранкових новин",
-          "preview": "images/Tour/17.jpg",
-          "full": "images/Tour/17.jpg",
+          "preview": "images/Tour/17.webp",
+          "full": "images/Tour/17.webp",
           "alt": "Телевізор для ранкових новин"
         }
       ]

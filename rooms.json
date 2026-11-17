@@ -45,17 +45,17 @@
         "Текстиль та гігієна: фен, комплект рушників (3 шт. на особу), гель для душу та рідке мило в дозаторах"
       ],
       "price": 1299,
-      "image": "images/Single/1.jpg",
+      "image": "images/Single/1.webp",
       "imageAlt": "Стандартний одномісний номер",
       "gallery": [
-        "images/Single/1.jpg",
-        "images/Single/2.jpg",
-        "images/Single/3.jpg",
-        "images/Single/4.jpg",
-        "images/Different/1.jpg",
-        "images/Different/3.jpg",
-        "images/Different/4.jpg",
-        "images/Different/5.jpg"
+        "images/Single/1.webp",
+        "images/Single/2.webp",
+        "images/Single/3.webp",
+        "images/Single/4.webp",
+        "images/Different/1.webp",
+        "images/Different/3.webp",
+        "images/Different/4.webp",
+        "images/Different/5.webp"
       ],
       "visible": true
     },
@@ -94,10 +94,10 @@
         "images/Single with add bed/4.jpg",
         "images/Single with add bed/6.jpg",
         "images/Single with add bed/7.jpg",
-        "images/Different/1.jpg",
-        "images/Different/3.jpg",
-        "images/Different/4.jpg",
-        "images/Different/5.jpg"
+        "images/Different/1.webp",
+        "images/Different/3.webp",
+        "images/Different/4.webp",
+        "images/Different/5.webp"
       ],
       "visible": true
     },
@@ -127,25 +127,25 @@
         "Текстиль та гігієна: фен, комплект рушників (3 шт. на особу), гель для душу та рідке мило в дозаторах"
       ],
       "price": 1459,
-      "image": "images/Double/9.jpg",
+      "image": "images/Double/9.webp",
       "imageAlt": "Стандартний двомісний номер у готелі",
       "gallery": [
-        "images/Double/9.jpg",
-        "images/Double/10.jpg",
-        "images/Double/11.jpg",
-        "images/Double/2.jpg",
-        "images/Double/3.jpg",
-        "images/Double/4.jpg",
-        "images/Double/5.jpg",
-        "images/Double/6.jpg",
-        "images/Double/7.jpg",
-        "images/Double/8.jpg",
-        "images/Double/12.jpg",
-        "images/Double/13.jpg",
-        "images/Different/1.jpg",
-        "images/Different/3.jpg",
-        "images/Different/4.jpg",
-        "images/Different/5.jpg"
+        "images/Double/9.webp",
+        "images/Double/10.webp",
+        "images/Double/11.webp",
+        "images/Double/2.webp",
+        "images/Double/3.webp",
+        "images/Double/4.webp",
+        "images/Double/5.webp",
+        "images/Double/6.webp",
+        "images/Double/7.webp",
+        "images/Double/8.webp",
+        "images/Double/12.webp",
+        "images/Double/13.webp",
+        "images/Different/1.webp",
+        "images/Different/3.webp",
+        "images/Different/4.webp",
+        "images/Different/5.webp"
       ],
       "visible": true
     },
@@ -181,10 +181,10 @@
         "images/Double small/1.jpg",
         "images/Double small/2.jpg",
         "images/Double small/3.jpg",
-        "images/Different/1.jpg",
-        "images/Different/3.jpg",
-        "images/Different/4.jpg",
-        "images/Different/5.jpg"
+        "images/Different/1.webp",
+        "images/Different/3.webp",
+        "images/Different/4.webp",
+        "images/Different/5.webp"
       ],
       "visible": true
     },
@@ -222,10 +222,10 @@
         "images/Double plus/3.jpg",
         "images/Double plus/4.jpg",
         "images/Double plus/6.jpg",
-        "images/Different/1.jpg",
-        "images/Different/3.jpg",
-        "images/Different/4.jpg",
-        "images/Different/5.jpg"
+        "images/Different/1.webp",
+        "images/Different/3.webp",
+        "images/Different/4.webp",
+        "images/Different/5.webp"
       ],
       "visible": true
     },
@@ -255,17 +255,17 @@
         "Текстиль та гігієна: фен, комплект рушників (3 шт. на особу), гель для душу та рідке мило в дозаторах"
       ],
       "price": 1459,
-      "image": "images/Doubleroom/1.jpg",
+      "image": "images/Doubleroom/1.webp",
       "imageAlt": "Двокімнатний номер у готелі",
       "gallery": [
-        "images/Doubleroom/1.jpg",
-        "images/Doubleroom/2.jpg",
-        "images/Doubleroom/3.jpg",
-        "images/Doubleroom/4.jpg",
-        "images/Different/1.jpg",
-        "images/Different/3.jpg",
-        "images/Different/4.jpg",
-        "images/Different/5.jpg"
+        "images/Doubleroom/1.webp",
+        "images/Doubleroom/2.webp",
+        "images/Doubleroom/3.webp",
+        "images/Doubleroom/4.webp",
+        "images/Different/1.webp",
+        "images/Different/3.webp",
+        "images/Different/4.webp",
+        "images/Different/5.webp"
       ],
       "visible": true
     }
