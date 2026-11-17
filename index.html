@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sleeport hotel</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/icon.png">
+    <link rel="preload" href="fonts/Montserrat-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="style.css">
     <script src="layout.js" defer></script>
     <link rel="canonical" href="https://sleeport.dp.ua/">
@@ -106,7 +107,7 @@
         <!-- Карусель фотографій -->
         <section class="home-hero">
             <div class="hero-slide active">
-                <img src="images/Tour/8.jpg" alt="Головний вхід до готелю">
+                <img src="images/Tour/8.jpg" alt="Головний вхід до готелю" fetchpriority="high">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <h1>Там, де завжди на вас чекають</h1>
@@ -115,7 +116,7 @@
             </div>
 
             <div class="hero-slide">
-                <img src="images/Tour/19.jpg" alt="Рецепція готелю">
+                <img src="images/Tour/19.jpg" alt="Рецепція готелю" fetchpriority="high">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <h1>Місце, де вас зустрінуть з посмішкою</h1>
@@ -127,7 +128,7 @@
             </div>
 
             <div class="hero-slide">
-                <img src="images/Double plus/8.jpg" alt="Інтер'єр готельного номера">
+                <img src="images/Double plus/8.jpg" alt="Інтер'єр готельного номера" fetchpriority="high">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <h2>Відпочинок у власному ритмі</h2>

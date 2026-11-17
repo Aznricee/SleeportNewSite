@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sleeport Hotel - Dnipro</title>
     <link rel="icon" type="image/png" sizes="32x32" href="/images/icon.png">
+    <link rel="preload" href="../fonts/Montserrat-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="stylesheet" href="../style.css">
     <script src="layout.js" defer></script>
     <link rel="canonical" href="https://sleeport.dp.ua/en/">
@@ -106,7 +107,7 @@
         <!-- Photo Carousel -->
         <section class="home-hero">
             <div class="hero-slide active">
-                <img src="../images/Tour/8.jpg" alt="Main entrance to the hotel">
+                <img src="../images/Tour/8.jpg" alt="Main entrance to the hotel" fetchpriority="high">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <h1>Where you are always welcome</h1>
@@ -115,7 +116,7 @@
             </div>
 
             <div class="hero-slide">
-                <img src="../images/Tour/19.jpg" alt="Hotel reception desk">
+                <img src="../images/Tour/19.jpg" alt="Hotel reception desk" fetchpriority="high">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <h1>A place where hospitality meets you with a smile</h1>
@@ -127,7 +128,7 @@
             </div>
 
             <div class="hero-slide">
-                <img src="../images/Double plus/8.jpg" alt="Cozy room interior">
+                <img src="../images/Double plus/8.jpg" alt="Cozy room interior" fetchpriority="high">
                 <div class="hero-overlay"></div>
                 <div class="hero-content">
                     <h2>Rest at your own pace</h2>

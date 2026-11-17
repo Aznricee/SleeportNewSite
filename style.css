@@ -3,7 +3,7 @@
 ========================================================================== */
 @font-face {
   font-family: "Montserrat";
-  src: url("./fonts/Montserrat-VariableFont_wght.ttf") format("truetype");
+  src: url("./fonts/Montserrat-VariableFont_wght.woff2") format("truetype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -11,7 +11,7 @@
 
 @font-face {
   font-family: "Montserrat";
-  src: url("./fonts/Montserrat-Italic-VariableFont_wght.ttf") format("truetype");
+  src: url("./fonts/Montserrat-Italic-VariableFont_wght.woff2") format("truetype");
   font-weight: 100 900;
   font-style: italic;
   font-display: swap;
@@ -21,9 +21,9 @@
     /* Кольори тексту */
     --color-text-main: #263b59;
     --color-text-heading: #18346d;
-    --color-text-muted: #3b485a;
-    --color-text-subtle: #6580a5;
-    --color-text-dark: #334155;
+    --color-text-muted: #243853;
+    --color-text-subtle: #466085;
+    --color-text-dark: #374f70;
     --color-text-body-alt: #4b5868;
 
     /* Кольори бренду та інтерактивних елементів */
