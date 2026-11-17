@@ -11,7 +11,7 @@ async function loadRoomsPage() {
         const data = await response.json();
 
         document.title = `Sleeport hotel — ${data.title || 'Rooms'}`;
-        document.getElementById('rooms-title').textContent = data.title || 'Room Inventory';
+        document.getElementById('rooms-title').textContent = data.title || 'Rooms';
         document.getElementById('common-title').textContent = data.commonTitle || '';
         document.getElementById('common-description').textContent = data.commonDescription || '';
         document.getElementById('common-note').textContent = data.commonNote || '';
@@ -172,7 +172,7 @@ async function loadRoomsPage() {
 
     } catch (error) {
         console.error(error);
-        list.textContent = 'Unable to load room inventory. Please check server availability.';
+        list.textContent = 'Unable to load rooms. Please check server availability.';
     }
 }
 

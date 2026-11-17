@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         {
                             "@type": "ListItem",
                             "position": 2,
-                            "name": "Номерний фонд",
+                            "name": "Номери",
                             "item": "https://sleeport.dp.ua/rooms.html"
                         },
                         {

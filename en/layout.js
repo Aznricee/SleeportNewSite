@@ -37,7 +37,7 @@ class SiteHeaderEn extends HTMLElement {
                     
                     <nav class="navigation" id="main-navigation">
                         <a href="about.html">About Us</a>
-                        <a href="rooms.html">Room Inventory</a>
+                        <a href="rooms.html">Rooms</a>
                         <a href="gallery.html">Gallery</a>
                         <a href="breakfast.html">Breakfast</a>
                         <a href="coop.html">Corporate Clients</a>
@@ -130,7 +130,7 @@ class SiteFooterEn extends HTMLElement {
                 <div class="footer-column">
                     <h3>Navigation</h3>
                     <a href="about.html">About Us</a>
-                    <a href="rooms.html">Room Inventory</a>
+                    <a href="rooms.html">Rooms</a>
                     <a href="gallery.html">Gallery</a>
                     <a href="breakfast.html">Breakfast</a>
                     <a href="coop.html">Corporate Clients</a>

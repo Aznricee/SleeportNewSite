@@ -45,13 +45,17 @@
         "Текстиль та гігієна: фен, комплект рушників (3 шт. на особу), гель для душу та рідке мило в дозаторах"
       ],
       "price": 1299,
-      "image": "images/rooms/8_6.jpg",
+      "image": "images/Single/1.jpg",
       "imageAlt": "Стандартний одномісний номер",
       "gallery": [
-        "images/rooms/8_6.jpg",
-        "images/rooms/8_2.jpg",
-        "images/rooms/8_3.jpg",
-        "images/rooms/8_5.jpg"
+        "images/Single/1.jpg",
+        "images/Single/2.jpg",
+        "images/Single/3.jpg",
+        "images/Single/4.jpg",
+        "images/Different/1.jpg",
+        "images/Different/3.jpg",
+        "images/Different/4.jpg",
+        "images/Different/5.jpg"
       ],
       "visible": true
     },
@@ -59,10 +63,10 @@
       "id": "superior-single",
       "number": "02",
       "name": "Стандарт одномісний з додатковим місцем",
-      "description": "Практичний номер площею з додатковим ліжком другого ярусу для розміщення ще однієї людини.",
+      "description": "Практичний номер з додатковим ліжком другого ярусу для розміщення ще однієї людини.",
       "fullDescription": "Функціональне рішення для спільної поїздки колег чи знайомих. Завдяки наявності додаткового спального місця другого ярусу кімната зберігає повноцінне робоче місце, власну систему вентиляції та сучасні готельні зручності.",
       "area": "16",
-      "capacity": "1–2 гостя",
+      "capacity": "1–2 гості",
       "bedType": "Односпальне ліжко + додаткове ярусне спальне місце",
       "features": [
         "Два спальних місця (ярусний тип)",
@@ -81,23 +85,30 @@
         "Текстиль та гігієна: фен, комплект рушників (3 шт. на особу), гель для душу та рідке мило в дозаторах"
       ],
       "price": 1449,
-      "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1000&q=85",
+      "image": "images/Single with add bed/1.jpg",
       "imageAlt": "Стандартний одномісний номер з додатковим місцем",
       "gallery": [
-        "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85",
-        "images/techn/locksystem_1.jpg",
-        "images/techn/safe_and_freezer.jpg"
+        "images/Single with add bed/1.jpg",
+        "images/Single with add bed/2.jpg",
+        "images/Single with add bed/3.jpg",
+        "images/Single with add bed/4.jpg",
+        "images/Single with add bed/6.jpg",
+        "images/Single with add bed/7.jpg",
+        "images/Different/1.jpg",
+        "images/Different/3.jpg",
+        "images/Different/4.jpg",
+        "images/Different/5.jpg"
       ],
-      "visible": false
+      "visible": true
     },
     {
       "id": "standard-double",
-      "number": "02",
+      "number": "03",
       "name": "Стандарт двомісний",
       "description": "Просторий номер з можливістю підготовки одного двоспального або двох окремих ліжок.",
       "fullDescription": "Зручний номер, який комплектується великим двоспальним ліжком або двома окремими ліжками. Оснащений телевізором LED TV LG 26\", комфортною робочою зоною та всіма комунікаціями.",
       "area": "20",
-      "capacity": "2 гостя",
+      "capacity": "2 гості",
       "bedType": "Двоспальне ліжко (160×200 см) або два односпальних (80×200 см)",
       "features": [
         "Трансформована зона сну (Double або Twin)",
@@ -116,28 +127,36 @@
         "Текстиль та гігієна: фен, комплект рушників (3 шт. на особу), гель для душу та рідке мило в дозаторах"
       ],
       "price": 1459,
-      "image": "images/rooms/room_3_bed_1 - prev.jpg",
+      "image": "images/Double/9.jpg",
       "imageAlt": "Стандартний двомісний номер у готелі",
       "gallery": [
-        "images/rooms/room_3_bed_1.jpg",
-        "images/rooms/room_3_table_2.jpg",
-        "images/rooms/room_3_bathroom_1.jpg",
-        "images/rooms/room_6_bed.jpg",
-        "images/rooms/room_6_bed_2.jpg",
-        "images/rooms/room_6_bathroom.jpg",
-        "images/rooms/room_6_closet.jpg",
-        "images/rooms/tea_and_water_2.jpg"
+        "images/Double/9.jpg",
+        "images/Double/10.jpg",
+        "images/Double/11.jpg",
+        "images/Double/2.jpg",
+        "images/Double/3.jpg",
+        "images/Double/4.jpg",
+        "images/Double/5.jpg",
+        "images/Double/6.jpg",
+        "images/Double/7.jpg",
+        "images/Double/8.jpg",
+        "images/Double/12.jpg",
+        "images/Double/13.jpg",
+        "images/Different/1.jpg",
+        "images/Different/3.jpg",
+        "images/Different/4.jpg",
+        "images/Different/5.jpg"
       ],
       "visible": true
     },
     {
       "id": "small-double",
-      "number": "03",
+      "number": "04",
       "name": "Двомісний маленький",
       "description": "Компактний номер із двоспальним диваном та повним набором готельних зручностей.",
       "fullDescription": "Затишний номер із продуманим плануванням для одного або двох гостей. Оснащений розкладним двоспальним диваном, робочим столом, індивідуальним клімат-контролем та душовою кімнатою.",
       "area": "16",
-      "capacity": "1–2 гостя",
+      "capacity": "1–2 гості",
       "bedType": "Двоспальний розкладний диван",
       "features": [
         "Розкладний двоспальний диван",
@@ -156,24 +175,27 @@
         "Текстиль та гігієна: фен, комплект рушників (3 шт. на особу), гель для душу та рідке мило в дозаторах"
       ],
       "price": 1359,
-      "image": "images/rooms/room_1_bed.jpg",
+      "image": "images/Double small/1.jpg",
       "imageAlt": "Невеликий двомісний номер у готелі",
       "gallery": [
-        "images/rooms/room_1_bed.jpg",
-        "images/rooms/room_1_table_1.jpg",
-        "images/rooms/room_1_mirror.jpg",
-        "images/rooms/room_1_bathroom_2.jpg"
+        "images/Double small/1.jpg",
+        "images/Double small/2.jpg",
+        "images/Double small/3.jpg",
+        "images/Different/1.jpg",
+        "images/Different/3.jpg",
+        "images/Different/4.jpg",
+        "images/Different/5.jpg"
       ],
       "visible": true
     },
     {
       "id": "superior-double",
-      "number": "04",
+      "number": "05",
       "name": "Двомісний покращений",
       "description": "Найпросторіший номер готелю із мікрохвильовою піччю та розширеним простором.",
       "fullDescription": "Продуманий простір, де легко відчути себе як удома.\nЗбільшена площа номера дарує приємне відчуття свободи, а побутові деталі роблять проживання безтурботним: розігрійте улюблену страву в мікрохвильовці, заваріть свіжий чай чи увімкніть улюблений фільм на 26\" LED TV. \nОберіть зручну конфігурацію ліжок під ваш візит - спільне ліжко Double або два окремих Twin - та насолоджуйтеся якісним відпочинком.",
       "area": "30",
-      "capacity": "2 гостя",
+      "capacity": "2 гості",
       "bedType": "Двоспальне ліжко (160×200 см) або два односпальних (80×200 см)",
       "features": [
         "Збільшена площа 30 м²",
@@ -193,26 +215,28 @@
         "Текстиль та гігієна: фен, комплект рушників (3 шт. на особу), гель для душу та рідке мило в дозаторах"
       ],
       "price": 1559,
-      "image": "images/rooms/room_2_full - prev.jpg",
+      "image": "images/Double plus/1.jpg",
       "imageAlt": "Покращений двомісний номер у готелі",
       "gallery": [
-        "images/rooms/room_2_full_bed_better.jpg",
-        "images/rooms/room_2_kitchen_2.jpg",
-        "images/rooms/room_2_something.jpg",
-        "images/rooms/room_2_decore.jpg",
-        "images/techn/safe.jpg",
-        "images/techn/temp_system.jpg"
+        "images/Double plus/2.jpg",
+        "images/Double plus/3.jpg",
+        "images/Double plus/4.jpg",
+        "images/Double plus/6.jpg",
+        "images/Different/1.jpg",
+        "images/Different/3.jpg",
+        "images/Different/4.jpg",
+        "images/Different/5.jpg"
       ],
       "visible": true
     },
     {
       "id": "two-room",
-      "number": "05",
+      "number": "06",
       "name": "Двокімнатний",
       "description": "Номер із двома окремими кімнатами, що ідеально підходить для бізнес-поїздок.",
       "fullDescription": "Практичний номер, розділений на дві окремі кімнати для забезпечення приватності кожного гостя. У кожній кімнаті передбачено окреме односпальне ліжко (900×2000 мм), власний телевізор LED TV LG 26\", автономний кондиціонер та робоче місце.",
       "area": "20",
-      "capacity": "2 гостя",
+      "capacity": "2 гості",
       "bedType": "Два окремих ліжка (по одному 90×200 см у кожній кімнаті)",
       "features": [
         "Дві ізольовані кімнати",
@@ -231,18 +255,21 @@
         "Текстиль та гігієна: фен, комплект рушників (3 шт. на особу), гель для душу та рідке мило в дозаторах"
       ],
       "price": 1459,
-      "image": "images/rooms/room_14_room_1_2 - prev.jpg",
+      "image": "images/Doubleroom/1.jpg",
       "imageAlt": "Двокімнатний номер у готелі",
       "gallery": [
-        "images/rooms/room_14_room_1_2 - prev.jpg",
-        "images/rooms/14_3.jpg",
-        "images/rooms/14_4.jpg",
-        "images/rooms/14_7.jpg",
-        "images/rooms/14_8.jpg"
+        "images/Doubleroom/1.jpg",
+        "images/Doubleroom/2.jpg",
+        "images/Doubleroom/3.jpg",
+        "images/Doubleroom/4.jpg",
+        "images/Different/1.jpg",
+        "images/Different/3.jpg",
+        "images/Different/4.jpg",
+        "images/Different/5.jpg"
       ],
       "visible": true
     }
   ],
-  "bottomNote": "Доступність номерів залежить від дат перебування. Для уточнення деталей зв'яжіться з адміністрацією готелю або залиште заявку на бронюваня.",
+  "bottomNote": "Доступність номерів залежить від дат перебування. Для уточнення деталей зв'яжіться з адміністрацією готелю або залиште заявку на бронювання.",
   "contactsLinkText": "Контакти готелю ↗"
 }

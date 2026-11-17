@@ -12,10 +12,10 @@ async function loadRoomsPage() {
 
         const data = await response.json();
 
-        document.title = `Sleeport hotel — ${data.title || 'Номерний фонд'}`;
+        document.title = `Sleeport hotel — ${data.title || 'Номери'}`;
 
         document.getElementById('rooms-title').textContent =
-            data.title || 'Номерний фонд';
+            data.title || 'Номери';
 
         document.getElementById('common-title').textContent =
             data.commonTitle || 'Стандартна комплектація номерів';
