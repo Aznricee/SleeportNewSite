@@ -13,7 +13,7 @@ async function loadBreakfastPage() {
 
         const data = await response.json();
 
-        document.title = data.title || 'Сніданки та кава — Sleeport';
+        document.title = data.title || 'Меню сніданків у Sleeport Hotel';
 
         setText('page-title', data.pageTitle || 'Сніданки та кава');
         setText('page-description', data.pageDescription || '');

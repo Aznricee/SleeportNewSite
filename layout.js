@@ -22,32 +22,32 @@ class SiteHeader extends HTMLElement {
                         </button>
                     </div>
                     <div class="language-switch">
-                        <a href="index.html" class="active">UA</a>
+                        <a href="/" class="active">UA</a>
                         <span>|</span>
-                        <a href="en/index.html" id="en-lang-link">EN</a>
+                        <a href="/en/" id="en-lang-link">EN</a>
                     </div>
                 </div>
             </div>
 
             <div class="main-header">
                 <div class="header-container">
-                    <a href="index.html" class="logo">
-                        <img src="images/logo.webp" alt="Sleeport" height="40">
+                    <a href="/" class="logo">
+                        <img src="/images/logo.webp" alt="Sleeport" height="40">
                     </a>
 
                     <nav class="navigation" id="main-navigation">
-                        <a href="about.html">Про нас</a>
-                        <a href="rooms.html">Номери</a>
-                        <a href="galery.html">Галерея</a>
-                        <a href="breakfast.html">Сніданки</a>
-                        <a href="coop.html">Для корпоративних клієнтів</a>
-                        <a href="contacts.html">Контакти</a>
-                        <a href="rules.html">Правила готелю</a>
-                        <a href="booking.html" class="mobile-booking-link">Забронювати номер</a>
+                        <a href="/about">Про нас</a>
+                        <a href="/rooms">Номери</a>
+                        <a href="/galery">Галерея</a>
+                        <a href="/breakfast">Сніданки</a>
+                        <a href="/coop">Для корпоративних клієнтів</a>
+                        <a href="/contacts">Контакти</a>
+                        <a href="/rules">Правила готелю</a>
+                        <a href="/booking" class="mobile-booking-link">Забронювати номер</a>
                     </nav>
 
                     <div class="header-actions">
-                        <a href="booking.html" class="booking-button desktop-booking-button">Забронювати</a>
+                        <a href="/booking" class="booking-button desktop-booking-button">Забронювати</a>
                         <button class="burger-menu-btn" id="burger-btn" type="button" aria-label="Відкрити меню" aria-expanded="false">
                             <span class="burger-line"></span>
                             <span class="burger-line"></span>
@@ -91,11 +91,21 @@ class SiteHeader extends HTMLElement {
         });
     }
 
+    getNormalizedPath() {
+        let path = window.location.pathname
+            .replace(/\.html$/, "")
+            .replace(/\/index$/, "/");
+        if (path.length > 1 && path.endsWith("/")) {
+            path = path.slice(0, -1);
+        }
+        return path || "/";
+    }
+
     highlightActiveLink() {
-        const currentFile = window.location.pathname.split("/").pop() || "index.html";
+        const currentPath = this.getNormalizedPath();
         const links = this.querySelectorAll(".navigation a");
         links.forEach(link => {
-            if (link.getAttribute("href") === currentFile) {
+            if (link.getAttribute("href") === currentPath) {
                 link.classList.add("active");
                 link.style.fontWeight = "600";
             }
@@ -103,17 +113,18 @@ class SiteHeader extends HTMLElement {
     }
 
     setupLanguageSwitcher() {
-        const currentFile = window.location.pathname.split("/").pop() || "index.html";
+        const currentPath = this.getNormalizedPath();
         const enLink = this.querySelector("#en-lang-link");
         if (!enLink) return;
 
-        let targetEnFile = currentFile;
-        if (currentFile === "galery.html") {
-            targetEnFile = "gallery.html";
+        let slug = currentPath === "/" ? "" : currentPath.replace(/^\//, "");
+        if (slug === "galery") {
+            slug = "gallery";
         }
 
         const queryString = window.location.search || "";
-        enLink.setAttribute("href", `en/${targetEnFile}${queryString}`);
+        const targetUrl = slug ? `/en/${slug}` : "/en/";
+        enLink.setAttribute("href", `${targetUrl}${queryString}`);
     }
 }
 
@@ -123,19 +134,19 @@ class SiteFooter extends HTMLElement {
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-column footer-about">
-                    <a href="index.html" class="footer-logo">Sleeport</a>
+                    <a href="/" class="footer-logo">Sleeport</a>
                     <p>Комфортний відпочинок<br>та затишок у кожній деталі.</p>
                 </div>
 
                 <div class="footer-column">
                     <h3>Навігація</h3>
-                    <a href="about.html">Про нас</a>
-                    <a href="rooms.html">Номери</a>
-                    <a href="galery.html">Галерея</a>
-                    <a href="breakfast.html">Сніданки</a>
-                    <a href="coop.html">Для корпоративних клієнтів</a>
-                    <a href="contacts.html">Контакти</a>
-                    <a href="rules.html">Правила готелю</a>
+                    <a href="/about">Про нас</a>
+                    <a href="/rooms">Номери</a>
+                    <a href="/galery">Галерея</a>
+                    <a href="/breakfast">Сніданки</a>
+                    <a href="/coop">Для корпоративних клієнтів</a>
+                    <a href="/contacts">Контакти</a>
+                    <a href="/rules">Правила готелю</a>
                 </div>
 
                 <div class="footer-column">
@@ -143,7 +154,7 @@ class SiteFooter extends HTMLElement {
                     <a href="tel:+380963759530">+380 96 375 95 30</a>
                     <a href="tel:+380662527727">+380 66 252 77 27</a>
                     <a href="mailto:sleeporthotelsleeport.dnk@gmail.com">sleeporthotelsleeport.dnk@gmail.com</a>
-                    <a href="booking.html">Забронювати номер</a>
+                    <a href="/booking">Забронювати номер</a>
                     
                     <div class="footer-messengers" style="display: flex; gap: 12px; margin-top: 6px;">
                         <a href="https://t.me/HotelSleeport" target="_blank" rel="noopener noreferrer" style="color: #64b5f6; font-weight: 500;">
@@ -173,7 +184,7 @@ class SiteFooter extends HTMLElement {
 
             <div class="footer-bottom">
                 <p>© 2026 Sleeport. Усі права захищено.</p>
-                <a href="privacy.html">Політика конфіденційності</a>
+                <a href="/privacy">Політика конфіденційності</a>
             </div>
         </footer>
         `;
