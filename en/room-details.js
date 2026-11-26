@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                             "@type": "ListItem",
                             "position": 2,
                             "name": "Rooms",
-                            "item": "https://sleeport.dp.ua/en/rooms.html"
+                            "item": "https://sleeport.dp.ua/en/rooms"
                         },
                         {
                             "@type": "ListItem",
@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                         "price": room.price,
                         "priceCurrency": "UAH",
                         "availability": "https://schema.org/InStock",
-                        "url": `https://sleeport.dp.ua/en/booking.html?room=${encodeURIComponent(room.id)}`
+                        "url": `https://sleeport.dp.ua/en/booking?room=${encodeURIComponent(room.id)}`
                     }
                 }
             ]

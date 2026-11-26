@@ -24,30 +24,30 @@ class SiteHeaderEn extends HTMLElement {
                     <div class="language-switch">
                         <a href="../index.html" id="ua-lang-link">UA</a>
                         <span>|</span>
-                        <a href="index.html" class="active">EN</a>
+                        <a href="/en/index" class="active">EN</a>
                     </div>
                 </div>
             </div>
 
             <div class="main-header">
                 <div class="header-container">
-                    <a href="index.html" class="logo">
+                    <a href="/en/index" class="logo">
                         <img src="../images/logo.webp" alt="Sleeport" height="40">
                     </a>
                     
                     <nav class="navigation" id="main-navigation">
-                        <a href="about.html">About Us</a>
-                        <a href="rooms.html">Rooms</a>
-                        <a href="gallery.html">Gallery</a>
-                        <a href="breakfast.html">Breakfast</a>
-                        <a href="coop.html">Corporate Clients</a>
-                        <a href="contacts.html">Contacts</a>
-                        <a href="rules.html">Hotel Rules</a>
-                        <a href="booking.html" class="mobile-booking-link">Book a Room</a>
+                        <a href="/en/about">About Us</a>
+                        <a href="/en/rooms">Rooms</a>
+                        <a href="/en/gallery">Gallery</a>
+                        <a href="/en/breakfast">Breakfast</a>
+                        <a href="/en/coop">Corporate Clients</a>
+                        <a href="/en/contacts">Contacts</a>
+                        <a href="/en/rules">Hotel Rules</a>
+                        <a href="/en/booking" class="mobile-booking-link">Book a Room</a>
                     </nav>
 
                     <div class="header-actions">
-                        <a href="booking.html" class="booking-button desktop-booking-button">Book Now</a>
+                        <a href="/en/booking" class="booking-button desktop-booking-button">Book Now</a>
                         <button class="burger-menu-btn" id="burger-btn" type="button" aria-label="Open menu" aria-expanded="false">
                             <span class="burger-line"></span>
                             <span class="burger-line"></span>
@@ -123,19 +123,19 @@ class SiteFooterEn extends HTMLElement {
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-column footer-about">
-                    <a href="index.html" class="footer-logo">Sleeport</a>
+                    <a href="/en/index" class="footer-logo">Sleeport</a>
                     <p>Comfortable stay<br>and coziness in every detail.</p>
                 </div>
 
                 <div class="footer-column">
                     <h3>Navigation</h3>
-                    <a href="about.html">About Us</a>
-                    <a href="rooms.html">Rooms</a>
-                    <a href="gallery.html">Gallery</a>
-                    <a href="breakfast.html">Breakfast</a>
-                    <a href="coop.html">Corporate Clients</a>
-                    <a href="contacts.html">Contacts</a>
-                    <a href="rules.html">Hotel Rules</a>
+                    <a href="/en/about">About Us</a>
+                    <a href="/en/rooms">Rooms</a>
+                    <a href="/en/gallery">Gallery</a>
+                    <a href="/en/breakfast">Breakfast</a>
+                    <a href="/en/coop">Corporate Clients</a>
+                    <a href="/en/contacts">Contacts</a>
+                    <a href="/en/rules">Hotel Rules</a>
                 </div>
 
                 <div class="footer-column">
@@ -143,7 +143,7 @@ class SiteFooterEn extends HTMLElement {
                     <a href="tel:+380963759530">+380 96 375 95 30</a>
                     <a href="tel:+380662527727">+380 66 252 77 27</a>
                     <a href="mailto:sleeporthotelsleeport.dnk@gmail.com">sleeporthotelsleeport.dnk@gmail.com</a>
-                    <a href="booking.html">Book a Room</a>
+                    <a href="/en/booking">Book a Room</a>
                     
                     <div class="footer-messengers" style="display: flex; gap: 12px; margin-top: 6px;">
                         <a href="https://t.me/HotelSleeport" target="_blank" rel="noopener noreferrer" style="color: #64b5f6; font-weight: 500;">
@@ -173,8 +173,8 @@ class SiteFooterEn extends HTMLElement {
 
             <div class="footer-bottom">
                 <p>© 2026 Sleeport. All rights reserved.</p>
-                <a href="rules.html">Accommodation & Booking Rules</a>
-                <a href="privacy.html">Privacy Policy</a>
+                <a href="/en/rules">Accommodation & Booking Rules</a>
+                <a href="/en/privacy">Privacy Policy</a>
             </div>
         </footer>
         `;
