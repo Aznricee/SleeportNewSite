@@ -12,7 +12,7 @@ async function loadRoomsPage() {
 
         const data = await response.json();
 
-        document.title = `Sleeport hotel — ${data.title || 'Номери'}`;
+        document.title = `Номери та ціни у готелі Sleeport у Дніпрі`;
 
         document.getElementById('rooms-title').textContent =
             data.title || 'Номери';
